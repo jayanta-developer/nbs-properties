@@ -1,0 +1,41 @@
+.BlackBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: #242527;
+  padding: 0 18px;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+.BlackBtn:hover {
+  background: #575757;
+}
+.BlackBtn p {
+  font-size: 18px;
+  color: #fff;
+}
+
+.WhiteBtn {
+  background: #fff;
+  border: 1px solid #242527;
+}
+.WhiteBtn:hover {
+  background: #ebebebcc;
+}
+.WhiteBtn p {
+  color: #000;
+}
+.WhiteFillBtn {
+  background: #fff;
+}
+.WhiteFillBtn:hover {
+  background: #ebebebcc;
+}
+.WhiteFillBtn p {
+  color: #000;
+  font-size: 22px;
+  font-weight: 500;
+}
