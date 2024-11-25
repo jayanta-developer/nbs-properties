@@ -149,16 +149,8 @@ export default function Home({ navItem, setNavItem }) {
               </div>
               <img src={difBgImg} />
             </div>
-
-
-
-
           </div>
-
-
-
         </div>
-
       </div>
     </>
   )
