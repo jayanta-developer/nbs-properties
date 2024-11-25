@@ -1,7 +1,7 @@
 import "./style.css"
 
 //images
-import dropIcon from "../../assets/Images/dropIcon.svg"
+import dropIcon from "../../assets/Images/DropIcon.svg"
 
 
 //Buttons
