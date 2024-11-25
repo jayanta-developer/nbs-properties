@@ -1,19 +1,23 @@
 .homeContainer {
   width: 100%;
 }
+.homeContainer p {
+  margin-bottom: 0;
+}
 .homeTopSection {
   width: 100%;
-  height: 100vh;
+  height: 82vh;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   gap: 20px;
+  padding-top: 11%;
 }
 .homeTopBg {
   width: 100%;
-  height: 80%;
+  height: 75vh;
   position: absolute;
   top: 0;
   object-fit: cover;
@@ -28,4 +32,226 @@
 .homeSubHeader {
   font-size: 25px;
   color: #fff;
+}
+.homeTopSection h3 {
+  color: black;
+}
+.HomeBtnBox {
+  width: 80%;
+  height: 80px;
+  position: relative;
+  top: 11px;
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.locationInputBox {
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 50px;
+  gap: 8px;
+  cursor: pointer;
+  position: relative;
+}
+.locationInputBox .targetIcon {
+  position: absolute;
+  right: 10px;
+}
+.topHomeTavSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 32px;
+}
+.thTabInBox {
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: #fff;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  gap: 15px;
+  padding: 7px 12px 0 12px;
+}
+.tabBox {
+  width: 97px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.tabBox > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #fff;
+}
+.ActivetabBuyBox > div {
+  box-shadow: #ffb605 0px 9px 91px 2px;
+}
+.ActivetabRentBox > div {
+  box-shadow: gray 0px 9px 91px 2px;
+}
+.serviceSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 70px;
+}
+.SectionHeader {
+  font-size: 50px;
+  font-weight: 700;
+  color: #000;
+  font-family: "ClashDisplay";
+}
+.sectionSubText {
+  font-size: 18px;
+  font-weight: 400;
+  color: #444156;
+  margin-bottom: 30px !important;
+}
+.serviceCardBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25px;
+}
+.serviceCard {
+  width: 370px;
+}
+.serviceCard img {
+  width: 100%;
+}
+.serviceCard p {
+  font-size: 25px;
+  font-weight: 600;
+  color: #242527;
+  margin: 8px 0;
+}
+.serviceCard span {
+  font-size: 16px;
+  color: #444156;
+}
+.centerBtnBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+}
+.aboutNbsSection {
+  width: 100%;
+  background: #fff5dd;
+  padding: 6% 8%;
+}
+.anbs {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  gap: 30px;
+}
+.nbsImgBox {
+  width: 50%;
+  position: relative;
+}
+.nbsImgBox .nbsImg {
+  width: 100%;
+  height: 100%;
+}
+.nbsTextBox {
+  width: 50%;
+}
+.nbsInImgBox {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 150px;
+  height: 150px;
+  padding: 8px;
+  background: #fff;
+}
+.nbsInImgBox img {
+  width: 100%;
+  height: 100%;
+}
+.nbsTextBox .sectionSubText {
+  margin-bottom: 0 !important;
+}
+.nbsBtnBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 20px;
+}
+.trustSection {
+  width: 100%;
+  padding: 6% 8%;
+}
+.trustBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.trustInBox {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.wmDifferent {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #fff5dd 53.25%, #ffffff 100%);
+  border-radius: 15px;
+  padding: 20px;
+}
+.wmDfHeader {
+  font-size: 30px;
+  font-weight: 600;
+  color: #242527;
+}
+.wmdBtnBox {
+  width: 100%;
+}
+.wmdBtnBox .BlackBtn {
+  width: 170px;
+}
+.trustCard {
+  width: 48%;
+}
+.trustCard p {
+  font-size: 25px;
+  font-weight: 600;
+  color: #242527;
+  margin: 8px 0;
+}
+.trustCard samp {
+  font-size: 16px;
+  color: #444156;
+  font-family: "Syne";
 }

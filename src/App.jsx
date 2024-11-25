@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 
@@ -6,9 +6,11 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home"
 
 function App() {
+  const [navItem, setNavItem] = useState("Home")
+
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home navItem={navItem} setNavItem={setNavItem} />} />
     </Routes>
   )
 }
