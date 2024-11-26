@@ -13,7 +13,7 @@
   align-items: center;
   /* justify-content: center; */
   gap: 20px;
-  padding-top: 11%;
+  padding-top: 7%;
 }
 .homeTopBg {
   width: 100%;
@@ -27,7 +27,7 @@
   font-size: 50px;
   font-weight: 600;
   color: #fff;
-  font-family: "ClashDisplay";
+  font-family: "ClashDisplayBold";
 }
 .homeSubHeader {
   font-size: 25px;
@@ -39,8 +39,8 @@
 .HomeBtnBox {
   width: 80%;
   height: 80px;
-  position: relative;
-  top: 11px;
+  position: absolute;
+  bottom: 13%;
   background: #fff;
   border-radius: 12px;
   display: flex;
@@ -71,8 +71,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  position: relative;
-  top: 32px;
+  position: absolute;
+  bottom: 25.5%;
 }
 .thTabInBox {
   height: 70px;
@@ -120,9 +120,9 @@
 }
 .SectionHeader {
   font-size: 50px;
-  font-weight: 700;
+  /* font-weight: 700; */
   color: #000;
-  font-family: "ClashDisplay";
+  font-family: "ClashDisplayBold";
 }
 .sectionSubText {
   font-size: 18px;
@@ -148,6 +148,7 @@
   font-weight: 600;
   color: #242527;
   margin: 8px 0;
+  font-family: "ClashDisplayBold";
 }
 .serviceCard span {
   font-size: 16px;
@@ -221,6 +222,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 10px;
 }
 .wmDifferent {
   width: 40%;
@@ -234,6 +236,7 @@
   font-size: 30px;
   font-weight: 600;
   color: #242527;
+  font-family: "ClashDisplayBold";
 }
 .wmdBtnBox {
   width: 100%;
@@ -254,4 +257,189 @@
   font-size: 16px;
   color: #444156;
   font-family: "Syne";
+}
+.NearUSection {
+  width: 100%;
+  margin-top: 80px;
+}
+.nearLoCardBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 25px;
+}
+.nearLoCard {
+  width: 33%;
+  height: 185px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  background: #fff5dd;
+  border: 1px solid #e2d2ac;
+  padding: 20px;
+  gap: 16px;
+}
+.nearLoCard p {
+  font-size: 40px;
+  font-family: "ClashDisplayBold";
+  color: #444156;
+}
+.nearLoCard span {
+  font-size: 20px;
+  color: #444156;
+  position: relative;
+  top: -20px;
+}
+.nlCardLine {
+  width: 75%;
+  border-top: 1px solid #000;
+  position: relative;
+}
+.nlCardLine img {
+  position: absolute;
+  right: -59px;
+  top: -20px;
+  cursor: pointer;
+}
+.AbelPropt {
+  width: 100%;
+  display: flex;
+  background: #fff5dd;
+  padding: 6% 8%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.propertieCardBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+.propertieCard {
+  width: 25%;
+  height: fit-content;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.propertieCard .propImgBox {
+  width: 100%;
+  height: 55%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.propertieCard .propImgBox img {
+  width: 100%;
+  height: 100%;
+}
+.propInfoBox {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.propAriyaInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.propAriyaInfo p {
+  font-size: 16px;
+  color: #4e4b5c;
+}
+.propPrice {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  font-family: "ClashDisplay";
+}
+.propPrice samp {
+  font-size: 20px;
+  color: #4e4b5c;
+  font-family: "ClashDisplay";
+}
+.propLocation {
+  font-size: 16px;
+  color: #4e4b5c;
+}
+.BlogSection {
+  width: 100%;
+  padding: 6% 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.blogDisplaySection {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 25px;
+}
+.RightBlogBox {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.RBlogImgBox {
+  width: 100%;
+  height: 60%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.RBlogImgBox img {
+  width: 100%;
+  height: 100%;
+}
+.blogTitle {
+  font-size: 25px;
+  font-weight: 600;
+  color: #242527;
+  font-family: "ClashDisplayBold";
+}
+.blogSumText {
+  font-size: 18px;
+  color: #444156;
+}
+.LeftBlogBox {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.blogRowCard {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  height: 140px;
+}
+.brImgBox {
+  width: 45%;
+  min-width: 230px;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.brImgBox img {
+  width: 100%;
+  height: 100%;
+}
+.brTextBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }

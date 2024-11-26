@@ -7,6 +7,11 @@
   src: url("./Assets/Fonts/ClashDisplay_Complete/ClashDisplay-Regular.otf")
     format("truetype");
 }
+@font-face {
+  font-family: "ClashDisplayBold";
+  src: url("./Assets/Fonts/ClashDisplay_Complete/ClashDisplay-Semibold.otf")
+    format("truetype");
+}
 * {
   padding: 0;
   margin: 0;

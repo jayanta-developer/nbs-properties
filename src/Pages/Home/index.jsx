@@ -19,11 +19,16 @@ import trust1 from "../../assets/Images/trust1.svg"
 import trust2 from "../../assets/Images/trust2.svg"
 import trust3 from "../../assets/Images/trust3.svg"
 import trust4 from "../../assets/Images/trust4.svg"
+import roundArrow from "../../assets/Images/roundArrow.svg"
+
 
 //components
 import NavBar from '../../Components/NavBar';
 import { WhiteFillBtn, DropBox, BlackBtn, OutLineBtn } from "../../Components/Tools"
 import UncontrolledExample from "../../Components/Slider";
+
+//Data
+import { nearYouPropertie, PropertiesData, BlogData } from "../../assets/Data"
 
 export default function Home({ navItem, setNavItem }) {
   const [drop1, setDrop1] = useState(false);
@@ -149,6 +154,86 @@ export default function Home({ navItem, setNavItem }) {
               </div>
               <img src={difBgImg} />
             </div>
+          </div>
+
+          <div className="NearUSection">
+            <p className='SectionHeader'>Properties located near you</p>
+
+            <div className="nearLoCardBox">
+              {
+                nearYouPropertie?.map((el, i) => (
+                  <div key={el} className="nearLoCard">
+                    <p>{el.num}+</p>
+                    <span>{el.sum}</span>
+                    <div className="nlCardLine">
+                      <img src={roundArrow} alt="" />
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+
+          </div>
+        </div>
+
+        {/* Available Properties */}
+        <div className="AbelPropt">
+          <p className='SectionHeader'>Available Properties Near You</p>
+          <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
+          <div className="propertieCardBox">
+            {
+              PropertiesData?.map((el, i) => (
+                <div key={i} className="propertieCard">
+                  <div className="propImgBox">
+                    <img src={el.img} alt="" />
+                  </div>
+                  <div className="propInfoBox">
+                    <div className="propAriyaInfo">
+                      <p>{el.BHK} BHK Flat</p>
+                      <p>{el.SQFT} sqft</p>
+                    </div>
+                    <p className="propPrice">{el.price} Cr <samp>Onwards</samp></p>
+                    <p className="propLocation">{el.location}</p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        {/* Blogs section */}
+        <div className="BlogSection">
+          <p className='SectionHeader'>Our Blogs</p>
+          <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
+          <div className="blogDisplaySection">
+            <div className="RightBlogBox">
+              <div className="RBlogImgBox">
+                <img src={BlogData[0].img} alt="" />
+              </div>
+              <p className='blogTitle'>{BlogData[0].title}</p>
+              <p className="blogSumText">{BlogData[0].summery}</p>
+            </div>
+            <div className="LeftBlogBox">
+              {
+                BlogData?.slice(-3).map((el, i) => (
+                  <div className="blogRowCard">
+                    <div className="brImgBox">
+                      <img src={el.img} alt="" />
+                    </div>
+                    <div className="brTextBox">
+                      <p className='blogTitle'>{el.title}</p>
+                      <p className="blogSumText">{el.summery}</p>
+                    </div>
+                  </div>
+                ))
+              }
+
+
+
+            </div>
+          </div>
+          <div className="centerBtnBox">
+            <BlackBtn height="50px" btnText="View All Blogs" />
           </div>
         </div>
       </div>
