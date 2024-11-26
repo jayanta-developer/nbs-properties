@@ -5,8 +5,9 @@ import "./style.css"
 //images
 import Clogo from "../../assets/Images/Clogo.svg";
 import SearchIcon from "../../assets/Images/searchIcon.svg"
+
 //components
-import { BlackBtn, WhiteBtn } from "../Tools"
+import { BlackBtn, WhiteBtn } from "../Tools";
 
 export default function NavBar({ navItem, setNavItem }) {
   const [searchBox, setSearcBox] = useState(false);
@@ -40,7 +41,6 @@ export default function NavBar({ navItem, setNavItem }) {
           <WhiteBtn btnText="Login" height="42px" />
           <BlackBtn height="42px" btnText="Sign Up" />
         </div>
-
       </div>
     </>
   )

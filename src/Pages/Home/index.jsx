@@ -26,6 +26,8 @@ import roundArrow from "../../assets/Images/roundArrow.svg"
 import NavBar from '../../Components/NavBar';
 import { WhiteFillBtn, DropBox, BlackBtn, OutLineBtn } from "../../Components/Tools"
 import UncontrolledExample from "../../Components/Slider";
+import Footer from "../../Components/Footer";
+
 
 //Data
 import { nearYouPropertie, PropertiesData, BlogData } from "../../assets/Data"
@@ -227,9 +229,6 @@ export default function Home({ navItem, setNavItem }) {
                   </div>
                 ))
               }
-
-
-
             </div>
           </div>
           <div className="centerBtnBox">
@@ -237,6 +236,8 @@ export default function Home({ navItem, setNavItem }) {
           </div>
         </div>
       </div>
+      <Footer />
+
     </>
   )
 }
