@@ -20,3 +20,22 @@
 .carousel-control-next {
   display: none;
 }
+.sliderImgBox {
+  width: 100%;
+  height: 100%;
+}
+.sliderImgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carousel-inner {
+  height: 100%;
+}
+.carousel-item {
+  height: 100%;
+}
+.carousel-indicators .active {
+  background-color: #ffcc3b;
+  opacity: 1;
+}

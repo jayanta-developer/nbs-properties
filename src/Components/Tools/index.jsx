@@ -58,3 +58,7 @@ export const DropBox = ({ text, icon, drop, setDrop, dropVal, setDropVal, dropLi
     </div>
   )
 }
+
+export const GoTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth", })
+}

@@ -12,8 +12,9 @@ import FooterPatnerImg2 from "../../assets/Images/FooterPatnarImg2.svg"
 import FooterPatnerImg3 from "../../assets/Images/FooterPatnarImg3.svg"
 import FooterPatnerImg4 from "../../assets/Images/FooterPatnarImg4.svg"
 import FooterPatnerImg5 from "../../assets/Images/FooterPatnarImg5.svg"
+import GoTopIcon from "../../assets/Images/GoTopIcon.svg"
 
-
+import { GoTop } from "../../Components/Tools"
 
 export default function Footer() {
 
@@ -57,6 +58,7 @@ export default function Footer() {
         </div>
 
         <p className="footerBottomText">© 2024 <samp>NBS Property</samp> All right & Reserved</p>
+        <img src={GoTopIcon} className='goTopIcon' alt="" onClick={GoTop} />
       </div>
     </>
   )
