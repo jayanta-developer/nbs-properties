@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "./style.css"
+import { useNavigate } from "react-router-dom"
 
 
 //images
@@ -12,6 +13,7 @@ import RoundArrow from "../../assets/Images/angle-circle-right-icon.svg"
 import { BlackBtn, WhiteBtn } from "../Tools";
 
 export default function NavBar({ navItem, setNavItem }) {
+  const navigate = useNavigate()
   const [searchBox, setSearcBox] = useState(false);
   const [sideMenu, setSideMenu] = useState(false)
 
@@ -25,14 +27,25 @@ export default function NavBar({ navItem, setNavItem }) {
     "F & B"
   ]
 
+  const handelNavigation = (el) => {
+    if (el === "Home") {
+      navigate("/")
+    } else if (el === "Buy") {
+      navigate("/properties")
+    }
+  }
+
   return (
     <>
       <div className="navBarContainer">
-        <div className="clogBox"><img src={Clogo} /></div>
+        <div className="clogBox"><img src={Clogo} onClick={() => navigate("/")} /></div>
         <div className="navItemBox">
           {
             navItems?.map((el, i) => (
-              <p className={navItem === el ? 'navItem AtivenavItem' : "navItem"} onClick={() => setNavItem(el)} key={i}>{el}</p>
+              <p className={navItem === el ? 'navItem AtivenavItem' : "navItem"} onClick={() => {
+                setNavItem(el)
+                handelNavigation(el)
+              }} key={i}>{el}</p>
             ))
           }
         </div>

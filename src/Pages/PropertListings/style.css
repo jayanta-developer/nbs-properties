@@ -1,0 +1,141 @@
+.PropertListPage {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+.propertieFilterBox {
+  width: 100%;
+  height: 80px;
+  background: #fff5dd;
+  border: 1px solid #e1d2ae;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.propertMainSection {
+  width: 76%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+.propertieLeftSection {
+  width: 80%;
+  padding-top: 20px;
+}
+.pageNavText {
+  font-size: 20px;
+  color: #444156;
+  margin: 10px 0;
+}
+.propertieListHeaderBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.propLHText {
+  font-size: 25px;
+  font-weight: 600;
+  color: #000;
+  font-family: "ClashDisplay";
+}
+.propertieListHeaderBox .dropBox {
+  width: 200px;
+  height: 50px;
+}
+.propertiesListBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+.propertieRightSection {
+  width: 20%;
+  border: 1px solid blue;
+}
+.propertieBigCard {
+  width: 48%;
+  height: fit-content;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10px;
+  padding: 5px;
+}
+.propImgBox {
+  width: 100%;
+  height: 55%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.propImgBox img {
+  width: 100%;
+  height: 100%;
+}
+.proCInfoBox {
+  width: 100%;
+  height: 40%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+.proCBTitle {
+  font-size: 18px;
+  color: #110c30;
+  font-weight: 600;
+  font-family: "ClashDisplayBold";
+}
+.propClocText {
+  font-size: 16px;
+  color: #444156;
+}
+.probCYlBox {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff5dd;
+  border: 1px solid #fff5dd;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+.propPrice {
+  font-size: 18px;
+  color: #110c30;
+  font-family: "ClashDisplayBold";
+}
+.pcAgentBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.userPrf {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.userPrf img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+.userPrf p {
+  font-size: 18px;
+  color: #110c30;
+}
+.PropertListPage .AbelPropt {
+  margin-top: 30px;
+  background: #fff;
+}

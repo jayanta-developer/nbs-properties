@@ -184,7 +184,7 @@ export default function Home({ navItem, setNavItem }) {
           <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
           <div className="propertieCardBox">
             {
-              PropertiesData?.map((el, i) => (
+              PropertiesData?.splice(0, 4).map((el, i) => (
                 <div key={i} className="propertieCard">
                   <div className="propImgBox">
                     <img src={el.img} alt="" />
