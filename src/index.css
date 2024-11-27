@@ -1,15 +1,16 @@
 @font-face {
   font-family: "Syne";
-  src: url("./Assets/Fonts/Syne/static/Syne-Regular.ttf") format("truetype");
+  src: url("../public/Assets/Fonts/Syne/static/Syne-Regular.ttf")
+    format("truetype");
 }
 @font-face {
   font-family: "ClashDisplay";
-  src: url("./Assets/Fonts/ClashDisplay_Complete/ClashDisplay-Regular.otf")
+  src: url("../public/Assets/Fonts/ClashDisplay_Complete/ClashDisplay-Regular.otf")
     format("truetype");
 }
 @font-face {
   font-family: "ClashDisplayBold";
-  src: url("./Assets/Fonts/ClashDisplay_Complete/ClashDisplay-Semibold.otf")
+  src: url("../public/Assets/Fonts/ClashDisplay_Complete/ClashDisplay-Semibold.otf")
     format("truetype");
 }
 * {
