@@ -39,3 +39,16 @@
   background-color: #ffcc3b;
   opacity: 1;
 }
+
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+  .carousel {
+    height: 83vh;
+  }
+}
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+  .carousel {
+    height: 67vh;
+  }
+}

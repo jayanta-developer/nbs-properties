@@ -6,6 +6,33 @@
   align-items: center;
   justify-content: space-between;
   background: #fff;
+  position: relative;
+}
+.SideMenu {
+  width: 0;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  background: #e4e4e4;
+  transition: all 0.6s cubic-bezier(0, 0.88, 0.79, 0.79);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 9;
+  border: 1px solid rgba(128, 128, 128, 0.429);
+}
+.SideMenuActive {
+  width: 100%;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.sideMenuCloseArrow {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
 }
 .clogBox {
   width: 29%;
@@ -20,7 +47,7 @@
 }
 .navItemBox {
   width: 42%;
-  display: flex;
+  display: none;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -40,15 +67,22 @@
   color: #848484;
 }
 .navLogoBox {
-  width: 29%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: start;
+  justify-content: end;
   gap: 20px;
-  margin-left: 4%;
-  padding-left: 2px;
+  padding-right: 10px;
   position: relative;
+}
+.navLogoBox .WhiteBtn {
+  height: 33px !important;
+}
+.navLogoBox .BlackBtn {
+  height: 33px !important;
+}
+.navLogoBox .BlackBtn p {
+  font-size: 16px;
 }
 .searchIcon {
   cursor: pointer;
@@ -67,7 +101,7 @@
 }
 .SearchInputBoxActive {
   height: 40px;
-  border: 1px solid #000;
+  border: 1px solid #daa520;
 }
 .SearchInputBox input {
   width: 100%;
@@ -82,4 +116,53 @@
 }
 .navBarContainer p {
   margin-bottom: 0;
+}
+.mobileSideMenuList {
+  width: 100%;
+  display: flex;
+  padding-top: 30px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+.mobileSideMenuList .navItem {
+  font-size: 35px;
+  font-family: "ClashDisplayBold";
+}
+
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+  .navLogoBox .WhiteBtn {
+    height: 42px !important;
+  }
+  .navLogoBox .BlackBtn {
+    height: 42px !important;
+  }
+  .navLogoBox .BlackBtn p {
+    font-size: 18px;
+  }
+  .SideMenuActive {
+    width: 45%;
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+  .navItemBox {
+    display: flex;
+  }
+  .navLogoBox {
+    width: 29%;
+    margin-left: 4%;
+    justify-content: start;
+    padding-left: 2px;
+  }
+  .NavOptionIcon {
+    display: none;
+  }
+  .SideMenuActive {
+    display: none;
+  }
 }

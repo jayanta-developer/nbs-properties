@@ -6,14 +6,20 @@
 }
 .homeTopSection {
   width: 100%;
-  height: 82vh;
+  height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
-  gap: 20px;
-  padding-top: 7%;
+  gap: 25px;
+  padding-top: 40%;
+}
+.homeTopSection .homeHeader {
+  text-align: center;
+}
+.homeTopSection .homeSubHeader {
+  text-align: center;
 }
 .homeTopBg {
   width: 100%;
@@ -24,7 +30,7 @@
   z-index: -1;
 }
 .homeHeader {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 600;
   color: #fff;
   font-family: "ClashDisplayBold";
@@ -37,7 +43,7 @@
   color: black;
 }
 .HomeBtnBox {
-  width: 80%;
+  width: 95%;
   height: 80px;
   position: absolute;
   bottom: 13%;
@@ -47,8 +53,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px;
+  gap: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.HomeBtnBox .dropBox {
+  display: none;
 }
 .locationInputBox {
   height: 40px;
@@ -63,6 +73,9 @@
   cursor: pointer;
   position: relative;
 }
+.locationInputBox p {
+  font-size: 12px;
+}
 .locationInputBox .targetIcon {
   position: absolute;
   right: 10px;
@@ -72,7 +85,7 @@
   display: flex;
   justify-content: center;
   position: absolute;
-  bottom: 25.5%;
+  bottom: 21.5%;
 }
 .thTabInBox {
   height: 70px;
@@ -119,10 +132,14 @@
   padding-bottom: 70px;
 }
 .SectionHeader {
-  font-size: 50px;
+  font-size: 28px;
   /* font-weight: 700; */
   color: #000;
   font-family: "ClashDisplayBold";
+}
+.serviceSection .sectionSubText {
+  text-align: center;
+  width: 85%;
 }
 .sectionSubText {
   font-size: 18px;
@@ -133,12 +150,13 @@
 .serviceCardBox {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   gap: 25px;
+  padding: 0 20px;
 }
 .serviceCard {
-  width: 370px;
+  width: 100%;
 }
 .serviceCard img {
   width: 100%;
@@ -163,18 +181,18 @@
 .aboutNbsSection {
   width: 100%;
   background: #fff5dd;
-  padding: 6% 8%;
+  padding: 6% 3%;
 }
 .anbs {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   margin-top: 50px;
   gap: 30px;
 }
 .nbsImgBox {
-  width: 50%;
+  width: 100%;
   position: relative;
 }
 .nbsImgBox .nbsImg {
@@ -182,7 +200,7 @@
   height: 100%;
 }
 .nbsTextBox {
-  width: 50%;
+  width: 100%;
 }
 .nbsInImgBox {
   position: absolute;
@@ -209,23 +227,24 @@
 }
 .trustSection {
   width: 100%;
-  padding: 6% 8%;
+  padding: 6% 3%;
 }
 .trustBox {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
 }
 .trustInBox {
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 20px;
 }
 .wmDifferent {
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   background: linear-gradient(180deg, #fff5dd 53.25%, #ffffff 100%);
@@ -238,8 +257,12 @@
   color: #242527;
   font-family: "ClashDisplayBold";
 }
+.wmDifferent .sectionSubText {
+  text-align: start;
+}
 .wmdBtnBox {
   width: 100%;
+  margin-bottom: 10px;
 }
 .wmdBtnBox .BlackBtn {
   width: 170px;
@@ -265,13 +288,13 @@
 .nearLoCardBox {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   gap: 25px;
   margin-top: 25px;
 }
 .nearLoCard {
-  width: 33%;
+  width: 100%;
   height: 185px;
   border-radius: 15px;
   display: flex;
@@ -296,27 +319,33 @@
   width: 75%;
   border-top: 1px solid #000;
   position: relative;
+  top: 5px;
 }
 .nlCardLine img {
   position: absolute;
-  right: -59px;
-  top: -20px;
+  right: -46px;
+  top: -16px;
   cursor: pointer;
+  width: 30px;
 }
 .AbelPropt {
   width: 100%;
   display: flex;
   background: #fff5dd;
-  padding: 6% 8%;
+  padding: 6% 3%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.AbelPropt .sectionSubText {
+  text-align: start;
 }
 .propertieCardBox {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
+  flex-wrap: wrap;
   gap: 25px;
   margin-top: 30px;
 }
@@ -330,6 +359,10 @@
   background: #fff;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+.AbelPropt .propertieCard {
+  width: 100%;
+}
+
 .propertieCard .propImgBox {
   width: 100%;
   height: 55%;
@@ -374,22 +407,25 @@
 }
 .BlogSection {
   width: 100%;
-  padding: 6% 8%;
+  padding: 6% 3%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+.BlogSection .sectionSubText {
+  text-align: center;
+}
 .blogDisplaySection {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   gap: 25px;
   margin-top: 25px;
 }
 .RightBlogBox {
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -405,17 +441,18 @@
   height: 100%;
 }
 .blogTitle {
-  font-size: 25px;
+  font-size: 17px;
+  line-height: 21px;
   font-weight: 600;
   color: #242527;
   font-family: "ClashDisplayBold";
 }
 .blogSumText {
-  font-size: 18px;
+  font-size: 13px;
   color: #444156;
 }
 .LeftBlogBox {
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -425,11 +462,11 @@
   display: flex;
   flex-direction: row;
   gap: 10px;
-  height: 140px;
+  height: 120px;
 }
 .brImgBox {
-  width: 45%;
-  min-width: 230px;
+  width: 25%;
+  min-width: 120px;
   height: 100%;
   border-radius: 10px;
   overflow: hidden;
@@ -442,4 +479,146 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+  .HomeBtnBox {
+    width: 60%;
+    padding: 20px;
+    gap: unset;
+  }
+  .topHomeTavSection {
+    bottom: 20.5%;
+  }
+  .nbsTextBox .sectionSubText {
+    text-align: start;
+  }
+  .homeHeader {
+    font-size: 50px;
+  }
+  .homeTopSection .homeHeader {
+    text-align: start;
+  }
+  .homeTopSection .homeSubHeader {
+    text-align: start;
+  }
+  .locationInputBox p {
+    font-size: 16px;
+  }
+  .serviceCardBox {
+    flex-direction: row;
+  }
+  .serviceCard {
+    width: 370px;
+  }
+  .trustBox {
+    flex-direction: row;
+  }
+  .trustInBox {
+    width: 60%;
+    margin: 0;
+  }
+  .wmDifferent {
+    width: 40%;
+  }
+  .SectionHeader {
+    font-size: 50px;
+  }
+  .nearLoCardBox {
+    flex-direction: row;
+  }
+  .nearLoCard {
+    width: 33%;
+  }
+  .nlCardLine {
+    top: -14px;
+  }
+  .AbelPropt .propertieCard {
+    width: 31%;
+  }
+  .brImgBox {
+    width: 45%;
+    min-width: 230px;
+  }
+  .blogTitle {
+    font-size: 25px;
+    line-height: 28px;
+  }
+  .blogSumText {
+    font-size: 18px;
+  }
+  .blogRowCard {
+    height: 140px;
+  }
+}
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+  .homeTopSection {
+    height: 82vh;
+    gap: 20px;
+    padding-top: 7%;
+  }
+  .HomeBtnBox {
+    width: 80%;
+  }
+  .HomeBtnBox .dropBox {
+    display: flex;
+  }
+  .topHomeTavSection {
+    bottom: 25.5%;
+  }
+
+  .serviceCardBox {
+    padding: 0;
+  }
+  .anbs {
+    flex-direction: row;
+  }
+  .nbsImgBox {
+    width: 50%;
+  }
+
+  .nbsTextBox {
+    width: 50%;
+  }
+  .aboutNbsSection {
+    padding: 6% 8%;
+  }
+  .trustSection {
+    padding: 6% 8%;
+  }
+  .nlCardLine {
+    top: 0px;
+  }
+  .nlCardLine img {
+    width: unset;
+    right: -59px;
+    top: -20px;
+  }
+  .AbelPropt {
+    padding: 6% 8%;
+  }
+  .propertieCardBox {
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  .AbelPropt .propertieCard {
+    width: 25%;
+  }
+  .BlogSection .sectionSubText {
+    text-align: start;
+  }
+  .BlogSection {
+    padding: 6% 8%;
+  }
+  .blogDisplaySection {
+    flex-direction: row;
+  }
+  .RightBlogBox {
+    width: 40%;
+  }
+  .LeftBlogBox {
+    width: 60%;
+  }
 }
