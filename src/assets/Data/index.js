@@ -90,16 +90,6 @@ export const PropertiesData = [
     agentName: "David Warner",
     agentImg: userImg,
   },
-  {
-    img: propertieImg6,
-    location: "Matunga East, Mumbai, Maharastra, 720156 ",
-    BHK: "3",
-    SQFT: "1250",
-    PSF: "2,992",
-    price: "7.25 Cr",
-    agentName: "David Warner",
-    agentImg: userImg,
-  },
 ];
 
 export const BlogData = [

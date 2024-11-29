@@ -24,7 +24,7 @@ import roundArrow from "../../assets/Images/roundArrow.svg"
 
 //components
 import NavBar from '../../Components/NavBar';
-import { WhiteFillBtn, DropBox, BlackBtn, OutLineBtn } from "../../Components/Tools"
+import { WhiteFillBtn, DropBox, BlackBtn, OutLineBtn, PropertiesSmallCard } from "../../Components/Tools"
 import UncontrolledExample from "../../Components/Slider";
 import Footer from "../../Components/Footer";
 
@@ -185,19 +185,7 @@ export default function Home({ navItem, setNavItem }) {
           <div className="propertieCardBox">
             {
               PropertiesData?.splice(0, 4).map((el, i) => (
-                <div key={i} className="propertieCard">
-                  <div className="propImgBox">
-                    <img src={el.img} alt="" />
-                  </div>
-                  <div className="propInfoBox">
-                    <div className="propAriyaInfo">
-                      <p>{el.BHK} BHK Flat</p>
-                      <p>{el.SQFT} sqft</p>
-                    </div>
-                    <p className="propPrice">{el.price} Cr <samp>Onwards</samp></p>
-                    <p className="propLocation">{el.location}</p>
-                  </div>
-                </div>
+                <PropertiesSmallCard el={el} key={i} />
               ))
             }
           </div>
