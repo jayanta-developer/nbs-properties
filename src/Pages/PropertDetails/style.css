@@ -1,0 +1,48 @@
+.brandProfileBox {
+  width: 100%;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+.brandProfileBox .avatarBox {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e3cccc;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.brandProfileBox .avatarBox img {
+  width: 80%;
+  height: 80%;
+}
+.brandTitle {
+  font-size: 20px;
+  color: #110c30;
+  font-weight: 600;
+  font-family: "ClashDisplayBold";
+  margin-bottom: 10px;
+}
+.brandProfileBox span {
+  font-size: 16px;
+  color: #444156;
+  text-align: center;
+  line-height: 10px;
+  line-height: 20px;
+}
+.brandProfileBox .BlackBtn {
+  margin-top: 10px;
+}
+.propertySection {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+}

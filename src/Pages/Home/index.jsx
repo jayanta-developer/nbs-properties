@@ -41,6 +41,7 @@ export default function Home({ navItem, setNavItem }) {
   const [dropVal3, setDropVal3] = useState("Property type");
   const drop1List = ["item1", "item2", "item3"];
   const [homeTab, setHomeTab] = useState(0)
+  const [propertyData, setPropertyData] = useState(PropertiesData)
 
 
 
@@ -75,17 +76,7 @@ export default function Home({ navItem, setNavItem }) {
           <p className='homeHeader'>Welcome to NBS Property</p>
           <p className='homeSubHeader'>Search below for property or rent house. </p>
           <WhiteFillBtn height="50px" btnText="Learn More" />
-          <div className="topHomeTavSection">
-            <div className="thTabInBox">
-              <div onClick={() => setHomeTab(0)} style={{ background: "#ffb605" }} className={homeTab === 0 ? "tabBox ActivetabBuyBox" : "tabBox"}>
-                <div><p>Buy</p></div>
-              </div>
-              <div onClick={() => setHomeTab(1)} style={{ background: "#80808091" }} className={homeTab === 1 ? "tabBox ActivetabRentBox" : "tabBox"}>
-                <div><p>Rent</p></div>
-              </div>
-            </div>
 
-          </div>
           <div className="HomeBtnBox">
             <div className="locationInputBox">
               <img src={locationIcon} />
@@ -98,6 +89,19 @@ export default function Home({ navItem, setNavItem }) {
             <DropBox icon={dollerIcon} drop={drop3} setDrop={setDrop3} dropVal={dropVal3} setDropVal={setDropVal3} dropList={drop1List} />
 
             <BlackBtn icon={searchIcon} btnText="SEARCH" height="40px" />
+
+
+            <div className="topHomeTavSection">
+              <div className="thTabInBox">
+                <div onClick={() => setHomeTab(0)} style={{ background: "#ffb605" }} className={homeTab === 0 ? "tabBox ActivetabBuyBox" : "tabBox"}>
+                  <div><p>Buy</p></div>
+                </div>
+                <div onClick={() => setHomeTab(1)} style={{ background: "#80808091" }} className={homeTab === 1 ? "tabBox ActivetabRentBox" : "tabBox"}>
+                  <div><p>Rent</p></div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
 
@@ -184,7 +188,7 @@ export default function Home({ navItem, setNavItem }) {
           <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
           <div className="propertieCardBox">
             {
-              PropertiesData?.splice(0, 4).map((el, i) => (
+              propertyData?.splice(0, 4).map((el, i) => (
                 <PropertiesSmallCard el={el} key={i} />
               ))
             }

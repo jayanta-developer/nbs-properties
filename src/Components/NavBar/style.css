@@ -60,8 +60,8 @@
   transition: all 0.5s;
 }
 .AtivenavItem {
-  text-decoration: underline;
-  text-underline-offset: 10px;
+  /* text-decoration: underline;
+  text-underline-offset: 10px; */
 }
 .navItem:hover {
   color: #848484;
@@ -130,7 +130,6 @@
   font-size: 35px;
   font-family: "ClashDisplayBold";
 }
-
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .navLogoBox .WhiteBtn {

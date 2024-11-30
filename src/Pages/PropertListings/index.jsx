@@ -5,11 +5,13 @@ import "./style.css";
 import propertyCoverImg from "../../assets/Images/propertyCoverImg.png";
 import sbiBannar from "../../assets/Images/sbiBannar.png"
 import FilterIcon from "../../assets/Images/filterIcon.svg"
+import dropIcon from "../../assets/Images/DropIcon.svg"
+import CrossIcon from "../../assets/Images/crossIcon.png"
 
 //components
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
-import { DropBox, OutLineBtn, PropertiesSmallCard, PropertieBigCard } from "../../Components/Tools"
+import { DropBox, PropertiesSmallCard, PropertieBigCard, BlackBtn } from "../../Components/Tools"
 
 //data
 import { PropertiesData } from "../../assets/Data";
@@ -27,15 +29,59 @@ export default function PropertListings({ navItem, setNavItem }) {
   const [budgetDropVal, setBudgetValDrop] = useState("Budget");
   const [psfDrop, setPsfDrop] = useState(false);
   const [psfDropVal, setPsfDropDrop] = useState("PSF");
+  const [buyDrop, setBuyDrop] = useState(false);
+  const [buyDropVal, setBuyDropVal] = useState("Buy");
+  const buyDropList = ["Buy", "Rent"];
+  const dropList = ["Item1", "Item2", "Item3"];
+  const [chips, setChips] = useState([]);
+  const [chipsInputVal, setChipsInputVal] = useState("");
 
 
-  const dropList = ["Item1", "Item2", "Item3"]
+
+  const handelChipsAdd = () => {
+    if (chipsInputVal) {
+      setChips([...chips, chipsInputVal])
+      setChipsInputVal("")
+    }
+  }
+  const removeByIndex = (arr, index) => arr.filter((_, i) => i !== index);
+  const deleteChip = (i) => {
+    const newChipArray = removeByIndex(chips, i);
+    setChips(newChipArray)
+  }
+
+  document.addEventListener('keypress', (e) => {
+    if (e.key === "Enter") handelChipsAdd()
+  })
+
 
   return (
     <>
       <NavBar navItem={navItem} setNavItem={setNavItem} />
       <div className="PropertListPage">
         <div className="propertieFilterBox">
+
+          <div className="locationInputBox">
+            <div className="buyTogalBox" onClick={() => setBuyDrop(!buyDrop)}>
+              <p>{buyDropVal}</p>
+              <img src={dropIcon} style={{ rotate: buyDrop ? "180deg" : "0deg" }} />
+              <div className={buyDrop ? "dropItemBox dropItemBoxActive" : "dropItemBox"}>
+                {
+                  buyDropList?.map((el, i) => (
+                    <div className="dropItem" onClick={() => setBuyDropVal(el)} key={i}><p>{el}</p></div>
+                  ))
+                }
+              </div>
+            </div>
+
+            <div className="vrLine"></div>
+            {
+              chips?.map((el, i) => <div className="paper" key={i}><p>{el}</p><div className="delChip" onClick={() => deleteChip(i)}><img src={CrossIcon} /></div></div>)
+            }
+            <div className="paperBox"></div>
+            <input type="text" placeholder='Add More...' onChange={(e) => setChipsInputVal(e.target.value)} value={chipsInputVal} />
+            <div className="delChip addChip" onClick={handelChipsAdd}><img src={CrossIcon} /></div>
+          </div>
 
 
 
@@ -53,7 +99,7 @@ export default function PropertListings({ navItem, setNavItem }) {
 
         <div className="propertMainSection">
           <div className="propertieLeftSection">
-            <p className='pageNavText'>{"Home > Buy"}</p>
+            <p className='pageNavText' >{"Home > Buy"}</p>
 
             <div className="propertieListHeaderBox">
               <p className="propLHText">379 Results | Properties for Sale in Kolkata</p>
@@ -97,6 +143,9 @@ export default function PropertListings({ navItem, setNavItem }) {
                 <PropertiesSmallCard el={el} key={i} />
               ))
             }
+          </div>
+          <div className="centerBtnBox">
+            <BlackBtn height="50px" btnText="Explore All" />
           </div>
         </div>
 

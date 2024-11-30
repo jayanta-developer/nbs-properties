@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 //component
 import Home from "./Pages/Home"
 import PropertListings from "./Pages/PropertListings";
+import PropertDetails from "./Pages/PropertDetails"
 
 function App() {
   const [navItem, setNavItem] = useState("Home")
@@ -13,6 +14,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home navItem={navItem} setNavItem={setNavItem} />} />
       <Route path="/properties" element={<PropertListings navItem={navItem} setNavItem={setNavItem} />} />
+      <Route path="/property" element={<PropertDetails navItem={navItem} setNavItem={setNavItem} />} />
     </Routes>
   )
 }

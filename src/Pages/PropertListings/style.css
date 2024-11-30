@@ -199,7 +199,80 @@
   color: #fff;
   font-size: 16px;
 }
-
+.locationInputBox {
+  padding-left: 16px;
+  padding-right: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  gap: 8px;
+  cursor: pointer;
+  background: #fff;
+}
+.buyTogalBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  gap: 7px;
+  position: relative;
+}
+.buyTogalBox img {
+  transition: all 0.5s;
+}
+.buyTogalBox .dropItem {
+  padding: 0 10px;
+}
+.vrLine {
+  width: 1px;
+  height: 60%;
+  background: #44415691;
+}
+.locationInputBox input {
+  border: none;
+  width: 100px;
+}
+.locationInputBox input:focus {
+  outline: none;
+}
+.paper {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
+  background: #e1d2ae;
+  padding: 0 10px;
+  border-radius: 16px;
+}
+.paper p {
+  color: #444156;
+}
+.delChip {
+  width: 15px;
+  height: 15px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.delChip img {
+  width: 80%;
+}
+.addChip {
+  position: absolute;
+  right: 9px;
+}
+.addChip img {
+  rotate: 44deg;
+}
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .propertieListHeaderBox {
