@@ -46,3 +46,171 @@
   border: 1px solid #000;
   border-radius: 10px;
 }
+.propTitleNav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.proprteyTitle {
+  font-size: 25px;
+  color: #000;
+  font-family: "ClashDisplayBold";
+}
+.propOptiopBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.propOptiopBox p {
+  font-size: 14px;
+  color: #4e4b5c;
+  cursor: pointer;
+}
+.propOptiopBox img {
+  cursor: pointer;
+}
+.propInBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.propInBox .propImgBox {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.propTextBox {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.propImgInBox1 {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.propRow {
+  width: 100%;
+  height: 33%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.propRow img {
+  object-fit: none;
+  width: 100%;
+  height: 100%;
+}
+.propImgInBox2 {
+  width: 75%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.propImgInBox2 img {
+  width: 100%;
+  height: 100%;
+}
+.propPriceBox {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+.propPriceText {
+  font-size: 18px;
+  font-weight: 700;
+  color: #110c30;
+}
+.proceNotBox {
+  height: 20px;
+  padding: 0 16px;
+  background: #fff5dd;
+  border-radius: 5px;
+}
+.proceNotBox p {
+  font-size: 12px;
+  color: #4e4b5c;
+}
+.propFetuerBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  border-top: #d9d9d9 1px solid;
+  border-bottom: #d9d9d9 1px solid;
+  padding: 10px 0;
+}
+.featuresBox {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: start;
+}
+.featuresBox p {
+  font-size: 14px;
+  color: #4e4b5c;
+}
+.featuresBox samp {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+}
+.propBotomInfoBox {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.propBtomIBox p {
+  font-size: 14px;
+  color: #4e4b5c;
+}
+.propBtomIBox span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #110c30;
+}
+.propMDetailsSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.propDtalHeader {
+  font-size: 25px;
+  color: #000;
+  font-family: "ClashDisplay";
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.propMDSubText1 {
+  font-size: 18px;
+  color: #444156;
+}
+.propMDSubText2 {
+  font-size: 16px;
+  color: #4e4b5c;
+}
+.propSeemore {
+  font-size: 14px;
+  color: #242527;
+  cursor: pointer;
+}
+.propMDetailsSection .propBotomInfoBox {
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 20px;
+}
+.propMDetailsSection .propBtomIBox {
+  margin-right: 35px;
+}
+.propMDetailsSection .centerBtnBox {
+  justify-content: start;
+}
