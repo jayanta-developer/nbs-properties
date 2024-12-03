@@ -3,7 +3,7 @@ import "./style.css";
 
 //images
 import sbiBannar from "../../assets/Images/sbiBannar.png";
-import Avatar from "../../assets/Images/Avatar.png"
+import Avatar from "../../assets/Images/avatar.png"
 import hartIcon from "../../assets/Images/heartIcon.svg"
 import shareIcon from "../../assets/Images/shareIcon.svg"
 import optionIcon from "../../assets/Images/dotsIcon.svg";

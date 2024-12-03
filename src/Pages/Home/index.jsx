@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import "./style.css"
 
 //images
-import homeBackground from "../../assets/Images/homeBackground.png";
 import locationIcon from "../../assets/Images/locationIcon.svg";
 import targetIcon from "../../assets/Images/targetIcon.svg"
 import buildingIcon from "../../assets/Images/bullingIcon.svg"
