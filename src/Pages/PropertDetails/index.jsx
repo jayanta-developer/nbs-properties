@@ -54,9 +54,9 @@ export default function PropertDetails({ navItem, setNavItem }) {
   const QuestionRow = ({ title, summery, questionTab, setQuestionTab, i }) => {
     return (
       <div className="questionTabItem">
-        <div className="quesBox1">
+        <div className="quesBox1" onClick={() => hendelQuestionClick(i)}>
           <p className='questionText'>{title}</p>
-          <img src={AddIcon} onClick={() => hendelQuestionClick(i)} />
+          <img src={AddIcon} />
         </div>
         <div className={questionTab === i ? "quesBox2 quesBox2Active" : "quesBox2"}>
           <p>{summery}</p>
@@ -252,20 +252,7 @@ export default function PropertDetails({ navItem, setNavItem }) {
                     <QuestionRow title={el.title} summery={el.summery} key={i} setQuestionTab={setQuestionTab} questionTab={questionTab} i={i} />
                   ))
                 }
-
-                <div className="questionTabItem">
-                  <div className="quesBox1">
-                    <p className='questionText'>What is the sale price of this unit at Pioneer Point?</p>
-                    <img src={AddIcon} />
-                  </div>
-                  <div className="quesBox2">
-                    <p>property, In law, something that is owned or possessed. Concepts of property vary widely among cultures. In the West, property is generally regarded as either tangible (e.g., land or goods) or intangible (e.g., stocks and bonds or a patent).</p>
-                  </div>
-                </div>
-
               </div>
-
-
             </div>
 
 

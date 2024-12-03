@@ -22,7 +22,7 @@
   background: #fff;
 }
 .propertMainSection {
-  width: 95%;
+  width: 98%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -280,6 +280,9 @@
   }
   .propertieBigCard {
     width: 48%;
+  }
+  .propertMainSection {
+    width: 98%;
   }
 }
 /* Desktop view */
