@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 import "./style.css";
 
 //images
-import propertyCoverImg from "../../assets/Images/propertyCoverImg.png";
 import sbiBannar from "../../assets/Images/sbiBannar.png";
-import FilterIcon from "../../assets/Images/filterIcon.svg";
-import dropIcon from "../../assets/Images/DropIcon.svg";
-import CrossIcon from "../../assets/Images/crossIcon.png";
 import Avatar from "../../assets/Images/Avatar.png"
 import hartIcon from "../../assets/Images/heartIcon.svg"
 import shareIcon from "../../assets/Images/shareIcon.svg"
@@ -16,21 +12,66 @@ import locationIcon from "../../assets/Images/locationIcon2.svg"
 import badIcon from "../../assets/Images/bedIcon.svg";
 import bathroomIcon from "../../assets/Images/bathroomIcon.svg"
 import BalconyIcon from "../../assets/Images/BalconyIcon.svg"
-
+import airConditionerIcon from "../../assets/Images/air-conditioner.svg"
+import carParkingIcon from "../../assets/Images/car-parking.svg"
+import cctvIcon from "../../assets/Images/cctv.svg"
+import availabilityIcon from "../../assets/Images/availability.svg"
+import mapImg from "../../assets/Images/mapImg.png"
+import shoppingCartIcon from "../../assets/Images/shopping-cartIcon.svg"
+import walkIcon from "../../assets/Images/walk.svg"
+import AddIcon from "../../assets/Images/addIcon.svg"
 
 
 //components
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
-import { DropBox, PropertiesSmallCard, PropertieBigCard, BlackBtn } from "../../Components/Tools"
+import { DropBox, PropertiesSmallCard, PropertieBigCard, BlackBtn, WhiteBtn } from "../../Components/Tools"
 
 //data
-import { PropertiesData } from "../../assets/Data";
+import { PropertiesData, questionList } from "../../assets/Data";
 
 
 export default function PropertDetails({ navItem, setNavItem }) {
+  const [nearSectionTab, setNearSectionTab] = useState("Shopping");
+  const [questionTab, setQuestionTab] = useState()
+
+  const nearYourTabList = ["Saved Places", "Train", "Bus", "Shopping", "Food & Drink", "Bank", "Post Office"]
 
 
+
+  const LocationNearShop = ({ title, dist }) => {
+    return (
+      <div className="mapNearLocRow">
+        <p className='disLocText'><img src={shoppingCartIcon} /> {title}</p>
+        <div className="distaninBox">
+          <img src={walkIcon} />
+          <p>{dist} m</p>
+        </div>
+      </div>
+    )
+  }
+
+  const QuestionRow = ({ title, summery, questionTab, setQuestionTab, i }) => {
+    return (
+      <div className="questionTabItem">
+        <div className="quesBox1">
+          <p className='questionText'>{title}</p>
+          <img src={AddIcon} onClick={() => hendelQuestionClick(i)} />
+        </div>
+        <div className={questionTab === i ? "quesBox2 quesBox2Active" : "quesBox2"}>
+          <p>{summery}</p>
+        </div>
+      </div>
+    )
+  }
+
+  const hendelQuestionClick = (i) => {
+    if (questionTab === i) {
+      setQuestionTab(null)
+    } else {
+      setQuestionTab(i)
+    }
+  }
 
   return (
     <>
@@ -148,10 +189,83 @@ export default function PropertDetails({ navItem, setNavItem }) {
                 <div className="centerBtnBox">
                   <BlackBtn height="50px" btnText="Contact Agent" />
                 </div>
+              </div>
+            </div>
 
 
+            <div className="propertySection AmenitiesSection">
+              <p className="propDtalHeader">Amenities</p>
+              <div className="roomFasalityBox">
+                <div className="roomFasalityItem">
+                  <img src={airConditionerIcon} />
+                  <p>Air-Conditioning</p>
+                </div>
+                <div className="roomFasalityItem">
+                  <img src={carParkingIcon} />
+                  <p>Car Parking</p>
+                </div>
+                <div className="roomFasalityItem">
+                  <img src={cctvIcon} />
+                  <p>CCTV Security</p>
+                </div>
+                <div className="roomFasalityItem">
+                  <img src={availabilityIcon} />
+                  <p>24-hour access</p>
+                </div>
+              </div>
+              <div className="centerBtnBox">
+                <BlackBtn height="50px" btnText="View all Amenities" />
+                <WhiteBtn height="50px" btnText="Download Brochure" />
+              </div>
+            </div>
+
+            <div className="propertySection whatNearSection">
+              <p className="propDtalHeader">What's nearby</p>
+              <div className="roomFasalityBox">
+                {
+                  nearYourTabList?.map((el, i) => (
+                    <div className={nearSectionTab === el ? "nearSectionTab nearSectionTabActive" : "nearSectionTab"} onClick={() => setNearSectionTab(el)} key={i}><p>{el}</p></div>
+                  ))
+                }
+              </div>
+              <div className="mapOuterBox">
+                <div className="mapListBox">
+                  <LocationNearShop title="HardwareCity Pioneer Junction" dist="390" />
+                  <LocationNearShop title="AB Minimart" dist="720" />
+                  <LocationNearShop title="AB Minimart" dist="720" />
+                  <LocationNearShop title="Li Li Cheng Minimart" dist="500" />
+                  <LocationNearShop title="Pioneer Mall" dist="500" />
+                  <LocationNearShop title="Giant Hypermarket" dist="280" />
+                </div>
+                <div className="mapBox">
+                  <img src={mapImg} alt="" />
+                </div>
+              </div>
+            </div>
+
+
+            <div className="propertySection">
+              <p className="propDtalHeader">Frequently Asked Questions</p>
+              <div className="questionTabBox">
+                {
+                  questionList?.map((el, i) => (
+                    <QuestionRow title={el.title} summery={el.summery} key={i} setQuestionTab={setQuestionTab} questionTab={questionTab} i={i} />
+                  ))
+                }
+
+                <div className="questionTabItem">
+                  <div className="quesBox1">
+                    <p className='questionText'>What is the sale price of this unit at Pioneer Point?</p>
+                    <img src={AddIcon} />
+                  </div>
+                  <div className="quesBox2">
+                    <p>property, In law, something that is owned or possessed. Concepts of property vary widely among cultures. In the West, property is generally regarded as either tangible (e.g., land or goods) or intangible (e.g., stocks and bonds or a patent).</p>
+                  </div>
+                </div>
 
               </div>
+
+
             </div>
 
 

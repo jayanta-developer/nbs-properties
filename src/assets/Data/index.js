@@ -118,3 +118,31 @@ export const BlogData = [
       "Lorem ipsum dolor sit amet consectetur. Ornare eu fusce amet et ac scelerisque non. Neque.",
   },
 ];
+
+export const questionList = [
+  {
+    title: "What is the sale price of this unit at Pioneer Point?",
+    summery:
+      "property, In law, something that is owned or possessed. Concepts of property vary widely among cultures. In the West, property is generally regarded as either tangible (e.g., land or goods) or intangible (e.g., stocks and bonds or a patent).",
+  },
+  {
+    title: "What is the current PSF at Pioneer Point?",
+    summery:
+      "property, In law, something that is owned or possessed. Concepts of property vary widely among cultures. In the West, property is generally regarded as either tangible (e.g., land or goods) or intangible (e.g., stocks and bonds or a patent).",
+  },
+  {
+    title: "What is the address of Pioneer Point?",
+    summery:
+      "property, In law, something that is owned or possessed. Concepts of property vary widely among cultures. In the West, property is generally regarded as either tangible (e.g., land or goods) or intangible (e.g., stocks and bonds or a patent).",
+  },
+  {
+    title: "What is the floor size of  this unit at Pioneer Point?",
+    summery:
+      "property, In law, something that is owned or possessed. Concepts of property vary widely among cultures. In the West, property is generally regarded as either tangible (e.g., land or goods) or intangible (e.g., stocks and bonds or a patent).",
+  },
+  {
+    title: "What is the Tenure of Pioneer Point?",
+    summery:
+      "property, In law, something that is owned or possessed. Concepts of property vary widely among cultures. In the West, property is generally regarded as either tangible (e.g., land or goods) or intangible (e.g., stocks and bonds or a patent).",
+  },
+];
