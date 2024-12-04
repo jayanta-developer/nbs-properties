@@ -96,3 +96,28 @@
 .OutLineBtn:hover {
   background: #0000002b;
 }
+.unitesBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.unitesInerBox {
+}
+.unitesInerBox p {
+  font-size: 16px;
+  color: #444156;
+}
+.unitesInerBox samp {
+  font-size: 18px;
+  color: #444156;
+  font-weight: 600;
+  font-family: "ClashDisplay";
+}
+.BuildingCard .proCInfoBox {
+  gap: 6px;
+}
+.goBtnIcon {
+  cursor: pointer;
+}

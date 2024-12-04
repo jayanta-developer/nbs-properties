@@ -5,6 +5,8 @@ import dropIcon from "../../assets/Images/DropIcon.svg"
 import locationIcon from "../../assets/Images/locationIcon2.svg"
 import PcardIcon1 from "../../assets/Images/pCardIcon1.svg"
 import PcardIcon2 from "../../assets/Images/pCardIcon2.svg"
+import goBtnIcon from "../../assets/Images/upArrowGoBtnIcon.svg"
+import Avatar from "../../assets/Images/avatar.png"
 
 //Buttons
 export const BlackBtn = ({ height, icon, btnText }) => {
@@ -106,6 +108,41 @@ export const PropertieBigCard = ({ img, bhk, sqft, location, price, psf, agentIm
 
         </div>
       </div>
+    </div>
+  )
+}
+
+export const BuildingCard = ({ img, title, location, ForSale, ForRent }) => {
+  return (
+    <div className="propertieBigCard BuildingCard">
+      <div className="propImgBox">
+        <img src={img} alt="" />
+      </div>
+      <div className="proCInfoBox">
+        <p className='proCBTitle'>{title}</p>
+        <p className='propClocText'><img src={locationIcon} alt="" /> {location}</p>
+        <div className="unitesBox">
+          <div className="unitesInerBox">
+            <p>Unites For Sale: <samp>{ForSale}</samp></p>
+            <p>Unites For Rent: <samp>{ForRent}</samp></p>
+          </div>
+          <img src={goBtnIcon} className="goBtnIcon" alt="" />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export const AgentCard = () => {
+  return (
+    <div className="brandProfileBox">
+      <div className="avatarBox">
+        <img src={Avatar} />
+      </div>
+      <p className='brandTitle'>Brendon Kuay</p>
+      <span>ERA REALTY NETWORK PTE LTD</span>
+      <span>CEA: R017302B / L3002382K</span>
+      <BlackBtn btnText="WhatsApp Web" height="40px" />
     </div>
   )
 }

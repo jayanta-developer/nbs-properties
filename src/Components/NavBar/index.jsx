@@ -32,6 +32,8 @@ export default function NavBar({ navItem, setNavItem }) {
       navigate("/")
     } else if (el === "Buy") {
       navigate("/properties")
+    } else if (el === "Office") {
+      navigate("/office")
     }
   }
 
@@ -68,7 +70,7 @@ export default function NavBar({ navItem, setNavItem }) {
               navItems?.map((el, i) => (
                 <p className={navItem === el ? 'navItem AtivenavItem' : "navItem"} onClick={() => {
                   setNavItem(el)
-
+                  handelNavigation(el)
                 }} key={i}>{el}</p>
               ))
             }

@@ -1,0 +1,8 @@
+.radioMainBox {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.radioBox input {
+  margin-right: 5px;
+}

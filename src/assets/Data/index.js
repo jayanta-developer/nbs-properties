@@ -12,6 +12,13 @@ import BlogImg2 from "../Images/blogImg2.png";
 import BlogImg3 from "../Images/blogImg3.png";
 import BlogImg4 from "../Images/blogImg4.png";
 
+import buildingImg1 from "../Images/buildingImg1.png";
+import buildingImg2 from "../Images/buildingImg2.png";
+import buildingImg3 from "../Images/buildingImg3.png";
+import buildingImg4 from "../Images/buildingImg4.png";
+import buildingImg5 from "../Images/buildingImg5.png";
+import buildingImg6 from "../Images/buildingImg6.png";
+
 import userImg from "../Images/userImg.png";
 
 export const nearYouPropertie = [
@@ -144,5 +151,50 @@ export const questionList = [
     title: "What is the Tenure of Pioneer Point?",
     summery:
       "property, In law, something that is owned or possessed. Concepts of property vary widely among cultures. In the West, property is generally regarded as either tangible (e.g., land or goods) or intangible (e.g., stocks and bonds or a patent).",
+  },
+];
+
+export const buildingData = [
+  {
+    title: "2 BHK 791 Sq-ft Flat For Sale ",
+    img: buildingImg1,
+    location: "Location would be hereRuby Park",
+    ForSale: "170",
+    ForRent: "350",
+  },
+  {
+    title: "2 BHK 791 Sq-ft Flat For Sale ",
+    img: buildingImg2,
+    location: "Location would be hereRuby Park",
+    ForSale: "170",
+    ForRent: "350",
+  },
+  {
+    title: "2 BHK 791 Sq-ft Flat For Sale ",
+    img: buildingImg3,
+    location: "Location would be hereRuby Park",
+    ForSale: "170",
+    ForRent: "350",
+  },
+  {
+    title: "2 BHK 791 Sq-ft Flat For Sale ",
+    img: buildingImg4,
+    location: "Location would be hereRuby Park",
+    ForSale: "170",
+    ForRent: "350",
+  },
+  {
+    title: "2 BHK 791 Sq-ft Flat For Sale ",
+    img: buildingImg5,
+    location: "Location would be hereRuby Park",
+    ForSale: "170",
+    ForRent: "350",
+  },
+  {
+    title: "2 BHK 791 Sq-ft Flat For Sale ",
+    img: buildingImg6,
+    location: "Location would be hereRuby Park",
+    ForSale: "170",
+    ForRent: "350",
   },
 ];

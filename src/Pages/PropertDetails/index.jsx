@@ -34,9 +34,7 @@ import { PropertiesData, questionList } from "../../assets/Data";
 export default function PropertDetails({ navItem, setNavItem }) {
   const [nearSectionTab, setNearSectionTab] = useState("Shopping");
   const [questionTab, setQuestionTab] = useState()
-
   const nearYourTabList = ["Saved Places", "Train", "Bus", "Shopping", "Food & Drink", "Bank", "Post Office"]
-
 
 
   const LocationNearShop = ({ title, dist }) => {

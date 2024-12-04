@@ -128,6 +128,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0 20px;
   padding-bottom: 70px;
 }
 .SectionHeader {
@@ -152,7 +153,6 @@
   flex-direction: column;
   justify-content: center;
   gap: 25px;
-  padding: 0 20px;
 }
 .serviceCard {
   width: 100%;
