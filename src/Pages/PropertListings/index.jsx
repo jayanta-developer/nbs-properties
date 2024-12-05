@@ -7,14 +7,22 @@ import sbiBannar from "../../assets/Images/sbiBannar.png"
 import FilterIcon from "../../assets/Images/filterIcon.svg"
 import dropIcon from "../../assets/Images/DropIcon.svg"
 import CrossIcon from "../../assets/Images/crossIcon.png"
+import userImg from "../../assets/Images/userImg.png";
+
+import propertieImg1 from "../../assets/Images/propertieImg1.png";
+import propertieImg2 from "../../assets/Images/propertieImg2.png";
+import propertieImg3 from "../../assets/Images/propertieImg3.png";
+import propertieImg4 from "../../assets/Images/propertieImg4.png";
+import propertieImg5 from "../../assets/Images/propertieImg5.png";
+import propertieImg6 from "../../assets/Images/propertieImg6.png";
 
 //components
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
-import { DropBox, PropertiesSmallCard, PropertieBigCard, BlackBtn } from "../../Components/Tools"
+import { DropBox, PropertiesSmallCard, PropertieBigCard, BlackBtn } from "../../Components/Tools";
 
 //data
-import { PropertiesData } from "../../assets/Data";
+// import { PropertiesData } from "../../assets/Data";
 
 
 export default function PropertListings({ navItem, setNavItem }) {
@@ -37,6 +45,69 @@ export default function PropertListings({ navItem, setNavItem }) {
   const [chipsInputVal, setChipsInputVal] = useState("");
 
 
+
+  const propertiesData = [
+    {
+      img: propertieImg1,
+      location: "Matunga East, Mumbai, Maharastra, 720156 ",
+      BHK: "3",
+      SQFT: "1250",
+      PSF: "2,992",
+      price: "7.25",
+      agentImg: userImg,
+      agentName: "David Warner",
+    },
+    {
+      img: propertieImg2,
+      location: "Matunga East, Mumbai, Maharastra, 720156 ",
+      BHK: "3",
+      PSF: "2,992",
+      SQFT: "1250",
+      price: "7.25",
+      agentName: "David Warner",
+      agentImg: userImg,
+    },
+    {
+      img: propertieImg3,
+      location: "Matunga East, Mumbai, Maharastra, 720156 ",
+      BHK: "3",
+      SQFT: "1250",
+      PSF: "2,992",
+      price: "7.25",
+      agentName: "David Warner",
+      agentImg: userImg,
+    },
+    {
+      img: propertieImg4,
+      location: "Matunga East, Mumbai, Maharastra, 720156 ",
+      BHK: "3",
+      SQFT: "1250",
+      PSF: "2,992",
+      price: "7.25",
+      agentName: "David Warner",
+      agentImg: userImg,
+    },
+    {
+      img: propertieImg5,
+      location: "Matunga East, Mumbai, Maharastra, 720156 ",
+      BHK: "3",
+      SQFT: "1250",
+      PSF: "2,992",
+      price: "7.25",
+      agentName: "David Warner",
+      agentImg: userImg,
+    },
+    {
+      img: propertieImg6,
+      location: "Matunga East, Mumbai, Maharastra, 720156 ",
+      BHK: "3",
+      SQFT: "1250",
+      PSF: "2,992",
+      price: "7.25",
+      agentName: "David Warner",
+      agentImg: userImg,
+    },
+  ];
 
   const handelChipsAdd = () => {
     if (chipsInputVal) {
@@ -83,8 +154,6 @@ export default function PropertListings({ navItem, setNavItem }) {
             <div className="delChip addChip" onClick={handelChipsAdd}><img src={CrossIcon} /></div>
           </div>
 
-
-
           <DropBox dropList={dropList} drop={propertyTypeDrop} setDrop={setPropertyTypeDrop} dropVal={propertyTypeDropVal} setDropVal={setPropertyTypeDropVal} />
           <DropBox dropList={dropList} drop={propertySizeDrop} setDrop={setPropertySizeDrop} dropVal={propertySizeDropVal} setDropVal={setPropertySizeDropVal} />
           <DropBox dropList={dropList} drop={budgetDrop} setDrop={setBudgetDrop} dropVal={budgetDropVal} setDropVal={setBudgetValDrop} />
@@ -107,7 +176,7 @@ export default function PropertListings({ navItem, setNavItem }) {
             </div>
             <div className="propertiesListBox">
               {
-                PropertiesData?.map((el, i) => (
+                propertiesData?.map((el, i) => (
                   <PropertieBigCard key={i} price={el.price} location={el.location} sqft={el.SQFT} bhk={el.BHK} psf={el.PSF} img={el.img} agentImg={el.agentImg} agentName={el.agentName} />
                 ))
               }
@@ -115,7 +184,7 @@ export default function PropertListings({ navItem, setNavItem }) {
             <img src={propertyCoverImg} className='propertyCoverImg' />
             <div className="propertiesListBox">
               {
-                PropertiesData?.splice(0, 2).map((el, i) => (
+                propertiesData?.splice(0, 2).map((el, i) => (
                   <PropertieBigCard key={i} price={el.price} location={el.location} sqft={el.SQFT} bhk={el.BHK} psf={el.PSF} img={el.img} agentImg={el.agentImg} agentName={el.agentName} />
                 ))
               }
@@ -126,7 +195,7 @@ export default function PropertListings({ navItem, setNavItem }) {
             <div className="rightPropertieBox">
               <p className="propertiesSideHeader">Rent Flats Near You</p>
               {
-                PropertiesData?.splice(0, 2).map((el, i) => (
+                propertiesData?.splice(0, 2).map((el, i) => (
                   <PropertiesSmallCard el={el} key={i} />
                 ))
               }
@@ -139,7 +208,7 @@ export default function PropertListings({ navItem, setNavItem }) {
           <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
           <div className="propertieCardBox">
             {
-              PropertiesData?.splice(0, 4).map((el, i) => (
+              propertiesData?.splice(0, 4).map((el, i) => (
                 <PropertiesSmallCard el={el} key={i} />
               ))
             }

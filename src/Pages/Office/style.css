@@ -6,3 +6,33 @@
 .radioBox input {
   margin-right: 5px;
 }
+.AgentsRowSection {
+  width: 100%;
+  flex-direction: row;
+}
+.AgentsRowSection .brandProfileBox {
+  width: 100%;
+  min-width: 300px;
+}
+.officePage .propertieListHeaderBox {
+  align-items: center;
+}
+
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+  .AgentsRowSection {
+    justify-content: space-between;
+  }
+  .AgentsRowSection .brandProfileBox {
+    width: 47%;
+  }
+}
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+  .AgentsRowSection {
+    justify-content: center;
+  }
+  .AgentsRowSection .brandProfileBox {
+    width: 25%;
+  }
+}

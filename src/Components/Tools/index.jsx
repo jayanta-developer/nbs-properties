@@ -71,15 +71,15 @@ export const PropertiesSmallCard = ({ el }) => {
   return (
     <div className="propertieCard">
       <div className="propImgBox">
-        <img src={el.img} alt="" />
+        <img src={el?.img} alt="" />
       </div>
       <div className="propInfoBox">
         <div className="propAriyaInfo">
-          <p>{el.BHK} BHK Flat</p>
-          <p>{el.SQFT} sqft</p>
+          <p>{el?.BHK} BHK Flat</p>
+          <p>{el?.SQFT} sqft</p>
         </div>
-        <p className="propPrice">{el.price} Cr <samp>Onwards</samp></p>
-        <p className="propLocation">{el.location}</p>
+        <p className="propPrice">{el?.price} Cr <samp>Onwards</samp></p>
+        <p className="propLocation">{el?.location}</p>
       </div>
     </div>
   )

@@ -533,7 +533,7 @@
     top: -14px;
   }
   .AbelPropt .propertieCard {
-    width: 31%;
+    width: 47%;
   }
   .brImgBox {
     width: 45%;
@@ -548,6 +548,9 @@
   }
   .blogRowCard {
     height: 140px;
+  }
+  .propertieCardBox {
+    justify-content: space-between;
   }
 }
 /* Desktop view */

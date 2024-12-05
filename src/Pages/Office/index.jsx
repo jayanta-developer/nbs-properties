@@ -7,7 +7,22 @@ import sbiBannar from "../../assets/Images/sbiBannar.png"
 import FilterIcon from "../../assets/Images/filterIcon.svg"
 import dropIcon from "../../assets/Images/DropIcon.svg"
 import CrossIcon from "../../assets/Images/crossIcon.png"
+import userImg from "../../assets/Images/userImg.png";
+
+import propertieImg1 from "../../assets/Images/propertieImg1.png";
+import propertieImg2 from "../../assets/Images/propertieImg2.png";
+import propertieImg3 from "../../assets/Images/propertieImg3.png";
+import propertieImg4 from "../../assets/Images/propertieImg4.png";
+import propertieImg5 from "../../assets/Images/propertieImg5.png";
+import propertieImg6 from "../../assets/Images/propertieImg6.png";
+
 import buildingImg1 from "../../assets/Images/buildingImg1.png";
+import buildingImg2 from "../../assets/Images/buildingImg2.png";
+import buildingImg3 from "../../assets/Images/buildingImg3.png";
+import buildingImg4 from "../../assets/Images/buildingImg4.png";
+import buildingImg5 from "../../assets/Images/buildingImg5.png";
+import buildingImg6 from "../../assets/Images/buildingImg6.png";
+
 
 //components
 import NavBar from '../../Components/NavBar';
@@ -15,11 +30,11 @@ import Footer from '../../Components/Footer';
 import { DropBox, PropertiesSmallCard, PropertieBigCard, BlackBtn, BuildingCard, AgentCard } from "../../Components/Tools"
 
 //data
-import { PropertiesData, buildingData } from "../../assets/Data";
+// import { buildingData } from "../../assets/Data";
 
 
 export default function Office({ navItem, setNavItem }) {
-  const [buildingVal, setBuildingVal] = useState([])
+  // const [buildingVal, setBuildingVal] = useState([])
   const [sortDrop, setSortDrop] = useState(false)
   const [sortDropVal, setSortDropVal] = useState("Sort by: Relevance")
   const sortDropList = ["Sort by: Relevance", "Sort by: Item1", "Sort by: item2"]
@@ -36,6 +51,156 @@ export default function Office({ navItem, setNavItem }) {
   const [chips, setChips] = useState([]);
   const [chipsInputVal, setChipsInputVal] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
+
+  const proData1 = {
+    img: propertieImg1,
+    location: "Matunga East, Mumbai, Maharastra, 720156 ",
+    BHK: "3",
+    SQFT: "1250",
+    PSF: "2,992",
+    price: "7.25",
+    agentImg: userImg,
+    agentName: "David Warner",
+  }
+  const proData2 = {
+    img: propertieImg2,
+    location: "Matunga East, Mumbai, Maharastra, 720156 ",
+    BHK: "3",
+    SQFT: "1250",
+    PSF: "2,992",
+    price: "7.25",
+    agentImg: userImg,
+    agentName: "David Warner",
+  }
+  const proData3 = {
+    img: propertieImg3,
+    location: "Matunga East, Mumbai, Maharastra, 720156 ",
+    BHK: "3",
+    SQFT: "1250",
+    PSF: "2,992",
+    price: "7.25",
+    agentImg: userImg,
+    agentName: "David Warner",
+  }
+  const proData4 = {
+    img: propertieImg4,
+    location: "Matunga East, Mumbai, Maharastra, 720156 ",
+    BHK: "3",
+    SQFT: "1250",
+    PSF: "2,992",
+    price: "7.25",
+    agentImg: userImg,
+    agentName: "David Warner",
+  }
+
+  const PropertiesData = [
+    {
+      img: propertieImg1,
+      location: "Matunga East, Mumbai, Maharastra, 720156 ",
+      BHK: "3",
+      SQFT: "1250",
+      PSF: "2,992",
+      price: "7.25",
+      agentImg: userImg,
+      agentName: "David Warner",
+    },
+    {
+      img: propertieImg2,
+      location: "Matunga East, Mumbai, Maharastra, 720156 ",
+      BHK: "3",
+      PSF: "2,992",
+      SQFT: "1250",
+      price: "7.25",
+      agentName: "David Warner",
+      agentImg: userImg,
+    },
+    {
+      img: propertieImg3,
+      location: "Matunga East, Mumbai, Maharastra, 720156 ",
+      BHK: "3",
+      SQFT: "1250",
+      PSF: "2,992",
+      price: "7.25",
+      agentName: "David Warner",
+      agentImg: userImg,
+    },
+    {
+      img: propertieImg4,
+      location: "Matunga East, Mumbai, Maharastra, 720156 ",
+      BHK: "3",
+      SQFT: "1250",
+      PSF: "2,992",
+      price: "7.25",
+      agentName: "David Warner",
+      agentImg: userImg,
+    },
+    {
+      img: propertieImg5,
+      location: "Matunga East, Mumbai, Maharastra, 720156 ",
+      BHK: "3",
+      SQFT: "1250",
+      PSF: "2,992",
+      price: "7.25",
+      agentName: "David Warner",
+      agentImg: userImg,
+    },
+    {
+      img: propertieImg6,
+      location: "Matunga East, Mumbai, Maharastra, 720156 ",
+      BHK: "3",
+      SQFT: "1250",
+      PSF: "2,992",
+      price: "7.25",
+      agentName: "David Warner",
+      agentImg: userImg,
+    },
+  ];
+
+  const buildingData = [
+    {
+      title: "2 BHK 791 Sq-ft Flat For Sale ",
+      img: buildingImg1,
+      location: "Location would be hereRuby Park",
+      ForSale: "170",
+      ForRent: "350",
+    },
+    {
+      title: "2 BHK 791 Sq-ft Flat For Sale ",
+      img: buildingImg2,
+      location: "Location would be hereRuby Park",
+      ForSale: "170",
+      ForRent: "350",
+    },
+    {
+      title: "2 BHK 791 Sq-ft Flat For Sale ",
+      img: buildingImg3,
+      location: "Location would be hereRuby Park",
+      ForSale: "170",
+      ForRent: "350",
+    },
+    {
+      title: "2 BHK 791 Sq-ft Flat For Sale ",
+      img: buildingImg4,
+      location: "Location would be hereRuby Park",
+      ForSale: "170",
+      ForRent: "350",
+    },
+    {
+      title: "2 BHK 791 Sq-ft Flat For Sale ",
+      img: buildingImg5,
+      location: "Location would be hereRuby Park",
+      ForSale: "170",
+      ForRent: "350",
+    },
+    {
+      title: "2 BHK 791 Sq-ft Flat For Sale ",
+      img: buildingImg6,
+      location: "Location would be hereRuby Park",
+      ForSale: "170",
+      ForRent: "350",
+    },
+  ];
+
 
 
   const handelChipsAdd = () => {
@@ -58,18 +223,17 @@ export default function Office({ navItem, setNavItem }) {
   const handleRadioChange = (e) => {
     setSelectedOption(e.target.value);
   };
-  console.log(buildingVal, buildingData);
 
 
 
-  useEffect(() => {
-    setBuildingVal(buildingData)
-  }, [buildingData, buildingVal])
+  // useEffect(() => {
+  //   setBuildingVal(buildingData)
+  // }, [buildingData, buildingVal])
 
   return (
     <>
       <NavBar navItem={navItem} setNavItem={setNavItem} />
-      <div className="PropertListPage">
+      <div className="PropertListPage officePage">
         <div className="propertieFilterBox">
 
           <div className="locationInputBox">
@@ -138,8 +302,8 @@ export default function Office({ navItem, setNavItem }) {
               <DropBox dropList={sortDropList} drop={sortDrop} setDrop={setSortDrop} dropVal={sortDropVal} setDropVal={setSortDropVal} />
             </div>
             <div className="propertiesListBox">
-              {buildingVal?.length ? (
-                buildingVal.map((el, i) => (
+              {buildingData?.length ? (
+                buildingData.map((el, i) => (
                   <BuildingCard
                     key={el.id || i}
                     title={el.title}
@@ -156,7 +320,7 @@ export default function Office({ navItem, setNavItem }) {
             <img src={propertyCoverImg} className='propertyCoverImg' />
             <div className="propertiesListBox">
               {
-                buildingVal?.splice(0, 2).map((el, i) => (
+                buildingData?.splice(0, 2).map((el, i) => (
                   <BuildingCard key={i} title={el.title} img={el.img} location={el.location} ForRent={el.ForRent} ForSale={el.ForSale} />
                 ))
               }
@@ -181,7 +345,7 @@ export default function Office({ navItem, setNavItem }) {
           <p className='SectionHeader'>Office Featured Agents</p>
           <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
 
-          <div className="propertieCardBox">
+          <div className="propertieCardBox AgentsRowSection">
             {
               PropertiesData?.splice(0, 4).map((el, i) => (
                 <AgentCard key={i} />
@@ -199,11 +363,10 @@ export default function Office({ navItem, setNavItem }) {
         <div className="AbelPropt">
           <p className='SectionHeader'>Latest Office Space for Sale</p>
           <div className="propertieCardBox">
-            {
-              PropertiesData?.splice(0, 4).map((el, i) => (
-                <PropertiesSmallCard el={el} key={i} />
-              ))
-            }
+            <PropertiesSmallCard el={proData1} />
+            <PropertiesSmallCard el={proData2} />
+            <PropertiesSmallCard el={proData3} />
+            <PropertiesSmallCard el={proData4} />
           </div>
           <div className="centerBtnBox">
             <BlackBtn height="50px" btnText="Explore All" />
@@ -215,11 +378,12 @@ export default function Office({ navItem, setNavItem }) {
         <div className="AbelPropt">
           <p className='SectionHeader'>Latest Office Space for Rent</p>
           <div className="propertieCardBox">
-            {
-              PropertiesData?.splice(0, 4).map((el, i) => (
-                <PropertiesSmallCard el={el} key={i} />
-              ))
-            }
+
+            <PropertiesSmallCard el={proData1} />
+            <PropertiesSmallCard el={proData2} />
+            <PropertiesSmallCard el={proData3} />
+            <PropertiesSmallCard el={proData4} />
+
           </div>
           <div className="centerBtnBox">
             <BlackBtn height="50px" btnText="Explore All" />
