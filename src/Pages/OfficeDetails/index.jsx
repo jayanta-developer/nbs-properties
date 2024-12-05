@@ -45,6 +45,33 @@ export default function OfficeDetails({ navItem, setNavItem }) {
 
   const inde3 = [0, 0, 0];
 
+  const buildingTableData = [
+    {
+      building: "What is the sale price of this unit at Pioneer Point?",
+      floors: "NA",
+      Units: "NA"
+    },
+    {
+      building: "Building @ 6 Temasek Boulevard 038936",
+      floors: "NA",
+      Units: "NA"
+    },
+    {
+      building: "Building @ 2 Temasek Boulevard 038982Building",
+      floors: "NA",
+      Units: "NA"
+    },
+    {
+      building: "Building @ 6 Temasek Boulevard 038986",
+      floors: "NA",
+      Units: "NA"
+    },
+    {
+      building: "Building @ 7 Temasek Boulevard 038987",
+      floors: "NA",
+      Units: "NA"
+    },
+  ]
 
   const proData1 = {
     img: propertieImg1,
@@ -266,12 +293,21 @@ export default function OfficeDetails({ navItem, setNavItem }) {
             </div>
 
 
-            <div className="propertySection">
-              <p className="propDtalHeader">Frequently Asked Questions</p>
-              <div className="questionTabBox">
+            <div className="propertySection buildingTable">
+              <div className="buildingTableHeader">
+                <div style={{ width: "65%" }} className="buildingTableCel"><p>Building</p></div>
+                <div style={{ width: "17%" }} className="buildingTableCel"><p># Floors</p></div>
+                <div style={{ width: "17%" }} className="buildingTableCel"><p># Units</p></div>
+
+              </div>
+              <div className="buldingTableMainBox">
                 {
-                  questionList?.map((el, i) => (
-                    <QuestionRow title={el.title} summery={el.summery} key={i} setQuestionTab={setQuestionTab} questionTab={questionTab} i={i} />
+                  buildingTableData?.map((el, i) => (
+                    <div className="buldingTableRow" key={i}>
+                      <div style={{ width: "70%" }} className="buildingTableCel"><p>{el.building}</p></div>
+                      <div style={{ width: "15%" }} className="buildingTableCel"><p>{el.floors}</p></div>
+                      <div style={{ width: "15%" }} className="buildingTableCel"><p>{el.Units}</p></div>
+                    </div>
                   ))
                 }
               </div>

@@ -3,3 +3,48 @@
   gap: 10px;
   justify-content: start;
 }
+.buildingTable {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  overflow: hidden;
+}
+.buildingTableHeader {
+  width: 100%;
+  min-height: 60px;
+  background: #3d3d3d;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.buldingTableMainBox {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.buldingTableRow {
+  width: 100%;
+  min-height: 49px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #fff4db;
+  border-radius: 6px;
+  padding: 0 30px;
+}
+.buildingTableCel {
+  display: flex;
+  align-items: center;
+}
+.buildingTableCel p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #110c30;
+}
+.buildingTableHeader .buildingTableCel p {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+}
