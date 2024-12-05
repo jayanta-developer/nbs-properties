@@ -1,0 +1,5 @@
+.propTextBox .centerBtnBox {
+  margin: 0;
+  gap: 10px;
+  justify-content: start;
+}

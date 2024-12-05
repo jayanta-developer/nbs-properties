@@ -32,17 +32,18 @@ import propertieImg6 from "../../assets/Images/propertieImg6.png";
 //components
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
-import { DropBox, PropertiesSmallCard, BlackBtn, WhiteBtn } from "../../Components/Tools"
+import { DropBox, PropertiesSmallCard, BlackBtn, WhiteBtn, AgentCard } from "../../Components/Tools"
 
 //data
 import { PropertiesData, questionList } from "../../assets/Data";
 
 
-export default function PropertDetails({ navItem, setNavItem }) {
+export default function OfficeDetails({ navItem, setNavItem }) {
   const [nearSectionTab, setNearSectionTab] = useState("Shopping");
   const [questionTab, setQuestionTab] = useState()
   const nearYourTabList = ["Saved Places", "Train", "Bus", "Shopping", "Food & Drink", "Bank", "Post Office"]
 
+  const inde3 = [0, 0, 0];
 
 
   const proData1 = {
@@ -128,11 +129,11 @@ export default function PropertDetails({ navItem, setNavItem }) {
 
         <div className="propertMainSection">
           <div className="propertieLeftSection">
-            <p className='pageNavText' >{"Home>Industrial>Balestier/Toa Payoh "}</p>
+            <p className='pageNavText' >{"Home> Commercial Building Directory> Boat Quay/Raffles Place  "}</p>
 
             <div className="propertySection">
               <div className="propTitleNav">
-                <p className="proprteyTitle">2 BHK 791 Sq-ft Flat For Sale </p>
+                <p className="proprteyTitle">Suntec City Tower</p>
                 <div className="propOptiopBox">
                   <p><img src={hartIcon} /> Shortlist</p>
                   <p><img src={shareIcon} /> Share</p>
@@ -153,39 +154,24 @@ export default function PropertDetails({ navItem, setNavItem }) {
                 </div>
                 <div className="propTextBox">
                   <div className="propPriceBox">
-                    <p className='propPriceText'>$ 380,000</p>
+                    <p className='propPriceText'>S$ 6,080,000 ~  S$ 206,500,000</p>
                     <div className="proceNotBox">
-                      <p>Negotiable</p>
+                      <p>Office</p>
                     </div>
                   </div>
 
-                  <p className="propNText">5 Soon Lee Street Boon Lay / Jurong / Tuas (D22)</p>
-                  <p className="propNText"><img src={locationIcon} /> Location would be hereRuby Park</p>
-
-                  <div className="propFetuerBox">
-                    <div className="featuresBox">
-                      <img src={badIcon} />
-                      <p>Beds <br /> <samp>2</samp></p>
-                    </div>
-                    <div className="featuresBox">
-                      <img src={bathroomIcon} />
-                      <p>Bathroom <br /> <samp>2</samp></p>
-                    </div>
-                    <div className="featuresBox">
-                      <img src={BalconyIcon} />
-                      <p>Balcony <br /> <samp>1</samp></p>
-                    </div>
-                  </div>
+                  <p className="propNText"><img src={locationIcon} /> Temasek Boulevard, 038389, Boat Quay / Raffles Place / Marina (D01)</p>
 
                   <div className="propBotomInfoBox">
                     <div className="propBtomIBox">
                       <p>Build-Up-Area</p>
                       <span>969 sqft (S$ 392 psf)</span>
                     </div>
-                    <div className="propBtomIBox">
-                      <p>Developer</p>
-                      <span>Factory / Workshop (B2)</span>
-                    </div>
+
+                  </div>
+                  <div className="centerBtnBox">
+                    <BlackBtn height="50px" btnText="see 113 units to buy" />
+                    <WhiteBtn height="50px" btnText="see 224 units to rent" />
                   </div>
                 </div>
               </div>
@@ -193,44 +179,43 @@ export default function PropertDetails({ navItem, setNavItem }) {
 
               <div className="propMDetailsSection">
                 <p className="propDtalHeader">More details</p>
-                <p className="propMDSubText1">B2 Industrial Unit For Sale with High Rental Yield</p>
-                <p className="propMDSubText2">B2 Industrial Unit For Sale with High Rental Yield</p>
+                <p className="propMDSubText1">Suntec City Tower is a commercial property located at 9 Temasek Boulevard, Singapore 038989 in District 01. This commercial space is primarily used for Office rental and sale. Suntec City Tower is close to Promenade MRT Station, Esplanade MRT Station and Bugis MRT Station. It is near several bus stops located Bus Stop Suntec City - 80159, Bus Stop Suntec Tower Two - 02141 and Bus Stop Suntec ........</p>
 
                 <p className="propSeemore">Show More {">>"}</p>
 
 
                 <div className="propBotomInfoBox">
                   <div className="propBtomIBox">
-                    <p>Property Type</p>
-                    <span>Factory / Workshop (B2) For Sale</span>
+                    <p>Project Name</p>
+                    <span>Suntec City Tower</span>
                   </div>
                   <div className="propBtomIBox">
-                    <p>Floor Size</p>
-                    <span>969 sqft</span>
+                    <p>Project Type</p>
+                    <span>Office</span>
                   </div>
                   <div className="propBtomIBox">
-                    <p>Furnishing</p>
-                    <span>Fully Fitted</span>
-                  </div>
-                  <div className="propBtomIBox">
-                    <p>PSF</p>
-                    <span>$ 392.16 psf</span>
-                  </div>
-                  <div className="propBtomIBox">
-                    <p>Currently Tenanted</p>
-                    <span>Until 31 Aug 2025</span>
+                    <p>Developer</p>
+                    <span>N/A</span>
                   </div>
                   <div className="propBtomIBox">
                     <p>Tenure</p>
-                    <span>30-year Leasehold</span>
+                    <span>N/A</span>
                   </div>
                   <div className="propBtomIBox">
-                    <p>Listed On</p>
-                    <span>7 Nov 2024</span>
+                    <p>PSM</p>
+                    <span>S$ 2,604 - S$ 4,123</span>
                   </div>
                   <div className="propBtomIBox">
-                    <p>Listing ID</p>
-                    <span>25345514</span>
+                    <p>Completion Year</p>
+                    <span>N/A</span>
+                  </div>
+                  <div className="propBtomIBox">
+                    <p># of Floors</p>
+                    <span>N/A</span>
+                  </div>
+                  <div className="propBtomIBox">
+                    <p>Total Units</p>
+                    <span>N/A</span>
                   </div>
                 </div>
 
@@ -240,30 +225,19 @@ export default function PropertDetails({ navItem, setNavItem }) {
               </div>
             </div>
 
+            {/* agents row section */}
 
-            <div className="propertySection AmenitiesSection">
-              <p className="propDtalHeader">Amenities</p>
-              <div className="roomFasalityBox">
-                <div className="roomFasalityItem">
-                  <img src={airConditionerIcon} />
-                  <p>Air-Conditioning</p>
-                </div>
-                <div className="roomFasalityItem">
-                  <img src={carParkingIcon} />
-                  <p>Car Parking</p>
-                </div>
-                <div className="roomFasalityItem">
-                  <img src={cctvIcon} />
-                  <p>CCTV Security</p>
-                </div>
-                <div className="roomFasalityItem">
-                  <img src={availabilityIcon} />
-                  <p>24-hour access</p>
-                </div>
+            <div className="AbelPropt">
+              <p className='SectionHeader'>Building Featured Agents</p>
+              <div className="propertieCardBox AgentsRowSection">
+                {
+                  inde3?.splice(0, 4).map((el, i) => (
+                    <AgentCard key={i} />
+                  ))
+                }
               </div>
               <div className="centerBtnBox">
-                <BlackBtn height="50px" btnText="View all Amenities" />
-                <WhiteBtn height="50px" btnText="Download Brochure" />
+                <BlackBtn height="50px" btnText="Explore All" />
               </div>
             </div>
 
@@ -322,7 +296,7 @@ export default function PropertDetails({ navItem, setNavItem }) {
         </div>
         {/* Available Properties */}
         <div className="AbelPropt">
-          <p className='SectionHeader'>Similar Listings</p>
+          <p className='SectionHeader'>Available Units</p>
           <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
           <div className="propertieCardBox">
             <PropertiesSmallCard el={proData1} />

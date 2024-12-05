@@ -1,5 +1,6 @@
 import "./style.css"
 
+
 //images
 import dropIcon from "../../assets/Images/DropIcon.svg"
 import locationIcon from "../../assets/Images/locationIcon2.svg"
@@ -85,9 +86,9 @@ export const PropertiesSmallCard = ({ el }) => {
   )
 }
 
-export const PropertieBigCard = ({ img, bhk, sqft, location, price, psf, agentImg, agentName }) => {
+export const PropertieBigCard = ({ img, bhk, sqft, location, price, psf, agentImg, agentName, onClick }) => {
   return (
-    <div className="propertieBigCard">
+    <div onClick={onClick} className="propertieBigCard">
       <div className="propImgBox">
         <img src={img} alt="" />
       </div>
@@ -112,9 +113,9 @@ export const PropertieBigCard = ({ img, bhk, sqft, location, price, psf, agentIm
   )
 }
 
-export const BuildingCard = ({ img, title, location, ForSale, ForRent }) => {
+export const BuildingCard = ({ img, title, location, ForSale, ForRent, onClick }) => {
   return (
-    <div className="propertieBigCard BuildingCard">
+    <div className="propertieBigCard BuildingCard" onClick={onClick}>
       <div className="propImgBox">
         <img src={img} alt="" />
       </div>

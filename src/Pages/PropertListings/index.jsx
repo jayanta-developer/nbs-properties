@@ -17,6 +17,7 @@ import propertieImg5 from "../../assets/Images/propertieImg5.png";
 import propertieImg6 from "../../assets/Images/propertieImg6.png";
 
 //components
+import { useNavigate } from "react-router-dom"
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
 import { DropBox, PropertiesSmallCard, PropertieBigCard, BlackBtn } from "../../Components/Tools";
@@ -26,6 +27,7 @@ import { DropBox, PropertiesSmallCard, PropertieBigCard, BlackBtn } from "../../
 
 
 export default function PropertListings({ navItem, setNavItem }) {
+  const navigate = useNavigate()
   const [sortDrop, setSortDrop] = useState(false)
   const [sortDropVal, setSortDropVal] = useState("Sort by: Relevance")
   const sortDropList = ["Sort by: Relevance", "Sort by: Item1", "Sort by: item2"]
@@ -44,7 +46,46 @@ export default function PropertListings({ navItem, setNavItem }) {
   const [chips, setChips] = useState([]);
   const [chipsInputVal, setChipsInputVal] = useState("");
 
-
+  const proData1 = {
+    img: propertieImg1,
+    location: "Matunga East, Mumbai, Maharastra, 720156 ",
+    BHK: "3",
+    SQFT: "1250",
+    PSF: "2,992",
+    price: "7.25",
+    agentImg: userImg,
+    agentName: "David Warner",
+  }
+  const proData2 = {
+    img: propertieImg2,
+    location: "Matunga East, Mumbai, Maharastra, 720156 ",
+    BHK: "3",
+    SQFT: "1250",
+    PSF: "2,992",
+    price: "7.25",
+    agentImg: userImg,
+    agentName: "David Warner",
+  }
+  const proData3 = {
+    img: propertieImg3,
+    location: "Matunga East, Mumbai, Maharastra, 720156 ",
+    BHK: "3",
+    SQFT: "1250",
+    PSF: "2,992",
+    price: "7.25",
+    agentImg: userImg,
+    agentName: "David Warner",
+  }
+  const proData4 = {
+    img: propertieImg4,
+    location: "Matunga East, Mumbai, Maharastra, 720156 ",
+    BHK: "3",
+    SQFT: "1250",
+    PSF: "2,992",
+    price: "7.25",
+    agentImg: userImg,
+    agentName: "David Warner",
+  }
 
   const propertiesData = [
     {
@@ -177,7 +218,7 @@ export default function PropertListings({ navItem, setNavItem }) {
             <div className="propertiesListBox">
               {
                 propertiesData?.map((el, i) => (
-                  <PropertieBigCard key={i} price={el.price} location={el.location} sqft={el.SQFT} bhk={el.BHK} psf={el.PSF} img={el.img} agentImg={el.agentImg} agentName={el.agentName} />
+                  <PropertieBigCard key={i} price={el.price} location={el.location} sqft={el.SQFT} bhk={el.BHK} psf={el.PSF} img={el.img} agentImg={el.agentImg} agentName={el.agentName} onClick={() => navigate("/property")} />
                 ))
               }
             </div>
@@ -185,7 +226,7 @@ export default function PropertListings({ navItem, setNavItem }) {
             <div className="propertiesListBox">
               {
                 propertiesData?.splice(0, 2).map((el, i) => (
-                  <PropertieBigCard key={i} price={el.price} location={el.location} sqft={el.SQFT} bhk={el.BHK} psf={el.PSF} img={el.img} agentImg={el.agentImg} agentName={el.agentName} />
+                  <PropertieBigCard key={i} price={el.price} location={el.location} sqft={el.SQFT} bhk={el.BHK} psf={el.PSF} img={el.img} agentImg={el.agentImg} agentName={el.agentName} onClick={() => navigate("/property")} />
                 ))
               }
             </div>
@@ -207,11 +248,12 @@ export default function PropertListings({ navItem, setNavItem }) {
           <p className='SectionHeader'>Available Properties Near You</p>
           <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
           <div className="propertieCardBox">
-            {
-              propertiesData?.splice(0, 4).map((el, i) => (
-                <PropertiesSmallCard el={el} key={i} />
-              ))
-            }
+            <div className="propertieCardBox">
+              <PropertiesSmallCard el={proData1} />
+              <PropertiesSmallCard el={proData2} />
+              <PropertiesSmallCard el={proData3} />
+              <PropertiesSmallCard el={proData4} />
+            </div>
           </div>
           <div className="centerBtnBox">
             <BlackBtn height="50px" btnText="Explore All" />

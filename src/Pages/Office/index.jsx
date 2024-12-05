@@ -25,6 +25,7 @@ import buildingImg6 from "../../assets/Images/buildingImg6.png";
 
 
 //components
+import { useNavigate } from "react-router-dom"
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
 import { DropBox, PropertiesSmallCard, PropertieBigCard, BlackBtn, BuildingCard, AgentCard } from "../../Components/Tools"
@@ -34,7 +35,7 @@ import { DropBox, PropertiesSmallCard, PropertieBigCard, BlackBtn, BuildingCard,
 
 
 export default function Office({ navItem, setNavItem }) {
-  // const [buildingVal, setBuildingVal] = useState([])
+  const navigate = useNavigate()
   const [sortDrop, setSortDrop] = useState(false)
   const [sortDropVal, setSortDropVal] = useState("Sort by: Relevance")
   const sortDropList = ["Sort by: Relevance", "Sort by: Item1", "Sort by: item2"]
@@ -311,6 +312,7 @@ export default function Office({ navItem, setNavItem }) {
                     location={el.location}
                     ForRent={el.ForRent}
                     ForSale={el.ForSale}
+                    onClick={() => navigate("/office-details")}
                   />
                 ))
               ) : (
