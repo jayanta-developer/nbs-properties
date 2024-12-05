@@ -378,12 +378,10 @@ export default function Office({ navItem, setNavItem }) {
         <div className="AbelPropt">
           <p className='SectionHeader'>Latest Office Space for Rent</p>
           <div className="propertieCardBox">
-
             <PropertiesSmallCard el={proData1} />
             <PropertiesSmallCard el={proData2} />
             <PropertiesSmallCard el={proData3} />
             <PropertiesSmallCard el={proData4} />
-
           </div>
           <div className="centerBtnBox">
             <BlackBtn height="50px" btnText="Explore All" />
