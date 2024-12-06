@@ -34,5 +34,6 @@
   }
   .AgentsRowSection .brandProfileBox {
     width: 25%;
+    min-width: unset;
   }
 }

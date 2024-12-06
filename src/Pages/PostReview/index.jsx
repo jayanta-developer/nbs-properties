@@ -6,10 +6,10 @@ import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
 import { RatingBox } from "../../Components/Tools"
 
-export default function PostReview() {
+export default function PostReview({ navItem, setNavItem }) {
   return (
     <>
-      <NavBar />
+      <NavBar navItem={navItem} setNavItem={setNavItem} />
       <div className="postReviewPage">
         <div className="reviewPageBox">
           <p className="reviewPHeader">Post your Review</p>

@@ -19,7 +19,7 @@
   padding: 0 20px;
 }
 .buldingTableMainBox {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -32,7 +32,7 @@
   justify-content: space-between;
   background: #fff4db;
   border-radius: 6px;
-  padding: 0 30px;
+  padding: 0 10px;
 }
 .buildingTableCel {
   display: flex;
@@ -44,7 +44,7 @@
   color: #110c30;
 }
 .buildingTableHeader .buildingTableCel p {
-  font-size: 20px;
+  font-size: 14px;
   color: #fff;
   font-weight: 500;
 }
@@ -89,4 +89,26 @@
 .ratingItemRow p {
   font-size: 14px;
   color: #110c30;
+}
+
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+  .buldingTableMainBox {
+    padding: 20px;
+  }
+  .buldingTableRow {
+    padding: 0 30px;
+  }
+  .buildingTableHeader .buildingTableCel p {
+    font-size: 20px;
+  }
+}
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+  .officeDetailsPage .brandProfileBox {
+    min-width: 265px;
+  }
+  .officeDetailsPage .AbelPropt {
+    margin-bottom: 50px;
+  }
 }

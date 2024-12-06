@@ -181,7 +181,7 @@ export default function OfficeDetails({ navItem, setNavItem }) {
   return (
     <>
       <NavBar navItem={navItem} setNavItem={setNavItem} />
-      <div className="PropertListPage propertyDetailsPage">
+      <div className="PropertListPage propertyDetailsPage officeDetailsPage">
 
         <div className="propertMainSection">
           <div className="propertieLeftSection">
