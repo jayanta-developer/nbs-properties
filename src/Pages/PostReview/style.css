@@ -1,0 +1,64 @@
+.postReviewPage {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #e1d2ae;
+}
+.reviewPageBox {
+  width: 96%;
+  background: #fff5dd80;
+  border: 1px solid #e1d2ae;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.reviewPHeader {
+  font-size: 30px;
+  font-weight: 600;
+  color: #000;
+  font-family: "ClashDisplayBold";
+}
+.reviewPSubHeader {
+  font-size: 16px;
+  color: #4e4b5c;
+  text-align: center;
+}
+.repRatBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.repRatColBox {
+  /* width: 50%; */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.repRatColBox img {
+  width: 20px;
+}
+.ratingItemRP {
+}
+.ratingItemRP p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #242527;
+  margin-bottom: 5px;
+}
+
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+  .reviewPageBox {
+    width: 500px;
+    padding: 30px;
+  }
+  .repRatColBox img {
+    width: 30px;
+  }
+}

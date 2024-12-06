@@ -154,7 +154,7 @@ export const AgentCard = () => {
 
 const displayRating = (rating, width) => {
   const stars = [];
-  for (let i = 1; i <= 6; i++) {
+  for (let i = 1; i <= 5; i++) {
     if (rating >= i) {
       stars.push(<img style={{ width: width }} key={i} src={fullStar} alt="Full Star" />);
     } else if (rating >= i - 0.5) {

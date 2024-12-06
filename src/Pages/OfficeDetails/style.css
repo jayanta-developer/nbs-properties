@@ -71,6 +71,7 @@
 .reviewSubText samp {
   color: #cb0000;
   font-size: 14px;
+  font-weight: 600;
 }
 .ratingItemBox {
   width: 100%;

@@ -347,7 +347,7 @@ export default function OfficeDetails({ navItem, setNavItem }) {
           <div className="propertieRightSection">
             <div className="brandProfileBox ratingBox">
               <div className="ratingHeader">4.5 out of 5</div>
-              <RatingBox width="18px" rating="1.5" />
+              <RatingBox width="18px" rating="4.5" />
               <p className="reviewSubText">Based on <samp> 4.5/5 review</samp></p>
               <div className="ratingItemBox">
                 {
@@ -358,10 +358,8 @@ export default function OfficeDetails({ navItem, setNavItem }) {
                     </div>
                   ))
                 }
-
-
-
               </div>
+              <BlackBtn btnText="Add Review" height="40px" />
             </div>
 
 
