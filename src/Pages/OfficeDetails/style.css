@@ -48,3 +48,44 @@
   color: #fff;
   font-weight: 500;
 }
+.ratingBox {
+  margin-bottom: 0;
+  gap: 11px;
+}
+.ratingHeader {
+  font-size: 24px;
+  font-weight: 600;
+  color: #110c30;
+  font-family: "Poppins";
+}
+.starBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2px;
+}
+.reviewSubText {
+  font-size: 14px;
+  color: #444156;
+}
+.reviewSubText samp {
+  color: #cb0000;
+  font-size: 14px;
+}
+.ratingItemBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 20px;
+}
+.ratingItemRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ratingItemRow p {
+  font-size: 14px;
+  color: #110c30;
+}

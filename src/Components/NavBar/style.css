@@ -154,7 +154,6 @@
   }
   .navLogoBox {
     width: 29%;
-    margin-left: 4%;
     justify-content: start;
     padding-left: 2px;
   }
@@ -163,5 +162,8 @@
   }
   .SideMenuActive {
     display: none;
+  }
+  .navBarContainer {
+    gap: 5%;
   }
 }

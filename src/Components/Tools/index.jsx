@@ -9,6 +9,10 @@ import PcardIcon2 from "../../assets/Images/pCardIcon2.svg"
 import goBtnIcon from "../../assets/Images/upArrowGoBtnIcon.svg"
 import Avatar from "../../assets/Images/avatar.png"
 
+import fullStar from "../../assets/Images/fullStar.svg"
+import hulfStar from "../../assets/Images/hulfStar.svg"
+import emptyStar from "../../assets/Images/emptyStar.svg"
+
 //Buttons
 export const BlackBtn = ({ height, icon, btnText }) => {
   return (
@@ -64,9 +68,7 @@ export const DropBox = ({ text, icon, drop, setDrop, dropVal, setDropVal, dropLi
   )
 }
 
-export const GoTop = () => {
-  window.scrollTo({ top: 0, behavior: "smooth", })
-}
+export const GoTop = () => window.scrollTo({ top: 0, behavior: "smooth" })
 
 export const PropertiesSmallCard = ({ el }) => {
   return (
@@ -146,4 +148,25 @@ export const AgentCard = () => {
       <BlackBtn btnText="WhatsApp Web" height="40px" />
     </div>
   )
+}
+
+
+
+const displayRating = (rating, width) => {
+  const stars = [];
+  for (let i = 1; i <= 6; i++) {
+    if (rating >= i) {
+      stars.push(<img style={{ width: width }} key={i} src={fullStar} alt="Full Star" />);
+    } else if (rating >= i - 0.5) {
+      stars.push(<img style={{ width: width }} key={i} src={hulfStar} alt="Half Star" />);
+    } else {
+      stars.push(<img style={{ width: width }} key={i} src={emptyStar} alt="Empty Star" />);
+    }
+  }
+  return stars;
+};
+
+export const RatingBox = ({ width, rating }) => {
+  return <div className="star-rating">{displayRating(rating, width)}</div>;
+
 }

@@ -16,7 +16,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home navItem={navItem} setNavItem={setNavItem} />} />
       <Route path="/properties" element={<PropertListings navItem={navItem} setNavItem={setNavItem} />} />
-      <Route path="/property" element={<PropertDetails navItem={navItem} setNavItem={setNavItem} />} />
+      <Route path="/property-details" element={<PropertDetails navItem={navItem} setNavItem={setNavItem} />} />
       <Route path="/office" element={<Office navItem={navItem} setNavItem={setNavItem} />} />
       <Route path="/office-details" element={<OfficeDetails navItem={navItem} setNavItem={setNavItem} />} />
     </Routes>

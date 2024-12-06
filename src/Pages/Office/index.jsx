@@ -28,7 +28,7 @@ import buildingImg6 from "../../assets/Images/buildingImg6.png";
 import { useNavigate } from "react-router-dom"
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
-import { DropBox, PropertiesSmallCard, PropertieBigCard, BlackBtn, BuildingCard, AgentCard } from "../../Components/Tools"
+import { DropBox, PropertiesSmallCard, BlackBtn, BuildingCard, AgentCard, GoTop } from "../../Components/Tools"
 
 //data
 // import { buildingData } from "../../assets/Data";
@@ -312,7 +312,10 @@ export default function Office({ navItem, setNavItem }) {
                     location={el.location}
                     ForRent={el.ForRent}
                     ForSale={el.ForSale}
-                    onClick={() => navigate("/office-details")}
+                    onClick={() => {
+                      navigate("/office-details")
+                      GoTop()
+                    }}
                   />
                 ))
               ) : (
@@ -323,7 +326,10 @@ export default function Office({ navItem, setNavItem }) {
             <div className="propertiesListBox">
               {
                 buildingData?.splice(0, 2).map((el, i) => (
-                  <BuildingCard key={i} title={el.title} img={el.img} location={el.location} ForRent={el.ForRent} ForSale={el.ForSale} />
+                  <BuildingCard key={i} title={el.title} img={el.img} location={el.location} ForRent={el.ForRent} ForSale={el.ForSale} onClick={() => {
+                    navigate("/office-details")
+                    GoTop()
+                  }} />
                 ))
               }
             </div>

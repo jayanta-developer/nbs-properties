@@ -21,6 +21,8 @@ import shoppingCartIcon from "../../assets/Images/shopping-cartIcon.svg"
 import walkIcon from "../../assets/Images/walk.svg"
 import AddIcon from "../../assets/Images/addIcon.svg"
 import userImg from "../../assets/Images/userImg.png";
+import fullStar from "../../assets/Images/fullStar.svg"
+import hulfStar from "../../assets/Images/hulfStar.svg"
 
 import propertieImg1 from "../../assets/Images/propertieImg1.png";
 import propertieImg2 from "../../assets/Images/propertieImg2.png";
@@ -32,7 +34,7 @@ import propertieImg6 from "../../assets/Images/propertieImg6.png";
 //components
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
-import { DropBox, PropertiesSmallCard, BlackBtn, WhiteBtn, AgentCard } from "../../Components/Tools"
+import { DropBox, PropertiesSmallCard, BlackBtn, WhiteBtn, AgentCard, RatingBox } from "../../Components/Tools"
 
 //data
 import { PropertiesData, questionList } from "../../assets/Data";
@@ -113,6 +115,33 @@ export default function OfficeDetails({ navItem, setNavItem }) {
     agentImg: userImg,
     agentName: "David Warner",
   }
+
+  const ratingData = [
+    {
+      title: 'Interior / Units',
+      rating: 3
+    },
+    {
+      title: 'Common Areas',
+      rating: 2
+    },
+    {
+      title: 'Condo Facilities',
+      rating: 4.5
+    },
+    {
+      title: 'Transport Links',
+      rating: 2.5
+    },
+    {
+      title: 'Nearby Amenities',
+      rating: 3
+    },
+    {
+      title: 'Management',
+      rating: 5
+    },
+  ]
 
 
   const LocationNearShop = ({ title, dist }) => {
@@ -316,18 +345,26 @@ export default function OfficeDetails({ navItem, setNavItem }) {
 
           </div>
           <div className="propertieRightSection">
-            <div className="brandProfileBox">
-              <div className="avatarBox">
-                <img src={Avatar} />
+            <div className="brandProfileBox ratingBox">
+              <div className="ratingHeader">4.5 out of 5</div>
+              <RatingBox width="18px" rating="1.5" />
+              <p className="reviewSubText">Based on <samp> 4.5/5 review</samp></p>
+              <div className="ratingItemBox">
+                {
+                  ratingData?.map((el, i) => (
+                    <div key={i} className="ratingItemRow">
+                      <p>{el.title}</p>
+                      <RatingBox rating={el.rating} width="16px" />
+                    </div>
+                  ))
+                }
+
+
+
               </div>
-              <p className='brandTitle'>Brendon Kuay</p>
-              <span>ERA REALTY NETWORK PTE LTD</span>
-              <span>CEA: R017302B / L3002382K</span>
-              <BlackBtn btnText="WhatsApp Web" height="40px" />
             </div>
 
 
-            <img src={sbiBannar} className='sbiBannar' />
           </div>
         </div>
         {/* Available Properties */}

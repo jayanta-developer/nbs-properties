@@ -20,7 +20,7 @@ import propertieImg6 from "../../assets/Images/propertieImg6.png";
 import { useNavigate } from "react-router-dom"
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
-import { DropBox, PropertiesSmallCard, PropertieBigCard, BlackBtn } from "../../Components/Tools";
+import { DropBox, PropertiesSmallCard, PropertieBigCard, BlackBtn, GoTop } from "../../Components/Tools";
 
 //data
 // import { PropertiesData } from "../../assets/Data";
@@ -218,7 +218,10 @@ export default function PropertListings({ navItem, setNavItem }) {
             <div className="propertiesListBox">
               {
                 propertiesData?.map((el, i) => (
-                  <PropertieBigCard key={i} price={el.price} location={el.location} sqft={el.SQFT} bhk={el.BHK} psf={el.PSF} img={el.img} agentImg={el.agentImg} agentName={el.agentName} onClick={() => navigate("/property")} />
+                  <PropertieBigCard key={i} price={el.price} location={el.location} sqft={el.SQFT} bhk={el.BHK} psf={el.PSF} img={el.img} agentImg={el.agentImg} agentName={el.agentName} onClick={() => {
+                    navigate("/property-details")
+                    GoTop()
+                  }} />
                 ))
               }
             </div>
@@ -226,7 +229,10 @@ export default function PropertListings({ navItem, setNavItem }) {
             <div className="propertiesListBox">
               {
                 propertiesData?.splice(0, 2).map((el, i) => (
-                  <PropertieBigCard key={i} price={el.price} location={el.location} sqft={el.SQFT} bhk={el.BHK} psf={el.PSF} img={el.img} agentImg={el.agentImg} agentName={el.agentName} onClick={() => navigate("/property")} />
+                  <PropertieBigCard key={i} price={el.price} location={el.location} sqft={el.SQFT} bhk={el.BHK} psf={el.PSF} img={el.img} agentImg={el.agentImg} agentName={el.agentName} onClick={() => {
+                    navigate("/property-details")
+                    GoTop()
+                  }} />
                 ))
               }
             </div>

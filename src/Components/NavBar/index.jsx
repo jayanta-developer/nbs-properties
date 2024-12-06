@@ -76,7 +76,6 @@ export default function NavBar({ navItem, setNavItem }) {
             }
 
           </div>
-
         </div>
       </div>
     </>
