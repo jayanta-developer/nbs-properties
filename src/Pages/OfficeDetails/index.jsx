@@ -342,7 +342,6 @@ export default function OfficeDetails({ navItem, setNavItem }) {
               </div>
             </div>
 
-
           </div>
           <div className="propertieRightSection">
             <div className="brandProfileBox ratingBox">
@@ -361,10 +360,9 @@ export default function OfficeDetails({ navItem, setNavItem }) {
               </div>
               <BlackBtn btnText="Add Review" height="40px" />
             </div>
-
-
           </div>
         </div>
+
         {/* Available Properties */}
         <div className="AbelPropt">
           <p className='SectionHeader'>Available Units</p>
