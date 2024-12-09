@@ -1,14 +1,19 @@
 .aboutPage {
   width: 100%;
 }
+.aboutMainSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2%;
+}
 .bgPanal {
   width: 100%;
-  height: 36vh;
+  height: 14vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  border: 1px solid red;
 }
 .bgPanal img {
   position: absolute;
@@ -21,4 +26,48 @@
   color: #ffffff;
   font-weight: 700;
   z-index: 1;
+}
+.aboutPage .trustSection {
+  padding: 6% 0;
+  margin-top: 30px;
+}
+.aboutPage .AbelPropt {
+  padding: 2% 0;
+  background: transparent;
+  margin: 30px 0;
+}
+.aboutPage .centerBtnBox {
+  margin-bottom: 50px;
+}
+.aboutPage .nbsImgBox {
+  display: flex;
+  justify-content: center;
+}
+.aboutPage .nbsImgBox img {
+  width: 97%;
+}
+.aboutPage .SectionHeader {
+  text-align: center;
+}
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+  .bgPanal {
+    height: 25vh;
+  }
+  .aboutMainSection {
+    padding: 0 3%;
+  }
+  .aboutPage .nbsImgBox img {
+    width: unset;
+  }
+}
+
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+  .bgPanal {
+    height: 45vh;
+  }
+  .aboutMainSection {
+    padding: 0 10%;
+  }
 }
