@@ -9,7 +9,8 @@ import PropertDetails from "./Pages/PropertDetails";
 import Office from "./Pages/Office";
 import OfficeDetails from "./Pages/OfficeDetails"
 import PostReview from "./Pages/PostReview";
-import LogIn from "./Pages/Home/LogIn";
+import LogIn from "./Pages/Auth";
+import About from "./Pages/About"
 
 function App() {
   const [navItem, setNavItem] = useState("Home");
@@ -23,6 +24,7 @@ function App() {
       <Route path="/office-details" element={<OfficeDetails navItem={navItem} setNavItem={setNavItem} />} />
       <Route path="/post-review" element={<PostReview navItem={navItem} setNavItem={setNavItem} />} />
       <Route path="/logIn" element={<LogIn navItem={navItem} setNavItem={setNavItem} />} />
+      <Route path="/about-us" element={<About navItem={navItem} setNavItem={setNavItem} />} />
     </Routes>
   )
 }

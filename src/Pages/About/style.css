@@ -1,0 +1,24 @@
+.aboutPage {
+  width: 100%;
+}
+.bgPanal {
+  width: 100%;
+  height: 36vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 1px solid red;
+}
+.bgPanal img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bgPanal p {
+  font-size: 50px;
+  color: #ffffff;
+  font-weight: 700;
+  z-index: 1;
+}

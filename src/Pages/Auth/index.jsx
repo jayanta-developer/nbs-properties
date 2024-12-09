@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 
 import "./style.css";
 
-import pwdViewIcon from "../../../assets/Images/pwdview.png"
-import pwdHideIcon from "../../../assets/Images/Pwdhide.png"
-import googleIcon from "../../../assets/Images/googleIcon.svg";
-import facebookIcon from "../../../assets/Images/facebookIcon.svg";
-import appleIcon from "../../../assets/Images/apple-logoIcon.svg";
+import pwdViewIcon from "../../assets/Images/pwdview.png"
+import pwdHideIcon from "../../assets/Images/Pwdhide.png"
+import googleIcon from "../../assets/Images/googleIcon.svg";
+import facebookIcon from "../../assets/Images/facebookIcon.svg";
+import appleIcon from "../../assets/Images/apple-logoIcon.svg";
 
 
 
-import NavBar from '../../../Components/NavBar';
-import Footer from '../../../Components/Footer';
-import { BlackBtn, OutLineBtn } from "../../../Components/Tools"
+import NavBar from '../../Components/NavBar';
+import Footer from '../../Components/Footer';
+import { BlackBtn, OutLineBtn } from "../../Components/Tools"
 
 
 export default function LogIn({ navItem, setNavItem }) {
