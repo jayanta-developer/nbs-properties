@@ -13,6 +13,10 @@ import fullStar from "../../assets/Images/FullStar.svg"
 import hulfStar from "../../assets/Images/HulfStar.svg"
 import emptyStar from "../../assets/Images/EmptyStar.svg"
 
+import BlogImg from "../../assets/Images/BlogImg1.png"
+import clockIcon from "../../assets/Images/clockIcon.svg"
+import humanIcon from "../../assets/Images/AvatarBlackIcon.svg"
+
 //Buttons
 export const BlackBtn = ({ height, icon, btnText }) => {
   return (
@@ -169,4 +173,29 @@ const displayRating = (rating, width) => {
 export const RatingBox = ({ width, rating }) => {
   return <div className="star-rating">{displayRating(rating, width)}</div>;
 
+}
+
+
+export const BlogCard = ({ }) => {
+  return (
+    <div className="blogCard">
+      <div className="blogImgBox">
+        <img src={BlogImg} />
+      </div>
+      <div className="blogTextBox">
+        <div className="bcMBox">
+          <p>
+            <img src={humanIcon} />
+            Saimon Jhonson
+          </p>
+          <p>
+            <img src={clockIcon} />
+            20th April 2023
+          </p>
+        </div>
+        <p className='blogCTitle'>JTC launches Jalan Papan site for tender</p>
+        <p className='blogCSubTitle'>Lorem ipsum dolor sit amet consectetur. Orci vitae sagittis non porttitor pellentesque. Congue lobortis viverra platea et feugiat at tempor.</p>
+      </div>
+    </div>
+  )
 }

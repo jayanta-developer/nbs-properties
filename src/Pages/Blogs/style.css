@@ -1,0 +1,93 @@
+.blogMainHeader {
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  color: #121129;
+  margin-top: 40px;
+}
+.blogCardBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.blogCard {
+  min-width: 323px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.blogImgBox {
+  width: 100%;
+  height: 50%;
+}
+.blogImgBox img {
+  width: 100%;
+  height: 100%;
+}
+.blogTextBox {
+  width: 100%;
+  /* height: 50%; */
+  background: #fff5dd;
+  position: relative;
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.blogCTitle {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  color: #242527;
+  margin-bottom: 10px;
+  text-align: start;
+}
+.blogCSubTitle {
+  font-size: 16px;
+  color: #444156;
+}
+.bcMBox {
+  position: absolute;
+  top: -19px;
+  width: 90%;
+  height: 40px;
+  padding: 0 5%;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.bcMBox img {
+  margin-right: 8px;
+}
+.bcMBox p {
+  font-size: 14px;
+  color: #32314b;
+}
+.bookingBaner {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+  .blogCard {
+    width: 47%;
+  }
+  .blogCardBox {
+    gap: 30px;
+  }
+}
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+  .blogCard {
+    width: 30%;
+  }
+}

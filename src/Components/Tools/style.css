@@ -122,6 +122,42 @@
 .goBtnIcon {
   cursor: pointer;
 }
+.pagination {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+.pagination button.active {
+  background-color: #000;
+  color: white;
+  border: none;
+}
+.pagination span {
+  margin: 0 5px;
+}
+.paginationBtn {
+  cursor: pointer;
+}
+.paginationBtnDisable {
+  cursor: unset;
+  pointer-events: none;
+}
+.pagination button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.pagination button:focus {
+  outline: none;
+}
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .BlackBtn p {
