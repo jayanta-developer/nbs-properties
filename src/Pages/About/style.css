@@ -70,4 +70,7 @@
   .aboutMainSection {
     padding: 0 10%;
   }
+  .aboutPage .SectionHeader {
+    text-align: start;
+  }
 }
