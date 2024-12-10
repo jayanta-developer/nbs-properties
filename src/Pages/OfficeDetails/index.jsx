@@ -2,42 +2,25 @@ import React, { useState } from 'react';
 import "./style.css";
 
 //images
-import sbiBannar from "../../assets/Images/sbiBannar.png";
-import Avatar from "../../assets/Images/avatar.png"
 import hartIcon from "../../assets/Images/heartIcon.svg"
 import shareIcon from "../../assets/Images/shareIcon.svg"
 import optionIcon from "../../assets/Images/dotsIcon.svg";
 import PropertieIntImg from "../../assets/Images/PropertieIntImg1.png"
 import locationIcon from "../../assets/Images/locationIcon2.svg"
-import badIcon from "../../assets/Images/bedIcon.svg";
-import bathroomIcon from "../../assets/Images/bathroomIcon.svg"
-import BalconyIcon from "../../assets/Images/BalconyIcon.svg"
-import airConditionerIcon from "../../assets/Images/air-conditioner.svg"
-import carParkingIcon from "../../assets/Images/car-parking.svg"
-import cctvIcon from "../../assets/Images/cctv.svg"
-import availabilityIcon from "../../assets/Images/availability.svg"
 import mapImg from "../../assets/Images/mapImg.png"
 import shoppingCartIcon from "../../assets/Images/shopping-cartIcon.svg"
 import walkIcon from "../../assets/Images/walk.svg"
 import AddIcon from "../../assets/Images/addIcon.svg"
 import userImg from "../../assets/Images/userImg.png";
-import fullStar from "../../assets/Images/fullStar.svg"
-import hulfStar from "../../assets/Images/hulfStar.svg"
-
 import propertieImg1 from "../../assets/Images/propertieImg1.png";
 import propertieImg2 from "../../assets/Images/propertieImg2.png";
 import propertieImg3 from "../../assets/Images/propertieImg3.png";
 import propertieImg4 from "../../assets/Images/propertieImg4.png";
-import propertieImg5 from "../../assets/Images/propertieImg5.png";
-import propertieImg6 from "../../assets/Images/propertieImg6.png";
 
 //components
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
 import { DropBox, PropertiesSmallCard, BlackBtn, WhiteBtn, AgentCard, RatingBox } from "../../Components/Tools"
-
-//data
-import { PropertiesData, questionList } from "../../assets/Data";
 
 
 export default function OfficeDetails({ navItem, setNavItem }) {

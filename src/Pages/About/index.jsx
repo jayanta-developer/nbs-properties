@@ -4,17 +4,6 @@ import "./style.css"
 //images
 import BgImg from "../../assets/Images/aboutBg.png";
 import aboutHomeImg from "../../assets/Images/aboutHomeImg.png"
-import locationIcon from "../../assets/Images/locationIcon.svg";
-import targetIcon from "../../assets/Images/targetIcon.svg"
-import buildingIcon from "../../assets/Images/bullingIcon.svg"
-import propertyIcon from "../../assets/Images/propertyIcon.svg"
-import dollerIcon from "../../assets/Images/dollerIcon.svg"
-import searchIcon from '../../assets/Images/searchWhiteIcon.svg'
-import serviceImg1 from "../../assets/Images/serviceCard1.png"
-import serviceImg2 from "../../assets/Images/serviceCard2.png"
-import serviceImg3 from "../../assets/Images/serviceCard3.png"
-import nbsImg from "../../assets/Images/nbsImg.png"
-import nbsBlackIcon from "../../assets/Images/nbsBlackIcon.svg"
 import difBgImg from "../../assets/Images/difBgImg.png";
 import trust1 from "../../assets/Images/trust1.svg"
 import trust2 from "../../assets/Images/trust2.svg"
@@ -25,11 +14,11 @@ import roundArrow from "../../assets/Images/roundArrow.svg"
 
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
-import { WhiteFillBtn, DropBox, BlackBtn, OutLineBtn, PropertiesSmallCard } from "../../Components/Tools"
+import { BlackBtn, PropertiesSmallCard } from "../../Components/Tools"
 
 
 //data
-import { nearYouPropertie, PropertiesData, BlogData } from "../../assets/Data"
+import { nearYouPropertie, PropertiesData } from "../../assets/Data"
 
 
 export default function About({ navItem, setNavItem }) {
