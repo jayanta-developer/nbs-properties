@@ -9,9 +9,9 @@ import PcardIcon2 from "../../assets/Images/pCardIcon2.svg"
 import goBtnIcon from "../../assets/Images/upArrowGoBtnIcon.svg"
 import Avatar from "../../assets/Images/avatar.png"
 
-import fullStar from "../../assets/Images/fullStar.svg"
-import hulfStar from "../../assets/Images/hulfStar.svg"
-import emptyStar from "../../assets/Images/emptyStar.svg"
+import fullStar from "../../assets/Images/FullStar.svg"
+import hulfStar from "../../assets/Images/HulfStar.svg"
+import emptyStar from "../../assets/Images/EmptyStar.svg"
 
 //Buttons
 export const BlackBtn = ({ height, icon, btnText }) => {
