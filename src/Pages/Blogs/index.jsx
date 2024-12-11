@@ -3,7 +3,7 @@ import "./style.css";
 
 //images
 import BgImg from "../../assets/Images/aboutBg.png";
-import Arrow from "../../assets/Images/arrow.png";
+import Arrow from "../../assets/Images/Arrow.png";
 import bookingBaner from "../../assets/Images/bookingBaner.png"
 
 //components
