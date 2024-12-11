@@ -13,7 +13,7 @@ import fullStar from "../../assets/Images/FullStar.svg"
 import hulfStar from "../../assets/Images/HulfStar.svg"
 import emptyStar from "../../assets/Images/EmptyStar.svg"
 
-import BlogImg from "../../assets/Images/BlogImg1.png"
+import BlogImg from "../../assets/Images/blogImg1.png"
 import clockIcon from "../../assets/Images/clockIcon.svg"
 import humanIcon from "../../assets/Images/AvatarBlackIcon.svg"
 
