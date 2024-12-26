@@ -12,6 +12,8 @@ import PostReview from "./Pages/PostReview";
 import LogIn from "./Pages/Auth";
 import About from "./Pages/About"
 import Blogs from "./Pages/Blogs";
+import BlogDetails from "./Pages/BlogDetails";
+
 
 function App() {
   const [navItem, setNavItem] = useState("Home");
@@ -27,6 +29,7 @@ function App() {
       <Route path="/logIn" element={<LogIn navItem={navItem} setNavItem={setNavItem} />} />
       <Route path="/about-us" element={<About navItem={navItem} setNavItem={setNavItem} />} />
       <Route path="/blogs" element={<Blogs navItem={navItem} setNavItem={setNavItem} />} />
+      <Route path="/blog-details" element={<BlogDetails navItem={navItem} setNavItem={setNavItem} />} />
     </Routes>
   )
 }

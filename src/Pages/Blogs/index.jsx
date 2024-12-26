@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom"
 import "./style.css";
 
 //images
@@ -12,6 +13,7 @@ import Footer from '../../Components/Footer';
 import { BlogCard } from "../../Components/Tools";
 
 export default function Blogs() {
+  const Navigate = useNavigate()
   const ary = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
   const handlePageClick = (page) => {
@@ -73,7 +75,7 @@ export default function Blogs() {
           <div className="blogCardBox">
             {
               currentData?.map((el, i) => (
-                <BlogCard />
+                <BlogCard key={i} onClick={() => Navigate("/blog-details")} />
               ))
             }
           </div>

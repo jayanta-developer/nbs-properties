@@ -1,0 +1,90 @@
+.blogDetailPage {
+  width: 100%;
+}
+.MainBlogSection {
+  width: 100%;
+  padding: 2% 10%;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.blogLSection {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.blogRAdeSection {
+  width: 30%;
+  border: 1px solid #d0d2e2;
+  border-radius: 15px;
+  padding: 20px 10px;
+}
+.blogImgBox {
+  width: 100%;
+  height: 60vh;
+  border-radius: 13px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.blogImgBox img {
+  width: 100%;
+  height: 100%;
+}
+.blogDTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #242527;
+  margin-bottom: 20px;
+}
+.blogDSubTitle {
+  font-size: 18px;
+  color: #32314b;
+  margin-bottom: 20px;
+}
+.noteBox {
+  width: 100%;
+  padding: 20px;
+  background: #fff5dd;
+  border-width: 1px 5px 1px 5px;
+  border-style: solid;
+  border-color: #e2d2ac;
+  border-radius: 15px;
+  margin: 20px 0;
+}
+.liBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.liPoint {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.BDot {
+  width: 4px;
+  height: 4px;
+  background: #000;
+}
+.liPoint P {
+  font-size: 18px;
+  color: #32314b;
+}
+.blogDMainBottomSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10%;
+}
+.blogDetailPage .AbelPropt {
+  background: transparent;
+  margin-bottom: 50px;
+}
+.blogRAdeSection .blogDTitle {
+  margin-bottom: 15px;
+}

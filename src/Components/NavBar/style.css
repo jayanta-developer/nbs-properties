@@ -7,6 +7,7 @@
   justify-content: space-between;
   background: #fff;
   position: relative;
+  border-bottom: 1px solid #e1d2ae;
 }
 .SideMenu {
   width: 0;

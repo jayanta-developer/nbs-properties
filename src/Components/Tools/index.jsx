@@ -176,9 +176,9 @@ export const RatingBox = ({ width, rating }) => {
 }
 
 
-export const BlogCard = ({ }) => {
+export const BlogCard = ({ onClick }) => {
   return (
-    <div className="blogCard">
+    <div className="blogCard" onClick={onClick}>
       <div className="blogImgBox">
         <img src={BlogImg} />
       </div>
