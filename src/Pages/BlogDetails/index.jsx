@@ -4,9 +4,6 @@ import "./style.css";
 //images
 import blogDImgk from "../../assets/Images/blogDImg.png";
 import BlogBanner from "../../assets/Images/BlogCoverPhoto.png"
-import postImg from "../../assets/Images/blogImg1.png";
-import postImg from "../../assets/Images/blogImg1.png";
-import postImg from "../../assets/Images/blogImg1.png";
 
 //components
 import NavBar from '../../Components/NavBar';
@@ -16,11 +13,10 @@ import { BlackBtn, PropertiesSmallCard } from "../../Components/Tools"
 
 //data
 //data
-import { PropertiesData } from "../../assets/Data";
+import { PropertiesData, recentPostData } from "../../assets/Data";
 
 export default function BlogDetails() {
   const [propertyData, setPropertyData] = useState(PropertiesData)
-
 
 
   return (
@@ -78,7 +74,19 @@ export default function BlogDetails() {
             </div>
           </div>
           <div className="blogRAdeSection">
-            <div className="blogDTitle">Recent Posts</div>
+            <p className="blogDTitle">Recent Posts</p>
+
+            {
+              recentPostData?.map((el, i) => (
+                <div className="recentPostCard" key={i}>
+                  <div className="rpcImgBox">
+                    <img src={el?.img} alt="" />
+                  </div>
+                  <p>{el.text}</p>
+                </div>
+              ))
+            }
+
 
           </div>
         </div>

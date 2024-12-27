@@ -19,6 +19,13 @@ import buildingImg4 from "../Images/buildingImg4.png";
 import buildingImg5 from "../Images/buildingImg5.png";
 import buildingImg6 from "../Images/buildingImg6.png";
 
+import postImg1 from "../../assets/Images/blogImg1.png";
+import postImg2 from "../../assets/Images/blogImg2.png";
+import postImg3 from "../../assets/Images/blogImg3.png";
+import postImg4 from "../../assets/Images/blogImg4.png";
+import postImg5 from "../../assets/Images/blogImg5.png";
+import postImg6 from "../../assets/Images/blogImg6.png";
+
 import userImg from "../Images/userImg.png";
 
 export const nearYouPropertie = [
@@ -196,5 +203,28 @@ export const buildingData = [
     location: "Location would be hereRuby Park",
     ForSale: "170",
     ForRent: "350",
+  },
+];
+
+export const recentPostData = [
+  {
+    img: postImg1,
+    text: "The Ultimate Guide to Buying Your First Home with HRH",
+  },
+  {
+    img: postImg2,
+    text: "Top Trends in Luxury Real Estate: What’s Hot in 2024",
+  },
+  {
+    img: postImg3,
+    text: "Maximizing Your Property Investment: Tips from HRH Experts",
+  },
+  {
+    img: postImg4,
+    text: "Exploring the Benefits of Commercial Properties for Small Businesses",
+  },
+  {
+    img: postImg5,
+    text: "Why HRH is Your Best Choice for Property Management Services",
   },
 ];

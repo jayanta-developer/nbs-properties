@@ -136,6 +136,7 @@
   /* font-weight: 700; */
   color: #000;
   font-family: "ClashDisplayBold";
+  text-align: center;
 }
 .serviceSection .sectionSubText {
   text-align: center;
@@ -622,5 +623,8 @@
   }
   .LeftBlogBox {
     width: 60%;
+  }
+  .SectionHeader {
+    text-align: start;
   }
 }
