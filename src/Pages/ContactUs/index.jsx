@@ -4,7 +4,7 @@ import "./style.css";
 //images
 import callicon from "../../assets/Images/callIcon.svg"
 import mailIcon from "../../assets/Images/mailIcon.svg"
-import mapImg from "../../assets/Images/map.png"
+import mapImg from "../../assets/Images/Map.png"
 
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
