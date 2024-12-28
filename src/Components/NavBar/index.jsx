@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./style.css"
 import { useNavigate } from "react-router-dom"
 
@@ -34,8 +34,21 @@ export default function NavBar({ navItem, setNavItem }) {
       navigate("/properties")
     } else if (el === "Office") {
       navigate("/office")
+    } else if (el === "F & B") {
+      navigate("/F&B")
     }
   }
+
+  useEffect(() => {
+    if (sideMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [sideMenu]);
 
   return (
     <>
@@ -74,7 +87,6 @@ export default function NavBar({ navItem, setNavItem }) {
                 }} key={i}>{el}</p>
               ))
             }
-
           </div>
         </div>
       </div>
