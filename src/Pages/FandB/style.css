@@ -1,0 +1,77 @@
+.FandBPage {
+  width: 100%;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pbHeader {
+  font-size: 40px;
+  font-weight: 600;
+  color: #121129;
+  font-family: "ClashDisplayBold";
+}
+.pbSubHeader {
+  font-size: 16px;
+  color: #4e4b5c;
+  text-align: center;
+}
+.coultureCardBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+.cultureCard {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.cultTitle {
+  font-size: 25px;
+  font-weight: 500;
+  font-family: "ClashDisplay";
+  color: #242527;
+  text-align: center;
+}
+.cultSubTitle {
+  font-size: 16px;
+  color: #4e4b5c;
+  text-align: center;
+}
+.FandBPage .AbelPropt {
+  background: transparent;
+  padding: 0;
+  margin-top: 50px;
+}
+
+/* Tabe view */
+@media only screen and (min-width: 768px) {
+  .FandBPage {
+    padding: 4% 2%;
+  }
+  .cultureCard {
+    min-width: 228px;
+    width: 28%;
+  }
+  .pbSubHeader {
+    text-align: start;
+  }
+}
+/* Desktop view */
+@media only screen and (min-width: 1000px) {
+  .FandBPage {
+    padding: 4% 10%;
+  }
+  .cultureCard {
+    min-width: 270px;
+    width: 23%;
+  }
+}

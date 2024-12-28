@@ -26,6 +26,19 @@ import postImg4 from "../../assets/Images/blogImg4.png";
 import postImg5 from "../../assets/Images/blogImg5.png";
 import postImg6 from "../../assets/Images/blogImg6.png";
 
+import hotel from "../Images/hotel.svg";
+import resort from "../Images/resort.svg";
+import BanquetHall from "../Images/BanquetHall.svg";
+import cafe from "../Images/cafe.svg";
+import lounge from "../Images/lounge.svg";
+import buffet from "../Images/buffet.svg";
+import nightClub from "../Images/night-club.svg";
+import foodCourt from "../Images/food-court.svg";
+import Pub from "../Images/Pub.svg";
+import bar from "../Images/bar.svg";
+import rooftop from "../Images/rooftop.svg";
+import catering from "../Images/catering.svg";
+
 import userImg from "../Images/userImg.png";
 
 export const nearYouPropertie = [
@@ -226,5 +239,80 @@ export const recentPostData = [
   {
     img: postImg5,
     text: "Why HRH is Your Best Choice for Property Management Services",
+  },
+];
+
+export const cultureData = [
+  {
+    icon: hotel,
+    title: "Hotel",
+    summery:
+      "Lorem ipsum dolor sit amet consectetur. Elementum pretium enim scelerisque in ut.",
+  },
+  {
+    icon: BanquetHall,
+    title: "Banquet Hall",
+    summery:
+      "Lorem ipsum dolor sit amet consectetur. Elementum pretium enim scelerisque in ut.",
+  },
+  {
+    icon: resort,
+    title: "Resort",
+    summery:
+      "Lorem ipsum dolor sit amet consectetur. Elementum pretium enim scelerisque in ut.",
+  },
+  {
+    icon: cafe,
+    title: "Cafe",
+    summery:
+      "Lorem ipsum dolor sit amet consectetur. Elementum pretium enim scelerisque in ut.",
+  },
+  {
+    icon: lounge,
+    title: "Lounge",
+    summery:
+      "Lorem ipsum dolor sit amet consectetur. Elementum pretium enim scelerisque in ut.",
+  },
+  {
+    icon: buffet,
+    title: "Buffet",
+    summery:
+      "Lorem ipsum dolor sit amet consectetur. Elementum pretium enim scelerisque in ut.",
+  },
+  {
+    icon: nightClub,
+    title: "Night Club",
+    summery:
+      "Lorem ipsum dolor sit amet consectetur. Elementum pretium enim scelerisque in ut.",
+  },
+  {
+    icon: foodCourt,
+    title: "Food Court",
+    summery:
+      "Lorem ipsum dolor sit amet consectetur. Elementum pretium enim scelerisque in ut.",
+  },
+  {
+    icon: Pub,
+    title: "Pub",
+    summery:
+      "Lorem ipsum dolor sit amet consectetur. Elementum pretium enim scelerisque in ut.",
+  },
+  {
+    icon: bar,
+    title: "Bar",
+    summery:
+      "Lorem ipsum dolor sit amet consectetur. Elementum pretium enim scelerisque in ut.",
+  },
+  {
+    icon: rooftop,
+    title: "Rooftop Dining",
+    summery:
+      "Lorem ipsum dolor sit amet consectetur. Elementum pretium enim scelerisque in ut.",
+  },
+  {
+    icon: catering,
+    title: "Catering Services",
+    summery:
+      "Lorem ipsum dolor sit amet consectetur. Elementum pretium enim scelerisque in ut.",
   },
 ];

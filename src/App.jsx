@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
-
 //component
 import Home from "./Pages/Home"
 import PropertListings from "./Pages/PropertListings";
@@ -13,6 +12,7 @@ import LogIn from "./Pages/Auth";
 import About from "./Pages/About"
 import Blogs from "./Pages/Blogs";
 import BlogDetails from "./Pages/BlogDetails";
+import FandB from "./Pages/FandB";
 
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
       <Route path="/about-us" element={<About navItem={navItem} setNavItem={setNavItem} />} />
       <Route path="/blogs" element={<Blogs navItem={navItem} setNavItem={setNavItem} />} />
       <Route path="/blog-details" element={<BlogDetails navItem={navItem} setNavItem={setNavItem} />} />
+      <Route path="/F&B" element={<FandB navItem={navItem} setNavItem={setNavItem} />} />
     </Routes>
   )
 }
