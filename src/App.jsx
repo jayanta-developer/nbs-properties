@@ -13,6 +13,7 @@ import About from "./Pages/About"
 import Blogs from "./Pages/Blogs";
 import BlogDetails from "./Pages/BlogDetails";
 import FandB from "./Pages/FandB";
+import ContactUs from "./Pages/ContactUs"
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
       <Route path="/blogs" element={<Blogs navItem={navItem} setNavItem={setNavItem} />} />
       <Route path="/blog-details" element={<BlogDetails navItem={navItem} setNavItem={setNavItem} />} />
       <Route path="/F&B" element={<FandB navItem={navItem} setNavItem={setNavItem} />} />
+      <Route path="/contact-us" element={<ContactUs navItem={navItem} setNavItem={setNavItem} />} />
     </Routes>
   )
 }
