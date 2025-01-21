@@ -77,7 +77,7 @@
   color: #ffcf42;
 }
 .goTopIcon {
-  width: 40px;
+  width: 10%;
   position: absolute;
   bottom: 79%;
   right: 4%;
@@ -101,7 +101,7 @@
     flex-wrap: nowrap;
   }
   .goTopIcon {
-    width: 80px;
+    width: 6%;
     bottom: 10%;
   }
 }
@@ -124,6 +124,7 @@
     font-size: 18px;
   }
   .goTopIcon {
+    width: 3%;
     right: 14%;
   }
 }

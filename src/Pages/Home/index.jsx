@@ -32,17 +32,16 @@ import Footer from "../../Components/Footer";
 import { nearYouPropertie, PropertiesData, BlogData } from "../../assets/Data"
 
 export default function Home({ navItem, setNavItem }) {
-  const [drop1, setDrop1] = useState(false);
   const [dropVal1, setDropVal1] = useState("Property type");
-  const [drop2, setDrop2] = useState(false);
   const [dropVal2, setDropVal2] = useState("Property type");
-  const [drop3, setDrop3] = useState(false);
   const [dropVal3, setDropVal3] = useState("Property type");
-  const drop1List = ["item1", "item2", "item3"];
   const [homeTab, setHomeTab] = useState(0)
   const [propertyData, setPropertyData] = useState(PropertiesData)
 
 
+  const PropertyType = ["Apartments", "villas", "Commercia", "Plot A", "Plot B"];
+  const PropertySize = ["22,215 sq.ft", "30,928 sq.ft", "24,394 sq.ft", "19,166 sq.ft", "34,200 sq.ft"];
+  const PropertyBudget = ["15,000", "24,000", "30,000"];
 
   const ServiceCard = ({ img, title, subTitle }) => {
     return (
@@ -83,9 +82,9 @@ export default function Home({ navItem, setNavItem }) {
               <img src={targetIcon} className='targetIcon' />
             </div>
 
-            <DropBox icon={buildingIcon} drop={drop1} setDrop={setDrop1} dropVal={dropVal1} setDropVal={setDropVal1} dropList={drop1List} />
-            <DropBox icon={propertyIcon} drop={drop2} setDrop={setDrop2} dropVal={dropVal2} setDropVal={setDropVal2} dropList={drop1List} />
-            <DropBox icon={dollerIcon} drop={drop3} setDrop={setDrop3} dropVal={dropVal3} setDropVal={setDropVal3} dropList={drop1List} />
+            <DropBox icon={buildingIcon} dropVal={dropVal3} setDropVal={setDropVal3} dropList={PropertyType} />
+            <DropBox icon={propertyIcon} dropVal={dropVal1} setDropVal={setDropVal1} dropList={PropertySize} />
+            <DropBox icon={dollerIcon} dropVal={dropVal2} setDropVal={setDropVal2} dropList={PropertyBudget} />
 
             <BlackBtn icon={searchIcon} btnText="SEARCH" height="40px" />
 

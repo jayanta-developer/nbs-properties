@@ -99,6 +99,7 @@
   border-radius: 25px;
   overflow: hidden;
   background: #fff;
+  z-index: 9;
 }
 .SearchInputBoxActive {
   height: 40px;
