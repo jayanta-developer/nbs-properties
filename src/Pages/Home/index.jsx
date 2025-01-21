@@ -82,9 +82,9 @@ export default function Home({ navItem, setNavItem }) {
               <img src={targetIcon} className='targetIcon' />
             </div>
 
-            <DropBox icon={buildingIcon} dropVal={dropVal3} setDropVal={setDropVal3} dropList={PropertyType} />
-            <DropBox icon={propertyIcon} dropVal={dropVal1} setDropVal={setDropVal1} dropList={PropertySize} />
-            <DropBox icon={dollerIcon} dropVal={dropVal2} setDropVal={setDropVal2} dropList={PropertyBudget} />
+            <DropBox icon={buildingIcon} label="Property type" setDropVal={setDropVal3} dropList={PropertyType} />
+            <DropBox icon={propertyIcon} label="Property Size" setDropVal={setDropVal1} dropList={PropertySize} />
+            <DropBox icon={dollerIcon} label="Budget" setDropVal={setDropVal2} dropList={PropertyBudget} />
 
             <BlackBtn icon={searchIcon} btnText="SEARCH" height="40px" />
 

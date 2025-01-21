@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "./style.css";
+import Select from 'react-select';
 
 //images
 import propertyCoverImg from "../../assets/Images/propertyCoverImg.png";
@@ -31,13 +32,9 @@ export default function PropertListings({ navItem, setNavItem }) {
   const [sortDrop, setSortDrop] = useState(false)
   const [sortDropVal, setSortDropVal] = useState("Sort by: Relevance")
   const sortDropList = ["Sort by: Relevance", "Sort by: Item1", "Sort by: item2"]
-  const [propertyTypeDrop, setPropertyTypeDrop] = useState(false)
   const [propertyTypeDropVal, setPropertyTypeDropVal] = useState("Property type")
-  const [propertySizeDrop, setPropertySizeDrop] = useState(false)
   const [propertySizeDropVal, setPropertySizeDropVal] = useState("Property Size")
-  const [budgetDrop, setBudgetDrop] = useState(false);
   const [budgetDropVal, setBudgetValDrop] = useState("Budget");
-  const [psfDrop, setPsfDrop] = useState(false);
   const [psfDropVal, setPsfDropDrop] = useState("PSF");
   const [buyDrop, setBuyDrop] = useState(false);
   const [buyDropVal, setBuyDropVal] = useState("Buy");
@@ -46,6 +43,15 @@ export default function PropertListings({ navItem, setNavItem }) {
   const [chips, setChips] = useState([]);
   const [chipsInputVal, setChipsInputVal] = useState("");
 
+
+  const PropertyType = ["Apartments", "villas", "Commercia", "Plot A", "Plot B"];
+  const PropertySize = ["22,215 sq.ft", "30,928 sq.ft", "24,394 sq.ft", "19,166 sq.ft", "34,200 sq.ft"];
+  const PropertyBudget = ["15,000", "24,000", "30,000"];
+  const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' }
+  ];
   const proData1 = {
     img: propertieImg1,
     location: "Matunga East, Mumbai, Maharastra, 720156 ",
@@ -195,10 +201,10 @@ export default function PropertListings({ navItem, setNavItem }) {
             <div className="delChip addChip" onClick={handelChipsAdd}><img src={CrossIcon} /></div>
           </div>
 
-          <DropBox dropList={dropList} drop={propertyTypeDrop} setDrop={setPropertyTypeDrop} dropVal={propertyTypeDropVal} setDropVal={setPropertyTypeDropVal} />
-          <DropBox dropList={dropList} drop={propertySizeDrop} setDrop={setPropertySizeDrop} dropVal={propertySizeDropVal} setDropVal={setPropertySizeDropVal} />
-          <DropBox dropList={dropList} drop={budgetDrop} setDrop={setBudgetDrop} dropVal={budgetDropVal} setDropVal={setBudgetValDrop} />
-          <DropBox dropList={dropList} drop={psfDrop} setDrop={setPsfDrop} dropVal={psfDropVal} setDropVal={setPsfDropDrop} />
+          <DropBox dropList={PropertyType} label="Property type" setDropVal={setPropertyTypeDropVal} />
+          <DropBox dropList={PropertySize} label="Property Size" setDropVal={setPropertySizeDropVal} />
+          <DropBox dropList={PropertyBudget} label="Budget" setDropVal={setBudgetValDrop} />
+          <DropBox dropList={dropList} label="PSF" setDropVal={setPsfDropDrop} />
 
           <div className="propFilterDrop">
             <img src={FilterIcon} />
@@ -213,7 +219,7 @@ export default function PropertListings({ navItem, setNavItem }) {
 
             <div className="propertieListHeaderBox">
               <p className="propLHText">379 Results | Properties for Sale in Kolkata</p>
-              <DropBox dropList={sortDropList} drop={sortDrop} setDrop={setSortDrop} dropVal={sortDropVal} setDropVal={setSortDropVal} />
+              <DropBox dropList={sortDropList} label="Sort by" setDropVal={setSortDropVal} />
             </div>
             <div className="propertiesListBox">
               {

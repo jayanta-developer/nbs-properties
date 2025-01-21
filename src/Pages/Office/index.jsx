@@ -39,11 +39,8 @@ export default function Office({ navItem, setNavItem }) {
   const [sortDrop, setSortDrop] = useState(false)
   const [sortDropVal, setSortDropVal] = useState("Sort by: Relevance")
   const sortDropList = ["Sort by: Relevance", "Sort by: Item1", "Sort by: item2"]
-  const [propertyTypeDrop, setPropertyTypeDrop] = useState(false)
   const [propertyTypeDropVal, setPropertyTypeDropVal] = useState("Property type")
-  const [propertySizeDrop, setPropertySizeDrop] = useState(false)
   const [propertySizeDropVal, setPropertySizeDropVal] = useState("Property Size")
-  const [budgetDrop, setBudgetDrop] = useState(false);
   const [budgetDropVal, setBudgetValDrop] = useState("Budget");
   const [buyDrop, setBuyDrop] = useState(false);
   const [buyDropVal, setBuyDropVal] = useState("office");
@@ -52,6 +49,10 @@ export default function Office({ navItem, setNavItem }) {
   const [chips, setChips] = useState([]);
   const [chipsInputVal, setChipsInputVal] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
+
+  const PropertyType = ["Apartments", "villas", "Commercia", "Plot A", "Plot B"];
+  const PropertySize = ["22,215 sq.ft", "30,928 sq.ft", "24,394 sq.ft", "19,166 sq.ft", "34,200 sq.ft"];
+  const PropertyBudget = ["15,000", "24,000", "30,000"];
 
   const proData1 = {
     img: propertieImg1,
@@ -259,9 +260,9 @@ export default function Office({ navItem, setNavItem }) {
             <div className="delChip addChip" onClick={handelChipsAdd}><img src={CrossIcon} /></div>
           </div>
 
-          <DropBox dropList={dropList} drop={propertyTypeDrop} setDrop={setPropertyTypeDrop} dropVal={propertyTypeDropVal} setDropVal={setPropertyTypeDropVal} />
-          <DropBox dropList={dropList} drop={propertySizeDrop} setDrop={setPropertySizeDrop} dropVal={propertySizeDropVal} setDropVal={setPropertySizeDropVal} />
-          <DropBox dropList={dropList} drop={budgetDrop} setDrop={setBudgetDrop} dropVal={budgetDropVal} setDropVal={setBudgetValDrop} />
+          <DropBox dropList={PropertyType} label="Property type" setDropVal={setPropertyTypeDropVal} />
+          <DropBox dropList={PropertySize} label="Property Size" setDropVal={setPropertySizeDropVal} />
+          <DropBox dropList={PropertyBudget} label="Budget" setDropVal={setBudgetValDrop} />
 
           <div className="radioMainBox">
             <div className="radioBox">
@@ -300,7 +301,7 @@ export default function Office({ navItem, setNavItem }) {
 
             <div className="propertieListHeaderBox">
               <p className="propLHText">Top Office Buildings</p>
-              <DropBox dropList={sortDropList} drop={sortDrop} setDrop={setSortDrop} dropVal={sortDropVal} setDropVal={setSortDropVal} />
+              <DropBox dropList={sortDropList} label="Sort by" setDropVal={setSortDropVal} />
             </div>
             <div className="propertiesListBox">
               {buildingData?.length ? (

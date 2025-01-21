@@ -55,11 +55,12 @@ export const OutLineBtn = ({ height, icon, btnText }) => {
 }
 
 //DropBox
-export const DropBox = ({ icon, setDropVal, dropList }) => {
+export const DropBox = ({ icon, setDropVal, dropList, label }) => {
   return (
     <div className="dropOuterBox">
       <img src={icon} className="dropIcon" />
-      <select className="dropBox" onClick={() => setDrop(!drop)}>
+      <select defaultValue={label} style={{ paddingLeft: icon ? "30px" : "8px" }} className="dropBox" onClick={() => setDrop(!drop)}>
+        <option disabled>{label}</option>
         {
           dropList?.map((el, i) => (
             <option className="dropItem" onClick={() => setDropVal(el)} key={i} value={el}>
