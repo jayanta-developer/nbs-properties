@@ -47,17 +47,47 @@
   padding: 10px;
   border-radius: 43px;
   position: relative;
+}
+.garyBox {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  background: rgba(128, 128, 128, 0.4);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 9999;
 }
 .searchPopBox {
-  width: 100%;
+  width: 80%;
   background: #242527;
   top: 0px;
   padding: 20px;
   border-radius: 20px;
+  position: relative;
+}
+.crossIcon{
+  width: 25px;
   position: absolute;
-  top: 0px;
+  top: 20px;
+  right: 20px;
+}
+.spHeader{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+.spHeader p{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+.spHeader img{
+width: 30px;
 }
 .MobileHomeBtnBox .BlackBtn {
   height: 40px;
