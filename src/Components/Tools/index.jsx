@@ -18,9 +18,9 @@ import clockIcon from "../../assets/Images/clockIcon.svg"
 import humanIcon from "../../assets/Images/AvatarBlackIcon.svg"
 
 //Buttons
-export const BlackBtn = ({ height, icon, btnText }) => {
+export const BlackBtn = ({ height, icon, btnText,onClick }) => {
   return (
-    <div style={{ height: height }} className="BlackBtn">
+    <div style={{ height: height }} className="BlackBtn" onClick={onClick}>
       {icon ? <img src={icon} /> : null}
       <p>{btnText}</p>
     </div>

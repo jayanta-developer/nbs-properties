@@ -30,13 +30,13 @@
   color: #000;
 }
 .WhiteFillBtn {
-  background: #fff;
+  background: #8888887c;
 }
 .WhiteFillBtn:hover {
-  background: #ebebebcc;
+  background: #888888a2;
 }
 .WhiteFillBtn p {
-  color: #000;
+  color: #ffffff;
   font-size: 22px;
   font-weight: 500;
 }
@@ -47,10 +47,13 @@
   padding-left: 30px;
   padding-right: 8px;
   height: 40px;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   border-radius: 12px;
   position: relative;
   cursor: pointer;
+}
+.dropBox:focus{
+  outline: none;
 }
 .dropIcon {
   position: absolute;

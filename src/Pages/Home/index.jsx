@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./style.css"
 
 //images
@@ -37,11 +37,23 @@ export default function Home({ navItem, setNavItem }) {
   const [dropVal3, setDropVal3] = useState("Property type");
   const [homeTab, setHomeTab] = useState(0)
   const [propertyData, setPropertyData] = useState(PropertiesData)
+  const [locationDropVal, setlocationDropVal] = useState();
+  const [searchPop, setSearchPop] = useState(false)
 
 
   const PropertyType = ["Apartments", "villas", "Commercia", "Plot A", "Plot B"];
   const PropertySize = ["22,215 sq.ft", "30,928 sq.ft", "24,394 sq.ft", "19,166 sq.ft", "34,200 sq.ft"];
   const PropertyBudget = ["15,000", "24,000", "30,000"];
+  const LocationList = [
+    "Pune Division",
+    "Nashik Division",
+    "Bangalore Division",
+    "Nagpur Division",
+    "Raigad",
+    "Mumbai",
+    "Thane",
+    "Pune",
+  ]
 
   const ServiceCard = ({ img, title, subTitle }) => {
     return (
@@ -64,42 +76,34 @@ export default function Home({ navItem, setNavItem }) {
     )
   }
 
+  useEffect(()=>{
+    
+
+  },[searchPop])
+
   return (
     <>
-      <NavBar navItem={navItem} setNavItem={setNavItem} />
+      <NavBar navItem={navItem} setNavItem={setNavItem} Full={true} />
       <div className="homeContainer">
         <div className="homeTopSection">
-          {/* <img src={homeBackground} className='homeTopBg' /> */}
           <UncontrolledExample />
           <p className='homeHeader'>Welcome to NBS Property</p>
-          <p className='homeSubHeader'>Search below for property or rent house. </p>
+          <p className='homeSubHeader'>India's best home advisory & property transaction platform </p>
           <WhiteFillBtn height="50px" btnText="Learn More" />
 
-          <div className="HomeBtnBox">
-            <div className="locationInputBox">
-              <img src={locationIcon} />
-              <p>Your preferred location</p>
-              <img src={targetIcon} className='targetIcon' />
+          <div className="MobileHomeBtnBox">
+            <BlackBtn icon={searchIcon} btnText="Search properties..." onClick={() => setSearchPop(true)} />
+            <div style={{ display: searchPop ? "flex" : "noen" }} className="searchPopBox">
+<h1>jflksdjklf</h1>
             </div>
+          </div>
 
+          <div className="HomeBtnBox">
+            <DropBox icon={locationIcon} label="location" setDropVal={setlocationDropVal} dropList={LocationList} />
             <DropBox icon={buildingIcon} label="Property type" setDropVal={setDropVal3} dropList={PropertyType} />
             <DropBox icon={propertyIcon} label="Property Size" setDropVal={setDropVal1} dropList={PropertySize} />
             <DropBox icon={dollerIcon} label="Budget" setDropVal={setDropVal2} dropList={PropertyBudget} />
-
             <BlackBtn icon={searchIcon} btnText="SEARCH" height="40px" />
-
-
-            <div className="topHomeTavSection">
-              <div className="thTabInBox">
-                <div onClick={() => setHomeTab(0)} style={{ background: "#ffb605" }} className={homeTab === 0 ? "tabBox ActivetabBuyBox" : "tabBox"}>
-                  <div><p>Buy</p></div>
-                </div>
-                <div onClick={() => setHomeTab(1)} style={{ background: "#80808091" }} className={homeTab === 1 ? "tabBox ActivetabRentBox" : "tabBox"}>
-                  <div><p>Rent</p></div>
-                </div>
-              </div>
-
-            </div>
           </div>
         </div>
 

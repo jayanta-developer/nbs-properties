@@ -12,7 +12,7 @@ import RoundArrow from "../../assets/Images/angle-circle-right-icon.svg"
 //components
 import { BlackBtn, WhiteBtn } from "../Tools";
 
-export default function NavBar({ navItem, setNavItem }) {
+export default function NavBar({ navItem, setNavItem, Full }) {
   const navigate = useNavigate()
   const [searchBox, setSearcBox] = useState(false);
   const [sideMenu, setSideMenu] = useState(false)
@@ -52,7 +52,7 @@ export default function NavBar({ navItem, setNavItem }) {
 
   return (
     <>
-      <div className="navBarContainer">
+      <div className={Full ? "navBarContainer navBarContainerFull" : "navBarContainer"}>
         <div className="clogBox"><img src={Clogo} onClick={() => navigate("/")} /></div>
         <div className="navItemBox">
           {

@@ -41,14 +41,34 @@
 .homeTopSection h3 {
   color: black;
 }
+.MobileHomeBtnBox {
+  width: 80%;
+  background: #91919180;
+  padding: 10px;
+  border-radius: 43px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.searchPopBox {
+  width: 100%;
+  background: #242527;
+  top: 0px;
+  padding: 20px;
+  border-radius: 20px;
+  position: absolute;
+  top: 0px;
+}
+.MobileHomeBtnBox .BlackBtn {
+  height: 40px;
+}
 .HomeBtnBox {
-  width: 95%;
   min-height: 80px;
   position: absolute;
-  bottom: 13%;
-  background: #fff;
-  border-radius: 12px;
-  display: flex;
+  top: 68%;
+  background: #91919180;
+  border-radius: 43px;
+  display: none;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -127,8 +147,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
-  padding-bottom: 70px;
+  padding: 70px 20px;
 }
 .SectionHeader {
   font-size: 28px;
@@ -483,7 +502,6 @@
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .HomeBtnBox {
-    width: 95%;
     padding: 20px;
     gap: 15px;
   }
@@ -556,14 +574,17 @@
 /* Desktop view */
 @media only screen and (min-width: 1000px) {
   .homeTopSection {
-    height: 82vh;
+    height: 100vh;
     gap: 20px;
-    padding-top: 7%;
+    padding-top: 11%;
+  }
+  .MobileHomeBtnBox {
+    display: none;
   }
   .HomeBtnBox {
-    width: 79%;
     gap: 20px;
     justify-content: center;
+    display: flex;
   }
   .HomeBtnBox .dropBox {
     display: flex;
