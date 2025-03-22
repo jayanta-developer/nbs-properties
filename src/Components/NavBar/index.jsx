@@ -69,7 +69,7 @@ export default function NavBar({ navItem, setNavItem, Full }) {
             <input type="text" placeholder='Search...' />
           </div>
           <img className='searchIcon' src={SearchIcon} alt="" onClick={() => setSearcBox(!searchBox)} />
-          <WhiteBtn btnText="Login" height="42px" />
+          {/* <WhiteBtn btnText="Login" height="42px" /> */}
           <BlackBtn height="42px" btnText="Sign Up" />
           <img src={OptionIcon} className='NavOptionIcon' alt="" onClick={() => setSideMenu(true)} />
         </div>

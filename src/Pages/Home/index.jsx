@@ -25,7 +25,7 @@ import buildingWhiteIcon from "../../assets/Images/buildingIcon.PNG"
 
 //components
 import NavBar from '../../Components/NavBar';
-import { WhiteFillBtn, DropBox, BlackBtn, OutLineBtn, PropertiesSmallCard } from "../../Components/Tools"
+import { WhiteFillBtn,WhiteBtn, DropBox, BlackBtn, OutLineBtn, PropertiesSmallCard } from "../../Components/Tools"
 import UncontrolledExample from "../../Components/Slider";
 import Footer from "../../Components/Footer";
 
@@ -84,6 +84,10 @@ export default function Home({ navItem, setNavItem }) {
     }
   }
 
+  useEffect(() => {
+
+  })
+
   return (
     <>
       {/* Pop Box */}
@@ -94,7 +98,22 @@ export default function Home({ navItem, setNavItem }) {
             <img src={buildingWhiteIcon} alt="" />
             <p>Find Your Dream Home</p>
           </div>
-          
+          <div className="searchPopBoxInput">
+            <p style={{color:"#fff"}}>Search location:</p>
+            <DropBox icon={locationIcon} label="location" setDropVal={setlocationDropVal} dropList={LocationList} />
+          </div>
+          <div className="searchPopBoxInput">
+            <p style={{color:"#fff"}}>Property type:</p>
+            <DropBox icon={buildingIcon} label="Select property" setDropVal={setDropVal3} dropList={PropertyType} />
+          </div>
+          <div style={{marginBottom:"50px"}} className="searchPopBoxInput">
+            <p style={{color:"#fff"}}>Property type:</p>
+            <DropBox icon={propertyIcon} label="Property Size" setDropVal={setDropVal1} dropList={PropertySize} />
+          </div>
+
+          <WhiteBtn btnText="SEARCH" height="40px" />
+
+
 
         </div>
 

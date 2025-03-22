@@ -61,7 +61,7 @@
   z-index: 9999;
 }
 .searchPopBox {
-  width: 80%;
+  width: 95%;
   background: #242527;
   top: 0px;
   padding: 20px;
@@ -69,25 +69,31 @@
   position: relative;
 }
 .crossIcon{
-  width: 25px;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 5px;
+  right: 10px;
+  width: 30px;
 }
-.spHeader{
+.searchPopBoxInput {
+  margin-top: 20px;
+}
+.searchPopBoxInput .dropBox{
+width: 100%;
+}
+.spHeader {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 16px;
 }
-.spHeader p{
+.spHeader p {
   color: #fff;
   font-size: 20px;
   font-weight: 600;
 }
-.spHeader img{
-width: 30px;
+.spHeader img {
+  width: 30px;
 }
 .MobileHomeBtnBox .BlackBtn {
   height: 40px;
@@ -599,6 +605,9 @@ width: 30px;
   }
   .propertieCardBox {
     justify-content: space-between;
+  }
+  .searchPopBox {
+    width: 80%;
   }
 }
 /* Desktop view */

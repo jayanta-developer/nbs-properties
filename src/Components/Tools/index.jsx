@@ -27,9 +27,9 @@ export const BlackBtn = ({ height, icon, btnText,onClick }) => {
   )
 }
 
-export const WhiteBtn = ({ height, icon, btnText }) => {
+export const WhiteBtn = ({ height, icon, btnText,width }) => {
   return (
-    <div style={{ height: height }} className="BlackBtn WhiteBtn">
+    <div style={{ height: height,width:width||"100%"  }} className="BlackBtn WhiteBtn">
       {icon ? <img src={icon} /> : null}
       <p>{btnText}</p>
     </div>
