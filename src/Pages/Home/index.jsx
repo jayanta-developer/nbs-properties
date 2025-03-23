@@ -19,7 +19,7 @@ import trust3 from "../../assets/Images/trust3.svg"
 import trust4 from "../../assets/Images/trust4.svg"
 import roundArrow from "../../assets/Images/roundArrow.svg"
 import crossWhite from "../../assets/Images/crossWhite.png"
-// import buildingWhiteIcon from "../../assets/Images/buildingIcon.PNG"
+import buildingWhiteIcon from "../../assets/Images/buildingIcon.PNG"
 
 
 //components
@@ -94,7 +94,7 @@ export default function Home({ navItem, setNavItem }) {
         <div className="searchPopBox">
           <img src={crossWhite} className='crossIcon' alt="" onClick={() => setSearchPop(false)} />
           <div className="spHeader">
-            <img src={buildingIcon} alt="" />
+            <img src={buildingWhiteIcon} alt="" />
             <p>Find Your Dream Home</p>
           </div>
           <div className="searchPopBoxInput">
