@@ -21,6 +21,7 @@ import shoppingCartIcon from "../../assets/Images/shopping-cartIcon.svg"
 import walkIcon from "../../assets/Images/walk.svg"
 import AddIcon from "../../assets/Images/addIcon.svg"
 import userImg from "../../assets/Images/userImg.png";
+import agentImg from "../../assets/Images/Agent.jpg"
 
 import propertieImg1 from "../../assets/Images/propertieImg1.png";
 import propertieImg2 from "../../assets/Images/propertieImg2.png";
@@ -291,6 +292,48 @@ export default function PropertDetails({ navItem, setNavItem }) {
                   <img src={mapImg} alt="" />
                 </div>
               </div>
+            </div>
+
+            <div className="propertySection">
+              <p className="propDtalHeader">Contact with Agent</p>
+              <div className="agentBox">
+                <div className="agImgBox">
+                  <img src={agentImg} alt="agentImg" />
+                </div>
+                <div className="agInfoBox">
+                  <h2>Ikey Advisor</h2>
+                  <p>Sr. Consultant</p>
+                  <p>Responds quickly in <span>15 mins</span></p>
+                </div>
+              </div>
+
+              <h2 className='agLabelText'>Whats' your enquiry about?</h2>
+              <div className="agCheckBox">
+                <div className="checkBox">
+                  <input type="checkBox" />
+                  <p>Scheduling Inspection</p>
+                </div>
+                <div className="checkBox">
+                  <input type="checkBox" />
+                  <p>Price Information</p>
+                </div>
+                <div className="checkBox">
+                  <input type="checkBox" />
+                  <p>Booking</p>
+                </div>
+              </div>
+
+
+              <div className="inputBox agInput">
+                <p>Email Address *</p>
+                <input type="text" />
+              </div>
+              <div className="inputBox agInput">
+                <p>Message *</p>
+                <textarea type="text" />
+              </div>
+              <BlackBtn btnText="Submit" height="40px" width="200px" />
+
             </div>
 
 
