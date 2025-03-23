@@ -108,7 +108,7 @@
 /* Desktop view */
 @media only screen and (min-width: 1000px) {
   .FooterTopBox img {
-    width: unset;
+    width: 14%;
   }
   .FooterTopBox {
     height: 100px;

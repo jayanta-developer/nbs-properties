@@ -2,7 +2,6 @@ import React from 'react'
 import "./style.css"
 import { useNavigate } from "react-router-dom"
 
-
 //images
 import nbsBlackIcon from "../../assets/Images/footerClogo.svg"
 import FacebookIcon from "../../assets/Images/FotFacebookIcon.svg"

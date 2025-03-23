@@ -10,7 +10,7 @@
   min-height: 80px;
   background: #fff5dd;
   border: 1px solid #e1d2ae;
-  display: flex;
+  display: none;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -283,6 +283,9 @@
   }
   .propertMainSection {
     width: 98%;
+  }
+  .propertieFilterBox {
+    display: flex;
   }
 }
 /* Desktop view */
