@@ -209,8 +209,8 @@ export default function OfficeDetails({ navItem, setNavItem }) {
 
                   </div>
                   <div className="centerBtnBox">
-                    <BlackBtn height="50px" btnText="see 113 units to buy" />
-                    <WhiteBtn height="50px" btnText="see 224 units to rent" />
+                    <BlackBtn height="50px"  width={200} btnText="see 113 units to buy" />
+                    <WhiteBtn height="50px"  width={200} btnText="see 224 units to rent" />
                   </div>
                 </div>
               </div>
@@ -259,7 +259,7 @@ export default function OfficeDetails({ navItem, setNavItem }) {
                 </div>
 
                 <div className="centerBtnBox">
-                  <BlackBtn height="50px" btnText="Contact Agent" />
+                  <BlackBtn height="50px"  width={200} btnText="Contact Agent" />
                 </div>
               </div>
             </div>
@@ -276,7 +276,7 @@ export default function OfficeDetails({ navItem, setNavItem }) {
                 }
               </div>
               <div className="centerBtnBox">
-                <BlackBtn height="50px" btnText="Explore All" />
+                <BlackBtn height="50px" width={200} btnText="Explore All" />
               </div>
             </div>
 
@@ -341,7 +341,7 @@ export default function OfficeDetails({ navItem, setNavItem }) {
                   ))
                 }
               </div>
-              <BlackBtn btnText="Add Review" height="40px" />
+              <BlackBtn btnText="Add Review" width={200} height="40px" />
             </div>
           </div>
         </div>
@@ -357,7 +357,7 @@ export default function OfficeDetails({ navItem, setNavItem }) {
             <PropertiesSmallCard el={proData4} />
           </div>
           <div className="centerBtnBox">
-            <BlackBtn height="50px" btnText="Explore All" />
+            <BlackBtn height="50px" width={200} btnText="Explore All" />
           </div>
         </div>
 

@@ -18,18 +18,18 @@ import clockIcon from "../../assets/Images/clockIcon.svg"
 import humanIcon from "../../assets/Images/AvatarBlackIcon.svg"
 
 //Buttons
-export const BlackBtn = ({ height, icon, btnText,onClick }) => {
+export const BlackBtn = ({ height, icon, btnText, width, onClick }) => {
   return (
-    <div style={{ height: height }} className="BlackBtn" onClick={onClick}>
+    <div style={{ height: height, width: width || "100%" }} className="BlackBtn" onClick={onClick}>
       {icon ? <img src={icon} /> : null}
       <p>{btnText}</p>
     </div>
   )
 }
 
-export const WhiteBtn = ({ height, icon, btnText,width }) => {
+export const WhiteBtn = ({ height, icon, btnText, width, onClick }) => {
   return (
-    <div style={{ height: height,width:width||"100%"  }} className="BlackBtn WhiteBtn">
+    <div style={{ height: height, width: width || "100%" }} onClick={onClick} className="BlackBtn WhiteBtn">
       {icon ? <img src={icon} /> : null}
       <p>{btnText}</p>
     </div>

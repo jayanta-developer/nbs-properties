@@ -8,6 +8,8 @@
   border-radius: 20px;
   padding: 20px 0;
   margin-bottom: 30px;
+  background: #8e8e8e1c;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .brandProfileBox .avatarBox {
   width: 70px;
@@ -46,6 +48,8 @@
   border: 1px solid #000;
   border-radius: 10px;
   margin-bottom: 30px;
+  background: #8e8e8e1c;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .propTitleNav {
   width: 100%;
@@ -235,7 +239,8 @@
   gap: 10px;
   padding: 0 10px;
   background: #fff5dd66;
-  border-radius: 5px;
+  border-radius: 7px;
+  border: 1px solid #00000017;
 }
 .roomFasalityItem p {
   font-size: 16px;
@@ -306,23 +311,38 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.196);
 }
 .distaninBox {
-  width: 100px;
+  min-width: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
   height: 30px;
   gap: 8px;
   background: #fff5dd80;
+  border: 1px rgba(0, 0, 0, 0.09) solid;
   padding: 0 10px;
+  border-radius: 5px;
 }
 .disLocText {
   font-size: 14px;
   color: #110c30;
 }
-.disLocText img {
+.disIconBox {
+  min-width: 25px;
   margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+.disIconBox img {
+  min-width: 25px;
+}
+.disFBox {
+  display: flex;
+  flex-direction: row;
 }
 .distaninBox p {
   font-size: 16px;

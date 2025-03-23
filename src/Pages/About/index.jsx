@@ -68,7 +68,7 @@ export default function About({ navItem, setNavItem }) {
                 <p className='wmDfHeader'>What Make Us Different?</p>
                 <p className='sectionSubText'>Lorem ipsum dolor sit amet consectetur. Diam scelerisque sollicitudin tristique enim integer sed nunc ultricies nisi. Urna lacinia tempor lacus placerat velit.</p>
                 <div className="wmdBtnBox">
-                  <BlackBtn btnText="Explore Services" height="40px" />
+                  <BlackBtn width="170px" btnText="Explore Services" height="40px" />
                 </div>
                 <img src={difBgImg} />
               </div>
@@ -108,7 +108,7 @@ export default function About({ navItem, setNavItem }) {
           </div>
 
           <div className="centerBtnBox">
-            <BlackBtn btnText="Explore All" height="50px" />
+            <BlackBtn width="200px" btnText="Explore All" height="50px" />
           </div>
 
         </div>

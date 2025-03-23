@@ -63,7 +63,7 @@ export default function ContactUs() {
               <textarea type="text" />
             </div>
 
-            <BlackBtn btnText="SUBMIT" height="40px" />
+            <BlackBtn btnText="SUBMIT"  width={200} height="40px" />
 
           </div>
 

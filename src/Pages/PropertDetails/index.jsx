@@ -90,7 +90,10 @@ export default function PropertDetails({ navItem, setNavItem }) {
   const LocationNearShop = ({ title, dist }) => {
     return (
       <div className="mapNearLocRow">
-        <p className='disLocText'><img src={shoppingCartIcon} /> {title}</p>
+        <div className="disFBox">
+          <div className="disIconBox"><img src={shoppingCartIcon} /> </div>
+          <div className="disTextBox"><p className='disLocText'>{title}</p></div>
+        </div>
         <div className="distaninBox">
           <img src={walkIcon} />
           <p>{dist} m</p>
@@ -192,9 +195,8 @@ export default function PropertDetails({ navItem, setNavItem }) {
 
 
               <div className="propMDetailsSection">
-                <p className="propDtalHeader">More details</p>
-                <p className="propMDSubText1">B2 Industrial Unit For Sale with High Rental Yield</p>
-                <p className="propMDSubText2">B2 Industrial Unit For Sale with High Rental Yield</p>
+                <p className="propDtalHeader">About This Home</p>
+                <p className="propMDSubText1">NBS developers llp has lauched passcode one vikhroli in vikhroli east, mumbai. It offers under construction units. Popular configurations include 1 bhk, 1.5 bhk, 2 bhk, 2.5 bhk units. As per the area plan, units are in the size range of 398.0 - 697.0 sq.Ft.. The possession date of passcode one vikhroli is dec, 2026. The address of passcode one vikhroli is vikhroli.</p>
 
                 <p className="propSeemore">Show More {">>"}</p>
 
@@ -235,7 +237,7 @@ export default function PropertDetails({ navItem, setNavItem }) {
                 </div>
 
                 <div className="centerBtnBox">
-                  <BlackBtn height="50px" btnText="Contact Agent" />
+                  <BlackBtn height="50px" width="200px" btnText="Contact Agent" />
                 </div>
               </div>
             </div>
@@ -262,8 +264,8 @@ export default function PropertDetails({ navItem, setNavItem }) {
                 </div>
               </div>
               <div className="centerBtnBox">
-                <BlackBtn height="50px" btnText="View all Amenities" />
-                <WhiteBtn height="50px" btnText="Download Brochure" />
+                <BlackBtn height="50px" width="200px" btnText="View all Amenities" />
+                <WhiteBtn height="50px" width="200px" btnText="Download Brochure" />
               </div>
             </div>
 
@@ -313,7 +315,7 @@ export default function PropertDetails({ navItem, setNavItem }) {
               <p className='brandTitle'>Brendon Kuay</p>
               <span>ERA REALTY NETWORK PTE LTD</span>
               <span>CEA: R017302B / L3002382K</span>
-              <BlackBtn btnText="WhatsApp Web" height="40px" />
+              <BlackBtn btnText="WhatsApp Web" width="200px" height="40px" />
             </div>
 
 
@@ -331,7 +333,7 @@ export default function PropertDetails({ navItem, setNavItem }) {
             <PropertiesSmallCard el={proData4} />
           </div>
           <div className="centerBtnBox">
-            <BlackBtn height="50px" btnText="Explore All" />
+            <BlackBtn height="50px" width={200} btnText="Explore All" />
           </div>
         </div>
 

@@ -268,7 +268,7 @@ export default function PropertListings({ navItem, setNavItem }) {
             </div>
           </div>
           <div className="centerBtnBox">
-            <BlackBtn height="50px" btnText="Explore All" />
+            <BlackBtn height="50px" width="200px" btnText="Explore All" />
           </div>
         </div>
 

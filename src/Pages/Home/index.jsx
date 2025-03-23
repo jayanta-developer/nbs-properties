@@ -25,7 +25,7 @@ import buildingWhiteIcon from "../../assets/Images/buildingIcon.PNG"
 
 //components
 import NavBar from '../../Components/NavBar';
-import { WhiteFillBtn,WhiteBtn, DropBox, BlackBtn, OutLineBtn, PropertiesSmallCard } from "../../Components/Tools"
+import { WhiteFillBtn, WhiteBtn, DropBox, BlackBtn, OutLineBtn, PropertiesSmallCard } from "../../Components/Tools"
 import UncontrolledExample from "../../Components/Slider";
 import Footer from "../../Components/Footer";
 
@@ -99,19 +99,19 @@ export default function Home({ navItem, setNavItem }) {
             <p>Find Your Dream Home</p>
           </div>
           <div className="searchPopBoxInput">
-            <p style={{color:"#fff"}}>Search location:</p>
+            <p style={{ color: "#fff" }}>Search location:</p>
             <DropBox icon={locationIcon} label="location" setDropVal={setlocationDropVal} dropList={LocationList} />
           </div>
           <div className="searchPopBoxInput">
-            <p style={{color:"#fff"}}>Property type:</p>
+            <p style={{ color: "#fff" }}>Property type:</p>
             <DropBox icon={buildingIcon} label="Select property" setDropVal={setDropVal3} dropList={PropertyType} />
           </div>
-          <div style={{marginBottom:"50px"}} className="searchPopBoxInput">
-            <p style={{color:"#fff"}}>Property type:</p>
+          <div style={{ marginBottom: "50px" }} className="searchPopBoxInput">
+            <p style={{ color: "#fff" }}>Property type:</p>
             <DropBox icon={propertyIcon} label="Property Size" setDropVal={setDropVal1} dropList={PropertySize} />
           </div>
 
-          <WhiteBtn btnText="SEARCH" height="40px" />
+          <WhiteBtn btnText="SEARCH" height="40px" onClick={() => setSearchPop(false)} />
 
 
 
@@ -127,7 +127,7 @@ export default function Home({ navItem, setNavItem }) {
           <WhiteFillBtn height="50px" btnText="Learn More" />
 
           <div className="MobileHomeBtnBox">
-            <BlackBtn icon={searchIcon} btnText="Search properties..." onClick={() => setSearchPop(true)} />
+            <BlackBtn width="100%" icon={searchIcon} btnText="Search properties..." onClick={() => setSearchPop(true)} />
           </div>
 
           <div className="HomeBtnBox">
@@ -135,7 +135,7 @@ export default function Home({ navItem, setNavItem }) {
             <DropBox icon={buildingIcon} label="Property type" setDropVal={setDropVal3} dropList={PropertyType} />
             <DropBox icon={propertyIcon} label="Property Size" setDropVal={setDropVal1} dropList={PropertySize} />
             <DropBox icon={dollerIcon} label="Budget" setDropVal={setDropVal2} dropList={PropertyBudget} />
-            <BlackBtn icon={searchIcon} btnText="SEARCH" height="40px" />
+            <BlackBtn icon={searchIcon} btnText="SEARCH" height="40px"  width={170} />
           </div>
         </div>
 
@@ -150,7 +150,7 @@ export default function Home({ navItem, setNavItem }) {
             <ServiceCard img={serviceImg3} title="Industrial" subTitle="Lorem ipsum dolor sit amet consectetur. Felis duis neque velit duis lectus tincidunt tortor amet." />
           </div>
           <div className="centerBtnBox">
-            <BlackBtn height="50px" btnText="Explore All" />
+            <BlackBtn height="50px"  width={200} btnText="Explore All" />
           </div>
         </div>
 
@@ -171,7 +171,7 @@ export default function Home({ navItem, setNavItem }) {
               <p className="sectionSubText">Lorem ipsum dolor sit amet consectetur. Consequat et est varius a leo. In id fringilla sagittis eu. Nec et lorem gravida rhoncus eget egestas tortor augue blandit. Suspendisse lacus morbi diam dui diam mi justo ut.</p>
               <p className="sectionSubText">Arcu ultrices luctus tincidunt dui nibh ante urna. Vel felis nunc in tincidunt non vitae dui. Proin tristique aenean morbi risus ultrices amet. Nunc proin massa sed laoreet euismod a magna at. Suspendisse nibh dolor elit commodo lectus commodo. Habitant nunc risus gravida in odio. Ut nunc amet in cursus malesuada augue amet pellentesque. Tortor nulla est ornare augue. Proin.</p>
               <div className="nbsBtnBox">
-                <BlackBtn height="40px" btnText="Explore Services" />
+                <BlackBtn   width={200}height="40px" btnText="Explore Services" />
                 <OutLineBtn height="40px" btnText="Contact Us Now" />
               </div>
             </div>
@@ -190,7 +190,7 @@ export default function Home({ navItem, setNavItem }) {
               <p className='wmDfHeader'>What Make Us Different?</p>
               <p className='sectionSubText'>Lorem ipsum dolor sit amet consectetur. Diam scelerisque sollicitudin tristique enim integer sed nunc ultricies nisi. Urna lacinia tempor lacus placerat velit.</p>
               <div className="wmdBtnBox">
-                <BlackBtn btnText="Explore Services" height="40px" />
+                <BlackBtn  width={200} btnText="Explore Services" height="40px" />
               </div>
               <img src={difBgImg} />
             </div>
@@ -244,7 +244,7 @@ export default function Home({ navItem, setNavItem }) {
             <div className="LeftBlogBox">
               {
                 BlogData?.slice(-3).map((el, i) => (
-                  <div className="blogRowCard">
+                  <div key={i} className="blogRowCard">
                     <div className="brImgBox">
                       <img src={el.img} alt="" />
                     </div>
@@ -258,7 +258,7 @@ export default function Home({ navItem, setNavItem }) {
             </div>
           </div>
           <div className="centerBtnBox">
-            <BlackBtn height="50px" btnText="View All Blogs" />
+            <BlackBtn height="50px"  width={200} btnText="View All Blogs" />
           </div>
         </div>
       </div>

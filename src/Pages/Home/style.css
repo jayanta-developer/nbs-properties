@@ -68,7 +68,7 @@
   border-radius: 20px;
   position: relative;
 }
-.crossIcon{
+.crossIcon {
   position: absolute;
   top: 5px;
   right: 10px;
@@ -77,8 +77,8 @@
 .searchPopBoxInput {
   margin-top: 20px;
 }
-.searchPopBoxInput .dropBox{
-width: 100%;
+.searchPopBoxInput .dropBox {
+  width: 100%;
 }
 .spHeader {
   width: 100%;
@@ -318,9 +318,7 @@ width: 100%;
   width: 100%;
   margin-bottom: 10px;
 }
-.wmdBtnBox .BlackBtn {
-  width: 170px;
-}
+
 .trustCard {
   width: 48%;
 }

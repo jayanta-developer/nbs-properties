@@ -1,5 +1,7 @@
 import React from 'react'
 import "./style.css"
+import { useNavigate } from "react-router-dom"
+
 
 //images
 import nbsBlackIcon from "../../assets/Images/footerClogo.svg"
@@ -17,6 +19,21 @@ import GoTopIcon from "../../assets/Images/GoTopIcon.svg"
 import { GoTop } from "../../Components/Tools"
 
 export default function Footer() {
+  const navigate = useNavigate()
+
+
+  const handelNavigation = (el) => {
+    window.scrollTo({top:0,behavior:"smooth"})
+    if (el === "Contact Us") {
+      navigate("/contact-us")
+    } else if (el === "Login / Sign Up") {
+      navigate("/logIn")
+    } else if (el === "Blog") {
+      navigate("/blogs")
+    } else if (el === "About us") {
+      navigate("/about-us")
+    }
+  }
 
 
   const FooterRowItems = [
@@ -45,7 +62,7 @@ export default function Footer() {
         <div className="footerRowBox">
           {
             FooterRowItems?.map((el, i) => (
-              <p className='FooterRowItem' key={i}>{el}</p>
+              <p className='FooterRowItem' onClick={() => handelNavigation(el)} key={i}>{el}</p>
             ))
           }
         </div>

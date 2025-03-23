@@ -48,7 +48,7 @@ export default function LogIn({ navItem, setNavItem }) {
                 <p className="forgotPwd">Forgot Password?</p>
               </div>
               <div className="centerBtnBox">
-                <BlackBtn btnText="Sign In" height="40px" />
+                <BlackBtn btnText="Sign In"  height="40px" />
               </div>
               <div className="orHrLine">
                 <p>OR</p>
@@ -92,7 +92,7 @@ export default function LogIn({ navItem, setNavItem }) {
               </div>
 
               <div className="supBottomBox">
-                <BlackBtn btnText="Create Account" height="40px" />
+                <BlackBtn  width={200} btnText="Create Account" height="40px" />
                 <p className="slLinkText">Already have an account? <span onClick={() => setlogPage(true)}>Sign In</span></p>
               </div>
 

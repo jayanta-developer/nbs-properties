@@ -58,8 +58,8 @@ export default function NavBar({ navItem, setNavItem, Full }) {
           {
             navItems?.map((el, i) => (
               <p className={navItem === el ? 'navItem AtivenavItem' : "navItem"} onClick={() => {
-                setNavItem(el)
                 handelNavigation(el)
+                setNavItem(el)
               }} key={i}>{el}</p>
             ))
           }
@@ -70,7 +70,7 @@ export default function NavBar({ navItem, setNavItem, Full }) {
           </div>
           <img className='searchIcon' src={SearchIcon} alt="" onClick={() => setSearcBox(!searchBox)} />
           {/* <WhiteBtn btnText="Login" height="42px" /> */}
-          <BlackBtn height="42px" btnText="Sign Up" />
+          <BlackBtn height="42px" width="120px" btnText="Sign Up" onClick={() => navigate("/logIn")} />
           <img src={OptionIcon} className='NavOptionIcon' alt="" onClick={() => setSideMenu(true)} />
         </div>
 

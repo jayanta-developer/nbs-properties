@@ -18,6 +18,7 @@ import ContactUs from "./Pages/ContactUs"
 
 function App() {
   const [navItem, setNavItem] = useState("Home");
+console.log(navItem);
 
   return (
     <Routes>
