@@ -17,9 +17,6 @@
 .homeTopSection .homeHeader {
   text-align: center;
 }
-.homeTopSection .homeSubHeader {
-  text-align: center;
-}
 .homeTopBg {
   width: 100%;
   height: 75vh;
@@ -32,12 +29,12 @@
   font-size: 40px;
   font-weight: 600;
   color: #fff;
-  font-family: "ClashDisplayBold";
 }
 .homeSubHeader {
   width: 98%;
   font-size: 25px;
   color: #fff;
+  text-align: center;
 }
 .homeTopSection h3 {
   color: black;
@@ -102,7 +99,7 @@
 .HomeBtnBox {
   min-height: 80px;
   position: absolute;
-  top: 68%;
+  top: 46%;
   background: #91919180;
   border-radius: 43px;
   display: none;
@@ -190,7 +187,6 @@
   font-size: 28px;
   /* font-weight: 700; */
   color: #000;
-  font-family: "ClashDisplayBold";
   text-align: center;
 }
 .serviceSection .sectionSubText {
@@ -221,7 +217,6 @@
   font-weight: 600;
   color: #242527;
   margin: 8px 0;
-  font-family: "ClashDisplayBold";
 }
 .serviceCard span {
   font-size: 16px;
@@ -310,7 +305,6 @@
   font-size: 30px;
   font-weight: 600;
   color: #242527;
-  font-family: "ClashDisplayBold";
 }
 .wmDifferent .sectionSubText {
   text-align: start;
@@ -332,7 +326,7 @@
 .trustCard samp {
   font-size: 16px;
   color: #444156;
-  font-family: "Syne";
+  font-family: Poppins;
 }
 .NearUSection {
   width: 100%;
@@ -359,7 +353,6 @@
 }
 .nearLoCard p {
   font-size: 40px;
-  font-family: "ClashDisplayBold";
   color: #444156;
 }
 .nearLoCard span {
@@ -447,12 +440,10 @@
   font-size: 20px;
   font-weight: 700;
   color: #000;
-  font-family: "ClashDisplay";
 }
 .propPrice samp {
   font-size: 20px;
   color: #4e4b5c;
-  font-family: "ClashDisplay";
 }
 .propLocation {
   font-size: 16px;
@@ -498,7 +489,6 @@
   line-height: 21px;
   font-weight: 600;
   color: #242527;
-  font-family: "ClashDisplayBold";
 }
 .blogSumText {
   font-size: 13px;
@@ -540,7 +530,8 @@
     padding: 20px;
     gap: 15px;
   }
-  .topHomeTavSection {
+  .MobileHomeBtnBox {
+    width: 50%;
   }
   .nbsTextBox .sectionSubText {
     text-align: start;
@@ -549,9 +540,6 @@
     font-size: 50px;
   }
   .homeTopSection .homeHeader {
-    text-align: start;
-  }
-  .homeTopSection .homeSubHeader {
     text-align: start;
   }
   .locationInputBox p {

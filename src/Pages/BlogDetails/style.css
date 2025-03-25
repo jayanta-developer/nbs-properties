@@ -90,7 +90,6 @@
 }
 .blogRAdeSection .blogDTitle {
   /* margin-bottom: 15px; */
-  font-family: "Syne";
 }
 .recentPostCard {
   width: 100%;
@@ -110,10 +109,10 @@
   height: 100%;
 }
 .recentPostCard p {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   color: #242527;
-  line-height: 23px;
+  line-height: 20px;
 }
 /* Tabe view */
 @media only screen and (min-width: 768px) {

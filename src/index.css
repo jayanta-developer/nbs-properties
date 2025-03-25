@@ -1,19 +1,4 @@
 @font-face {
-  font-family: "Syne";
-  src: url("../public/Assets/Fonts/Syne/static/Syne-Regular.ttf")
-    format("truetype");
-}
-@font-face {
-  font-family: "ClashDisplay";
-  src: url("../public/Assets/Fonts/ClashDisplay_Complete/ClashDisplay-Regular.otf")
-    format("truetype");
-}
-@font-face {
-  font-family: "ClashDisplayBold";
-  src: url("../public/Assets/Fonts/ClashDisplay_Complete/ClashDisplay-Semibold.otf")
-    format("truetype");
-}
-@font-face {
   font-family: "Poppins";
   src: url("../public/Assets/Fonts/Poppins/Poppins-Regular.ttf")
     format("truetype");
@@ -22,7 +7,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Syne;
+  font-family: Poppins;
 }
 p {
   margin: 0;

@@ -150,7 +150,7 @@ export const AgentCard = () => {
       <p className='brandTitle'>Brendon Kuay</p>
       <span>ERA REALTY NETWORK PTE LTD</span>
       <span>CEA: R017302B / L3002382K</span>
-      <BlackBtn btnText="WhatsApp Web" height="40px" />
+      <BlackBtn btnText="WhatsApp Web" height="40px" width="85%" />
     </div>
   )
 }

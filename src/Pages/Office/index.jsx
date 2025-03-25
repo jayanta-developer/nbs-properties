@@ -227,11 +227,6 @@ export default function Office({ navItem, setNavItem }) {
   };
 
 
-
-  // useEffect(() => {
-  //   setBuildingVal(buildingData)
-  // }, [buildingData, buildingVal])
-
   return (
     <>
       <NavBar navItem={navItem} setNavItem={setNavItem} />
@@ -362,7 +357,7 @@ export default function Office({ navItem, setNavItem }) {
             }
           </div>
           <div className="centerBtnBox">
-            <BlackBtn height="50px"  width={200} btnText="Explore All" />
+            <BlackBtn height="50px" width={200} btnText="Explore All" />
           </div>
         </div>
 
@@ -378,7 +373,7 @@ export default function Office({ navItem, setNavItem }) {
             <PropertiesSmallCard el={proData4} />
           </div>
           <div className="centerBtnBox">
-            <BlackBtn height="50px"  width={200} btnText="Explore All" />
+            <BlackBtn height="50px" width={200} btnText="Explore All" />
           </div>
         </div>
 
@@ -393,7 +388,7 @@ export default function Office({ navItem, setNavItem }) {
             <PropertiesSmallCard el={proData4} />
           </div>
           <div className="centerBtnBox">
-            <BlackBtn height="50px"  width={200} btnText="Explore All" />
+            <BlackBtn height="50px" width={200} btnText="Explore All" />
           </div>
         </div>
 

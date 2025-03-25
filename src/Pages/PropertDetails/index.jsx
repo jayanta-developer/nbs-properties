@@ -246,7 +246,7 @@ export default function PropertDetails({ navItem, setNavItem }) {
 
             <div className="propertySection AmenitiesSection">
               <p className="propDtalHeader">Amenities</p>
-              <div className="roomFasalityBox">
+              <div className="roomFasalityBox ">
                 <div className="roomFasalityItem">
                   <img src={airConditionerIcon} />
                   <p>Air-Conditioning</p>
@@ -266,7 +266,7 @@ export default function PropertDetails({ navItem, setNavItem }) {
               </div>
               <div className="centerBtnBox">
                 <BlackBtn height="50px" width="200px" btnText="View all Amenities" />
-                <WhiteBtn height="50px" width="200px" btnText="Download Brochure" />
+                <WhiteBtn height="50px" width="240px" btnText="Download Brochure" />
               </div>
             </div>
 

@@ -109,11 +109,7 @@ export default function Home({ navItem, setNavItem }) {
             <p style={{ color: "#fff" }}>Property type:</p>
             <DropBox icon={propertyIcon} label="Property Size" setDropVal={setDropVal1} dropList={PropertySize} />
           </div>
-
           <WhiteBtn btnText="SEARCH" height="40px" onClick={() => setSearchPop(false)} />
-
-
-
         </div>
 
       </div>
@@ -122,9 +118,7 @@ export default function Home({ navItem, setNavItem }) {
         <div className="homeTopSection">
           <UncontrolledExample />
           <p className='homeHeader'>Welcome to NBS Property</p>
-          <p className='homeSubHeader'>India's best home advisory & property transaction platform </p>
-          <WhiteFillBtn height="50px" btnText="Learn More" />
-
+          <p className='homeSubHeader'>India's best home advisory & property transaction platform</p>
           <div className="MobileHomeBtnBox">
             <BlackBtn width="100%" icon={searchIcon} btnText="Search properties..." onClick={() => setSearchPop(true)} />
           </div>

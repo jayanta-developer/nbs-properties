@@ -47,7 +47,6 @@
   font-size: 25px;
   font-weight: 600;
   color: #000;
-  font-family: "ClashDisplay";
 }
 .propertieListHeaderBox .dropBox {
   width: 200px;
@@ -97,7 +96,6 @@
   font-size: 18px;
   color: #110c30;
   font-weight: 600;
-  font-family: "ClashDisplayBold";
 }
 .propClocText {
   font-size: 16px;
@@ -118,7 +116,6 @@
 .propPrice {
   font-size: 18px;
   color: #110c30;
-  font-family: "ClashDisplayBold";
 }
 .pcAgentBox {
   width: 100%;
@@ -195,7 +192,6 @@
   border-radius: 50%;
 }
 .propFilterDrop > div span {
-  font-family: "ClashDisplayBold";
   color: #fff;
   font-size: 16px;
 }

@@ -29,7 +29,6 @@
   font-size: 20px;
   color: #110c30;
   font-weight: 600;
-  font-family: "ClashDisplayBold";
   margin-bottom: 10px;
 }
 .brandProfileBox span {
@@ -61,7 +60,6 @@
 .proprteyTitle {
   font-size: 25px;
   color: #000;
-  font-family: "ClashDisplayBold";
 }
 .propOptiopBox {
   display: flex;
@@ -193,7 +191,6 @@
 .propDtalHeader {
   font-size: 25px;
   color: #000;
-  font-family: "ClashDisplay";
   font-weight: 600;
   margin-bottom: 20px;
 }
@@ -226,11 +223,14 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: wrap !important;
+}
+.AmenitiesSection .roomFasalityBox {
+  gap: 10px;
 }
 .roomFasalityItem {
+  width: max-content;
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -467,9 +467,7 @@
     gap: 20px;
     flex-wrap: nowrap;
   }
-  .whatNearSection .roomFasalityBox {
-    gap: 30px;
-  }
+
   .mapListBox {
     width: 50%;
   }

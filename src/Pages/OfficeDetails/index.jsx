@@ -209,8 +209,8 @@ export default function OfficeDetails({ navItem, setNavItem }) {
 
                   </div>
                   <div className="centerBtnBox">
-                    <BlackBtn height="50px"  width={200} btnText="see 113 units to buy" />
-                    <WhiteBtn height="50px"  width={200} btnText="see 224 units to rent" />
+                    <BlackBtn height="50px"  width={150} btnText="Buy" />
+                    <WhiteBtn height="50px"  width={150} btnText="Rent" />
                   </div>
                 </div>
               </div>

@@ -138,7 +138,6 @@
 }
 .mobileSideMenuList .navItem {
   font-size: 35px;
-  font-family: "ClashDisplayBold";
 }
 /* Tabe view */
 @media only screen and (min-width: 768px) {
