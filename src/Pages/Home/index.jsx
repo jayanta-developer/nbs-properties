@@ -19,7 +19,7 @@ import trust3 from "../../assets/Images/trust3.svg"
 import trust4 from "../../assets/Images/trust4.svg"
 import roundArrow from "../../assets/Images/roundArrow.svg"
 import crossWhite from "../../assets/Images/crossWhite.png"
-import buildingWhiteIcon from "../../assets/Images/buildingIcon.PNG"
+import buildingWhiteIcon from "../../assets/Images/buildingIconV2.png"
 
 
 //components
