@@ -6,7 +6,7 @@
   align-items: center;
 }
 .pbHeader {
-  font-size: 40px;
+  font-size: 25px;
   font-weight: 600;
   color: #121129;
 }
@@ -62,6 +62,9 @@
   .pbSubHeader {
     text-align: start;
   }
+  .pbHeader {
+    font-size: 30px;
+  }
 }
 /* Desktop view */
 @media only screen and (min-width: 1000px) {
@@ -71,5 +74,8 @@
   .cultureCard {
     min-width: 270px;
     width: 23%;
+  }
+  .pbHeader {
+    font-size: 40px;
   }
 }

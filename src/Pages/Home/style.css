@@ -181,7 +181,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 70px 20px;
+  padding: 70px 10px;
 }
 .SectionHeader {
   font-size: 28px;
@@ -605,6 +605,9 @@
   .trustCard samp {
     font-size: 16px;
   }
+  .serviceSection {
+    padding: 70px 20px;
+  }
 }
 /* Desktop view */
 @media only screen and (min-width: 1000px) {
@@ -683,8 +686,8 @@
     text-align: start;
   }
   .serviceSection .SectionHeader,
-.serviceSection .sectionSubText {
-  width: 100%;
-  text-align: center;
-}
+  .serviceSection .sectionSubText {
+    width: 100%;
+    text-align: center;
+  }
 }
