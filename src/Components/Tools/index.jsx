@@ -93,14 +93,14 @@ export const PropertiesSmallCard = ({ el }) => {
   )
 }
 
-export const PropertieBigCard = ({ img, bhk, sqft, location, price, psf, agentImg, agentName, onClick }) => {
+export const PropertieBigCard = ({ img, title, bhk, sqft, location, price, psf, agentImg, agentName, onClick }) => {
   return (
     <div onClick={onClick} className="propertieBigCard">
       <div className="propImgBox">
         <img src={img} alt="" />
       </div>
       <div className="proCInfoBox">
-        <p className='proCBTitle'>{bhk}BHK {sqft}  Sq-ft Flat For Sale </p>
+        <p className='proCBTitle'>{title}</p>
         <p className='propClocText'><img src={locationIcon} alt="" /> {location}</p>
         <div className="probCYlBox">
           <p className="propPrice">₹ {price}</p>
@@ -200,3 +200,10 @@ export const BlogCard = ({ onClick }) => {
     </div>
   )
 }
+
+
+export const Reloader = (del) => {
+  setTimeout(() => {
+    window.location.reload();
+  }, del);
+};

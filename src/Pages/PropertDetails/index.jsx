@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./style.css";
 
 //images
@@ -37,9 +37,16 @@ import { DropBox, PropertiesSmallCard, BlackBtn, WhiteBtn } from "../../Componen
 
 //data
 import { PropertiesData, questionList } from "../../assets/Data";
-
+import { FetchOneProperty } from "../../Store/PropertySlice"
+import { useDispatch, useSelector } from "react-redux";
 
 export default function PropertDetails({ navItem, setNavItem }) {
+  const propertyId = localStorage.getItem("propertyId")
+  const dispatch = useDispatch();
+  const { data, status } = useSelector((state) => state.properys);
+  console.log(data)
+  console.log(status)
+
   const [nearSectionTab, setNearSectionTab] = useState("Shopping");
   const [questionTab, setQuestionTab] = useState()
   const nearYourTabList = ["Saved Places", "Train", "Bus", "Shopping", "Food & Drink", "Bank", "Post Office"]
@@ -125,246 +132,299 @@ export default function PropertDetails({ navItem, setNavItem }) {
     }
   }
 
+
+
+
+  useEffect(() => {
+    dispatch(FetchOneProperty(propertyId));
+    if (data?.length < 0) {
+      dispatch(FetchOneProperty(propertyId));
+    }
+  }, [propertyId]);
   return (
     <>
       <NavBar navItem={navItem} setNavItem={setNavItem} />
       <div className="PropertListPage propertyDetailsPage">
 
-        <div className="propertMainSection">
-          <div className="propertieLeftSection">
-            <p className='pageNavText' >{"Home>Industrial>Balestier/Toa Payoh "}</p>
+        {status === "error" ?
+          <h2>Internal server error!</h2> :
+          status === "loading" ?
+            <h2>Loading...</h2> :
+            status === "idle" ?
+              <div className="propertMainSection">
+                <div className="propertieLeftSection">
+                  <p className='pageNavText' >{"Home>Industrial>Balestier/Toa Payoh "}</p>
 
-            <div className="propertySection">
-              <div className="propTitleNav">
-                <p className="proprteyTitle">2 BHK 791 Sq-ft Flat For Sale </p>
-                <div className="propOptiopBox">
-                  <p><img src={hartIcon} /> Shortlist</p>
-                  <p><img src={shareIcon} /> Share</p>
-                  <img src={optionIcon} />
-                </div>
-              </div>
-              <div className="propInBox">
-                <div className="propImgBox">
-                  <div className="propImgInBox1">
-                    <div className="propRow"><img src={PropertieIntImg} /></div>
-                    <div className="propRow"><img src={PropertieIntImg} /></div>
-                    <div className="propRow"><img src={PropertieIntImg} /></div>
-                  </div>
-                  <div className="propImgInBox2">
-                    <img src={PropertieIntImg} />
-                  </div>
+                  <div className="propertySection">
+                    <div className="propTitleNav">
+                      <p className="proprteyTitle">{data?.title}</p>
+                      <div className="propOptiopBox">
+                        <p><img src={hartIcon} /> Shortlist</p>
+                        <p><img src={shareIcon} /> Share</p>
+                        <img src={optionIcon} />
+                      </div>
+                    </div>
+                    <div className="propInBox">
+                      <div className="propImgBox">
+                        <div className="propImgInBox1">
+                          {/* {
+                            data?.images[1] ?
+                              <div className="propRow"><img src={data?.images[1]} /></div> :
+                              null
+                          }
+                          {
+                            data?.images[2] ?
+                              <div className="propRow"><img src={data?.images[2]} /></div> :
+                              null
+                          }
+                          {
+                            data?.images[3] ?
+                              <div className="propRow"><img src={data?.images[3]} /></div> :
+                              null
+                          } */}
+                          {
+                            data?.images?.slice(0, 3).map((img, i) => (
+                              <div className="propRow" key={i}><img src={img} /></div>
+                            ))
+                          }
 
-                </div>
-                <div className="propTextBox">
-                  <div className="propPriceBox">
-                    <p className='propPriceText'>$ 380,000</p>
-                    <div className="proceNotBox">
-                      <p>Negotiable</p>
+                        </div>
+                        <div className="propImgInBox2">
+                          {data?.images?.slice(0, 1).map((img, i) => (
+                            <img key={i} src={img} />
+                          ))}
+                        </div>
+
+                      </div>
+                      <div className="propTextBox">
+                        <div className="propPriceBox">
+                          <p className='propPriceText'>$ {data?.price}</p>
+                          <div className="proceNotBox">
+                            <p>Negotiable</p>
+                          </div>
+                        </div>
+
+                        {/* <p className="propNText">5 Soon Lee Street Boon Lay / Jurong / Tuas (D22)</p> */}
+                        <p className="propNText"><img src={locationIcon} /> {data?.address}</p>
+
+                        <div className="propFetuerBox">
+                          <div className="featuresBox">
+                            <img src={badIcon} />
+                            <p>Room <br /> <samp>{data?.room}</samp></p>
+                          </div>
+                          <div className="featuresBox">
+                            <img src={bathroomIcon} />
+                            <p>Bathroom <br /> <samp>{data?.bath}</samp></p>
+                          </div>
+                          <div className="featuresBox">
+                            <img src={BalconyIcon} />
+                            <p>Balcony <br /> <samp>1</samp></p>
+                          </div>
+                        </div>
+
+                        <div className="propBotomInfoBox">
+                          <div className="propBtomIBox">
+                            <p>Build-Up-Area</p>
+                            <span>{data?.area} sqft</span>
+                          </div>
+                          <div className="propBtomIBox">
+                            <p>Developer</p>
+                            <span>{data?.propertyType
+                            }</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div className="propMDetailsSection">
+                      <p className="propDtalHeader">About This Home</p>
+                      <p className="propMDSubText1">{data?.summary}</p>
+
+                      <p className="propSeemore">Show More {">>"}</p>
+
+
+                      <div className="propBotomInfoBox">
+                        <div className="propBtomIBox">
+                          <p>Property Type</p>
+                          <span>{data?.propertyType}</span>
+                        </div>
+                        <div className="propBtomIBox">
+                          <p>Floor Size</p>
+                          <span>{data?.foolrSize} sqft</span>
+                        </div>
+                        <div className="propBtomIBox">
+                          <p>Furnishing</p>
+                          <span>Fully Fitted</span>
+                        </div>
+                        {/* <div className="propBtomIBox">
+                          <p>PSF</p>
+                          <span>$ 392.16 psf</span>
+                        </div> */}
+                        <div className="propBtomIBox">
+                          <p>Currently Tenanted</p>
+                          <span>Until 31 Aug 2025</span>
+                        </div>
+                        <div className="propBtomIBox">
+                          <p>Tenure</p>
+                          <span>30-year Leasehold</span>
+                        </div>
+                        <div className="propBtomIBox">
+                          <p>Listed On</p>
+                          <span>{data?.listedOn}</span>
+                        </div>
+                        <div className="propBtomIBox">
+                          <p>Listing ID</p>
+                          <span>25345514</span>
+                        </div>
+                      </div>
+
+                      <div className="centerBtnBox">
+                        <BlackBtn height="50px" width="200px" btnText="Contact Agent" />
+                      </div>
                     </div>
                   </div>
 
-                  <p className="propNText">5 Soon Lee Street Boon Lay / Jurong / Tuas (D22)</p>
-                  <p className="propNText"><img src={locationIcon} /> Location would be hereRuby Park</p>
 
-                  <div className="propFetuerBox">
-                    <div className="featuresBox">
-                      <img src={badIcon} />
-                      <p>Beds <br /> <samp>2</samp></p>
+                  <div className="propertySection AmenitiesSection">
+                    <p className="propDtalHeader">Amenities</p>
+                    {/* <div className="roomFasalityBox ">
+                      <div className="roomFasalityItem">
+                        <img src={airConditionerIcon} />
+                        <p>Air-Conditioning</p>
+                      </div>
+                      <div className="roomFasalityItem">
+                        <img src={carParkingIcon} />
+                        <p>Car Parking</p>
+                      </div>
+                      <div className="roomFasalityItem">
+                        <img src={cctvIcon} />
+                        <p>CCTV Security</p>
+                      </div>
+                      <div className="roomFasalityItem">
+                        <img src={availabilityIcon} />
+                        <p>24-hour access</p>
+                      </div>
+                    </div> */}
+                    <div className="roomFasalityBox ">
+                      {
+                        data?.amenities?.map((an, i) => (
+                          <div className="roomFasalityItem" key={i}>
+                            {/* <img src={airConditionerIcon} /> */}
+                            <p>{an}</p>
+                          </div>
+                        ))
+                      }
+
                     </div>
-                    <div className="featuresBox">
-                      <img src={bathroomIcon} />
-                      <p>Bathroom <br /> <samp>2</samp></p>
-                    </div>
-                    <div className="featuresBox">
-                      <img src={BalconyIcon} />
-                      <p>Balcony <br /> <samp>1</samp></p>
+                    <div className="centerBtnBox">
+                      <BlackBtn height="50px" width="200px" btnText="View all Amenities" />
+                      <WhiteBtn height="50px" width="240px" btnText="Download Brochure" />
                     </div>
                   </div>
 
-                  <div className="propBotomInfoBox">
-                    <div className="propBtomIBox">
-                      <p>Build-Up-Area</p>
-                      <span>969 sqft (S$ 392 psf)</span>
+                  <div className="propertySection whatNearSection">
+                    <p className="propDtalHeader">What's nearby</p>
+                    <div className="roomFasalityBox">
+                      {
+                        nearYourTabList?.map((el, i) => (
+                          <div className={nearSectionTab === el ? "nearSectionTab nearSectionTabActive" : "nearSectionTab"} onClick={() => setNearSectionTab(el)} key={i}><p>{el}</p></div>
+                        ))
+                      }
                     </div>
-                    <div className="propBtomIBox">
-                      <p>Developer</p>
-                      <span>Factory / Workshop (B2)</span>
+                    <div className="mapOuterBox">
+                      <div className="mapListBox">
+                        <LocationNearShop title="HardwareCity Pioneer Junction" dist="390" />
+                        <LocationNearShop title="AB Minimart" dist="720" />
+                        <LocationNearShop title="AB Minimart" dist="720" />
+                        <LocationNearShop title="Li Li Cheng Minimart" dist="500" />
+                        <LocationNearShop title="Pioneer Mall" dist="500" />
+                        <LocationNearShop title="Giant Hypermarket" dist="280" />
+                      </div>
+                      <div className="mapBox">
+                        <img src={mapImg} alt="" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
+
+                  <div className="propertySection">
+                    <p className="propDtalHeader">Contact with Agent</p>
+                    <div className="agentBox">
+                      <div className="agImgBox">
+                        <img src={agentImg} alt="agentImg" />
+                      </div>
+                      <div className="agInfoBox">
+                        <h2>Ikey Advisor</h2>
+                        <p>Sr. Consultant</p>
+                        <p>Responds quickly in <span>15 mins</span></p>
+                      </div>
+                    </div>
+
+                    <h2 className='agLabelText'>Whats' your enquiry about?</h2>
+                    <div className="agCheckBox">
+                      <div className="checkBox">
+                        <input type="checkBox" />
+                        <p>Scheduling Inspection</p>
+                      </div>
+                      <div className="checkBox">
+                        <input type="checkBox" />
+                        <p>Price Information</p>
+                      </div>
+                      <div className="checkBox">
+                        <input type="checkBox" />
+                        <p>Booking</p>
+                      </div>
+                    </div>
 
 
-              <div className="propMDetailsSection">
-                <p className="propDtalHeader">About This Home</p>
-                <p className="propMDSubText1">NBS developers llp has lauched passcode one vikhroli in vikhroli east, mumbai. It offers under construction units. Popular configurations include 1 bhk, 1.5 bhk, 2 bhk, 2.5 bhk units. As per the area plan, units are in the size range of 398.0 - 697.0 sq.Ft.. The possession date of passcode one vikhroli is dec, 2026. The address of passcode one vikhroli is vikhroli.</p>
+                    <div className="inputBox agInput">
+                      <p>Email Address *</p>
+                      <input type="text" />
+                    </div>
+                    <div className="inputBox agInput">
+                      <p>Message *</p>
+                      <textarea type="text" />
+                    </div>
+                    <BlackBtn btnText="Submit" height="40px" width="200px" />
 
-                <p className="propSeemore">Show More {">>"}</p>
-
-
-                <div className="propBotomInfoBox">
-                  <div className="propBtomIBox">
-                    <p>Property Type</p>
-                    <span>Factory / Workshop (B2) For Sale</span>
                   </div>
-                  <div className="propBtomIBox">
-                    <p>Floor Size</p>
-                    <span>969 sqft</span>
+
+
+                  <div className="propertySection">
+                    <p className="propDtalHeader">Frequently Asked Questions</p>
+                    <div className="questionTabBox">
+                      {
+                        questionList?.map((el, i) => (
+                          <QuestionRow title={el.title} summery={el.summery} key={i} setQuestionTab={setQuestionTab} questionTab={questionTab} i={i} />
+                        ))
+                      }
+                    </div>
                   </div>
-                  <div className="propBtomIBox">
-                    <p>Furnishing</p>
-                    <span>Fully Fitted</span>
+
+
+                </div>
+                <div className="propertieRightSection">
+                  <div className="brandProfileBox">
+                    <div className="avatarBox">
+                      <img src={Avatar} />
+                    </div>
+                    <p className='brandTitle'>Brendon Kuay</p>
+                    <span>ERA REALTY NETWORK PTE LTD</span>
+                    <span>CEA: R017302B / L3002382K</span>
+                    <BlackBtn btnText="WhatsApp Web" width="200px" height="40px" />
                   </div>
-                  <div className="propBtomIBox">
-                    <p>PSF</p>
-                    <span>$ 392.16 psf</span>
-                  </div>
-                  <div className="propBtomIBox">
-                    <p>Currently Tenanted</p>
-                    <span>Until 31 Aug 2025</span>
-                  </div>
-                  <div className="propBtomIBox">
-                    <p>Tenure</p>
-                    <span>30-year Leasehold</span>
-                  </div>
-                  <div className="propBtomIBox">
-                    <p>Listed On</p>
-                    <span>7 Nov 2024</span>
-                  </div>
-                  <div className="propBtomIBox">
-                    <p>Listing ID</p>
-                    <span>25345514</span>
-                  </div>
+
+
+                  <img src={sbiBannar} className='sbiBannar' />
                 </div>
-
-                <div className="centerBtnBox">
-                  <BlackBtn height="50px" width="200px" btnText="Contact Agent" />
-                </div>
-              </div>
-            </div>
+              </div> : null
 
 
-            <div className="propertySection AmenitiesSection">
-              <p className="propDtalHeader">Amenities</p>
-              <div className="roomFasalityBox ">
-                <div className="roomFasalityItem">
-                  <img src={airConditionerIcon} />
-                  <p>Air-Conditioning</p>
-                </div>
-                <div className="roomFasalityItem">
-                  <img src={carParkingIcon} />
-                  <p>Car Parking</p>
-                </div>
-                <div className="roomFasalityItem">
-                  <img src={cctvIcon} />
-                  <p>CCTV Security</p>
-                </div>
-                <div className="roomFasalityItem">
-                  <img src={availabilityIcon} />
-                  <p>24-hour access</p>
-                </div>
-              </div>
-              <div className="centerBtnBox">
-                <BlackBtn height="50px" width="200px" btnText="View all Amenities" />
-                <WhiteBtn height="50px" width="240px" btnText="Download Brochure" />
-              </div>
-            </div>
-
-            <div className="propertySection whatNearSection">
-              <p className="propDtalHeader">What's nearby</p>
-              <div className="roomFasalityBox">
-                {
-                  nearYourTabList?.map((el, i) => (
-                    <div className={nearSectionTab === el ? "nearSectionTab nearSectionTabActive" : "nearSectionTab"} onClick={() => setNearSectionTab(el)} key={i}><p>{el}</p></div>
-                  ))
-                }
-              </div>
-              <div className="mapOuterBox">
-                <div className="mapListBox">
-                  <LocationNearShop title="HardwareCity Pioneer Junction" dist="390" />
-                  <LocationNearShop title="AB Minimart" dist="720" />
-                  <LocationNearShop title="AB Minimart" dist="720" />
-                  <LocationNearShop title="Li Li Cheng Minimart" dist="500" />
-                  <LocationNearShop title="Pioneer Mall" dist="500" />
-                  <LocationNearShop title="Giant Hypermarket" dist="280" />
-                </div>
-                <div className="mapBox">
-                  <img src={mapImg} alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div className="propertySection">
-              <p className="propDtalHeader">Contact with Agent</p>
-              <div className="agentBox">
-                <div className="agImgBox">
-                  <img src={agentImg} alt="agentImg" />
-                </div>
-                <div className="agInfoBox">
-                  <h2>Ikey Advisor</h2>
-                  <p>Sr. Consultant</p>
-                  <p>Responds quickly in <span>15 mins</span></p>
-                </div>
-              </div>
-
-              <h2 className='agLabelText'>Whats' your enquiry about?</h2>
-              <div className="agCheckBox">
-                <div className="checkBox">
-                  <input type="checkBox" />
-                  <p>Scheduling Inspection</p>
-                </div>
-                <div className="checkBox">
-                  <input type="checkBox" />
-                  <p>Price Information</p>
-                </div>
-                <div className="checkBox">
-                  <input type="checkBox" />
-                  <p>Booking</p>
-                </div>
-              </div>
+        }
 
 
-              <div className="inputBox agInput">
-                <p>Email Address *</p>
-                <input type="text" />
-              </div>
-              <div className="inputBox agInput">
-                <p>Message *</p>
-                <textarea type="text" />
-              </div>
-              <BlackBtn btnText="Submit" height="40px" width="200px" />
-
-            </div>
 
 
-            <div className="propertySection">
-              <p className="propDtalHeader">Frequently Asked Questions</p>
-              <div className="questionTabBox">
-                {
-                  questionList?.map((el, i) => (
-                    <QuestionRow title={el.title} summery={el.summery} key={i} setQuestionTab={setQuestionTab} questionTab={questionTab} i={i} />
-                  ))
-                }
-              </div>
-            </div>
-
-
-          </div>
-          <div className="propertieRightSection">
-            <div className="brandProfileBox">
-              <div className="avatarBox">
-                <img src={Avatar} />
-              </div>
-              <p className='brandTitle'>Brendon Kuay</p>
-              <span>ERA REALTY NETWORK PTE LTD</span>
-              <span>CEA: R017302B / L3002382K</span>
-              <BlackBtn btnText="WhatsApp Web" width="200px" height="40px" />
-            </div>
-
-
-            <img src={sbiBannar} className='sbiBannar' />
-          </div>
-        </div>
         {/* Available Properties */}
         <div className="AbelPropt">
           <p className='SectionHeader'>Similar Listings</p>

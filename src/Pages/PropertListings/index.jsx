@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./style.css";
 import Select from 'react-select';
 
@@ -24,10 +24,14 @@ import Footer from '../../Components/Footer';
 import { DropBox, PropertiesSmallCard, PropertieBigCard, BlackBtn, GoTop } from "../../Components/Tools";
 
 //data
-// import { PropertiesData } from "../../assets/Data";
-
+import { FetchProperty } from "../../Store/PropertySlice"
+import { useDispatch, useSelector } from "react-redux";
 
 export default function PropertListings({ navItem, setNavItem }) {
+  const dispatch = useDispatch();
+  const { data, status } = useSelector((state) => state.properys);
+
+
   const navigate = useNavigate()
   const [sortDrop, setSortDrop] = useState(false)
   const [sortDropVal, setSortDropVal] = useState("Sort by: Relevance")
@@ -47,11 +51,7 @@ export default function PropertListings({ navItem, setNavItem }) {
   const PropertyType = ["Apartments", "villas", "Commercia", "Plot A", "Plot B"];
   const PropertySize = ["22,215 sq.ft", "30,928 sq.ft", "24,394 sq.ft", "19,166 sq.ft", "34,200 sq.ft"];
   const PropertyBudget = ["15,000", "24,000", "30,000"];
-  const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-  ];
+
   const proData1 = {
     img: propertieImg1,
     location: "Matunga East, Mumbai, Maharastra, 720156 ",
@@ -172,7 +172,12 @@ export default function PropertListings({ navItem, setNavItem }) {
     if (e.key === "Enter") handelChipsAdd()
   })
 
-
+  useEffect(() => {
+    dispatch(FetchProperty());
+    if (data?.length < 0) {
+      dispatch(FetchProperty());
+    }
+  }, []);
   return (
     <>
       <NavBar navItem={navItem} setNavItem={setNavItem} />
@@ -222,23 +227,47 @@ export default function PropertListings({ navItem, setNavItem }) {
               <DropBox dropList={sortDropList} label="Sort by" setDropVal={setSortDropVal} />
             </div>
             <div className="propertiesListBox">
-              {
-                propertiesData?.map((el, i) => (
-                  <PropertieBigCard key={i} price={el.price} location={el.location} sqft={el.SQFT} bhk={el.BHK} psf={el.PSF} img={el.img} agentImg={el.agentImg} agentName={el.agentName} onClick={() => {
-                    navigate("/property-details")
-                    GoTop()
-                  }} />
+              {data.length &&
+                data?.map((el, i) => (
+                  <PropertieBigCard
+                    key={i}
+                    img={el?.images[0]}
+                    price={el.price}
+                    title={el.title}
+                    location={el.address}
+                    sqft={el.area}
+                    psf={el.foolrSize}
+                    agentImg={userImg}
+                    agentName="Amit"
+                    onClick={() => {
+                      localStorage.setItem("propertyId", el._id)
+                      navigate("/property-details")
+                      GoTop()
+                    }}
+                  />
                 ))
               }
             </div>
             <img src={propertyCoverImg} className='propertyCoverImg' />
             <div className="propertiesListBox">
-              {
-                propertiesData?.splice(0, 2).map((el, i) => (
-                  <PropertieBigCard key={i} price={el.price} location={el.location} sqft={el.SQFT} bhk={el.BHK} psf={el.PSF} img={el.img} agentImg={el.agentImg} agentName={el.agentName} onClick={() => {
-                    navigate("/property-details")
-                    GoTop()
-                  }} />
+              {data.length &&
+                data?.map((el, i) => (
+                  <PropertieBigCard
+                    key={i}
+                    img={el?.images[0]}
+                    price={el.price}
+                    title={el.title}
+                    location={el.address}
+                    sqft={el.area}
+                    psf={el.foolrSize}
+                    agentImg={userImg}
+                    agentName="Amit"
+                    onClick={() => {
+                      localStorage.setItem("propertyId", el._id)
+                      navigate("/property-details")
+                      GoTop()
+                    }}
+                  />
                 ))
               }
             </div>
