@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./style.css";
 import Select from 'react-select';
 
+
 //images
 import propertyCoverImg from "../../assets/Images/propertyCoverImg.png";
 import sbiBannar from "../../assets/Images/sbiBannar.png"
@@ -30,9 +31,10 @@ import { useDispatch, useSelector } from "react-redux";
 export default function PropertListings({ navItem, setNavItem }) {
   const dispatch = useDispatch();
   const { data, status } = useSelector((state) => state.properys);
-
-
   const navigate = useNavigate()
+  console.log(data);
+
+
   const [sortDrop, setSortDrop] = useState(false)
   const [sortDropVal, setSortDropVal] = useState("Sort by: Relevance")
   const sortDropList = ["Sort by: Relevance", "Sort by: Item1", "Sort by: item2"]
@@ -249,38 +251,19 @@ export default function PropertListings({ navItem, setNavItem }) {
               }
             </div>
             <img src={propertyCoverImg} className='propertyCoverImg' />
-            <div className="propertiesListBox">
-              {data.length &&
-                data?.map((el, i) => (
-                  <PropertieBigCard
-                    key={i}
-                    img={el?.images[0]}
-                    price={el.price}
-                    title={el.title}
-                    location={el.address}
-                    sqft={el.area}
-                    psf={el.foolrSize}
-                    agentImg={userImg}
-                    agentName="Amit"
-                    onClick={() => {
-                      localStorage.setItem("propertyId", el._id)
-                      navigate("/property-details")
-                      GoTop()
-                    }}
-                  />
-                ))
-              }
-            </div>
+
           </div>
           <div className="propertieRightSection">
             <img src={sbiBannar} className='sbiBannar' />
             <div className="rightPropertieBox">
               <p className="propertiesSideHeader">Rent Flats Near You</p>
-              {
-                propertiesData?.splice(0, 2).map((el, i) => (
-                  <PropertiesSmallCard el={el} key={i} />
-                ))
-              }
+              {data?.slice(0, 2)?.map((el, i) => (
+                <PropertiesSmallCard {...el} key={i} onClick={() => {
+                  localStorage.setItem("propertyId", el?._id)
+                  navigate("/property-details")
+                  GoTop()
+                }} />
+              ))}
             </div>
           </div>
         </div>
@@ -290,14 +273,20 @@ export default function PropertListings({ navItem, setNavItem }) {
           <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
           <div className="propertieCardBox">
             <div className="propertieCardBox">
-              <PropertiesSmallCard el={proData1} />
-              <PropertiesSmallCard el={proData2} />
-              <PropertiesSmallCard el={proData3} />
-              <PropertiesSmallCard el={proData4} />
+              {data?.slice(0, 4)?.map((el, i) => (
+                <PropertiesSmallCard {...el} key={i} onClick={() => {
+                  localStorage.setItem("propertyId", el?._id)
+                  navigate("/property-details")
+                  GoTop()
+                }} />
+              ))}
             </div>
           </div>
           <div className="centerBtnBox">
-            <BlackBtn height="50px" width="200px" btnText="Explore All" />
+            <BlackBtn height="50px" width="200px" btnText="Explore All" onClick={() => {
+              navigate("/properties")
+              GoTop()
+            }} />
           </div>
         </div>
 

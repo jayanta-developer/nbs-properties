@@ -9,7 +9,7 @@ import BlogBanner from "../../assets/Images/BlogCoverPhoto.png"
 //components
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
-import { BlackBtn, PropertiesSmallCard } from "../../Components/Tools";
+import { PropertiesSmallCard } from "../../Components/Tools";
 
 
 //data
@@ -43,11 +43,11 @@ export default function FandB({ navItem, setNavItem }) {
           <p className='SectionHeader'>Available Banquet Hall Near You</p>
           <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
           <div className="propertieCardBox">
-            {
+            {/* {
               PropertiesData?.splice(0, 4).map((el, i) => (
                 <PropertiesSmallCard el={el} key={i} />
               ))
-            }
+            } */}
           </div>
         </div>
       </div>

@@ -18,8 +18,8 @@ interface OfficeDataType {
   address: string;
   amenities: string[];
   map: {
-    lat: Number;
-    lng: Number;
+    lat: number;
+    lng: number;
   };
   images: string[];
   price: string;
@@ -41,6 +41,15 @@ export const FetchOffice = createAsyncThunk<OfficeDataType[]>(
   "office/fetch",
   async () => {
     const response = await fetch(`${baseURL}/office`);
+    const data = await response.json();
+    return data;
+  }
+);
+
+export const FetchOneOffice = createAsyncThunk<OfficeDataType, string>(
+  "One office/fetch",
+  async (id) => {
+    const response = await fetch(`${baseURL}/office/${id}`);
     const data = await response.json();
     return data;
   }
@@ -99,6 +108,17 @@ const officeSlice = createSlice({
         state.status = STATUSES.IDLE;
       })
       .addCase(FetchOffice.rejected, (state) => {
+        state.status = STATUSES.ERROR;
+      })
+
+      .addCase(FetchOneOffice.pending, (state) => {
+        state.status = STATUSES.LOADING;
+      })
+      .addCase(FetchOneOffice.fulfilled, (state, action) => {
+        state.data = [action.payload]; // 👈 put the single object inside an array
+        state.status = STATUSES.IDLE;
+      })
+      .addCase(FetchOneOffice.rejected, (state) => {
         state.status = STATUSES.ERROR;
       });
   },

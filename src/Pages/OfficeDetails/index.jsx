@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./style.css";
+import { useNavigate } from "react-router-dom";
 
 //images
 import hartIcon from "../../assets/Images/heartIcon.svg"
@@ -20,10 +21,21 @@ import propertieImg4 from "../../assets/Images/propertieImg4.png";
 //components
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
-import { DropBox, PropertiesSmallCard, BlackBtn, WhiteBtn, AgentCard, RatingBox } from "../../Components/Tools"
+import { DropBox, PropertiesSmallCard, BlackBtn, WhiteBtn, AgentCard, RatingBox, GoTop } from "../../Components/Tools"
+import GoogleMapComponent from "../../Components/Map"
 
+import { FetchOneOffice, FetchOffice } from "../../Store/OfficeSlice"
+import { useDispatch, useSelector } from "react-redux";
 
 export default function OfficeDetails({ navItem, setNavItem }) {
+  const navigate = useNavigate()
+  const currentOfficeId = localStorage.getItem("officeIndex")
+
+
+  const dispatch = useDispatch();
+  const { data, status } = useSelector((state) => state.office);
+  const currentOffice = data?.find((val) => val._id === currentOfficeId)
+
   const [nearSectionTab, setNearSectionTab] = useState("Shopping");
   const [questionTab, setQuestionTab] = useState()
   const nearYourTabList = ["Saved Places", "Train", "Bus", "Shopping", "Food & Drink", "Bank", "Post Office"]
@@ -161,6 +173,14 @@ export default function OfficeDetails({ navItem, setNavItem }) {
     }
   }
 
+
+  useEffect(() => {
+    dispatch(FetchOffice());
+    if (data?.length < 0) {
+      dispatch(FetchOffice());
+    }
+  }, []);
+
   return (
     <>
       <NavBar navItem={navItem} setNavItem={setNavItem} />
@@ -172,7 +192,7 @@ export default function OfficeDetails({ navItem, setNavItem }) {
 
             <div className="propertySection">
               <div className="propTitleNav">
-                <p className="proprteyTitle">Suntec City Tower</p>
+                <p className="proprteyTitle">{currentOffice?.title}</p>
                 <div className="propOptiopBox">
                   <p><img src={hartIcon} /> Shortlist</p>
                   <p><img src={shareIcon} /> Share</p>
@@ -182,35 +202,39 @@ export default function OfficeDetails({ navItem, setNavItem }) {
               <div className="propInBox">
                 <div className="propImgBox">
                   <div className="propImgInBox1">
-                    <div className="propRow"><img src={PropertieIntImg} /></div>
-                    <div className="propRow"><img src={PropertieIntImg} /></div>
-                    <div className="propRow"><img src={PropertieIntImg} /></div>
+                    <div className="propRow"><img src={currentOffice?.images[1]} /></div>
+                    <div className="propRow"><img src={currentOffice?.images[2]} /></div>
+                    <div className="propRow"><img src={currentOffice?.images[3]} /></div>
                   </div>
                   <div className="propImgInBox2">
-                    <img src={PropertieIntImg} />
+                    <img src={currentOffice?.images[0]} />
                   </div>
 
                 </div>
                 <div className="propTextBox">
                   <div className="propPriceBox">
-                    <p className='propPriceText'>S$ 6,080,000 ~  S$ 206,500,000</p>
+                    <p className='propPriceText'>{currentOffice?.price}</p>
                     <div className="proceNotBox">
                       <p>Office</p>
                     </div>
                   </div>
 
-                  <p className="propNText"><img src={locationIcon} /> Temasek Boulevard, 038389, Boat Quay / Raffles Place / Marina (D01)</p>
+                  <p className="propNText"><img src={locationIcon} /> {currentOffice?.address}</p>
 
                   <div className="propBotomInfoBox">
                     <div className="propBtomIBox">
+                      <p>Configuration</p>
+                      <span>{currentOffice?.configuration || "Suntec City Tower"}</span>
+                    </div>
+                    <div className="propBtomIBox">
                       <p>Build-Up-Area</p>
-                      <span>969 sqft (S$ 392 psf)</span>
+                      <span>{currentOffice?.ERACarpetArea || "969 sqft (S$ 392 psf)"}</span>
                     </div>
 
                   </div>
                   <div className="centerBtnBox">
-                    <BlackBtn height="50px"  width={150} btnText="Buy" />
-                    <WhiteBtn height="50px"  width={150} btnText="Rent" />
+                    <BlackBtn height="50px" width={150} btnText="Buy" />
+                    <WhiteBtn height="50px" width={150} btnText="Rent" />
                   </div>
                 </div>
               </div>
@@ -218,51 +242,61 @@ export default function OfficeDetails({ navItem, setNavItem }) {
 
               <div className="propMDetailsSection">
                 <p className="propDtalHeader">More details</p>
-                <p className="propMDSubText1">Suntec City Tower is a commercial property located at 9 Temasek Boulevard, Singapore 038989 in District 01. This commercial space is primarily used for Office rental and sale. Suntec City Tower is close to Promenade MRT Station, Esplanade MRT Station and Bugis MRT Station. It is near several bus stops located Bus Stop Suntec City - 80159, Bus Stop Suntec Tower Two - 02141 and Bus Stop Suntec ........</p>
+                <p className="propMDSubText1">{currentOffice?.overview}</p>
 
                 <p className="propSeemore">Show More {">>"}</p>
 
 
                 <div className="propBotomInfoBox">
                   <div className="propBtomIBox">
-                    <p>Project Name</p>
-                    <span>Suntec City Tower</span>
+                    <p>Configuration</p>
+                    <span>{currentOffice?.configuration || "Suntec City Tower"}</span>
                   </div>
                   <div className="propBtomIBox">
-                    <p>Project Type</p>
-                    <span>Office</span>
+                    <p>RERA Carpet Area</p>
+                    <span>{currentOffice?.RERACarpetArea}</span>
                   </div>
                   <div className="propBtomIBox">
-                    <p>Developer</p>
-                    <span>N/A</span>
+                    <p>Ready To Posses</p>
+                    <span>{currentOffice?.ReadyToPosses}</span>
                   </div>
                   <div className="propBtomIBox">
-                    <p>Tenure</p>
-                    <span>N/A</span>
+                    <p>Average Priceper sqft</p>
+                    <span>{data?.AveragePricepersqft}</span>
                   </div>
                   <div className="propBtomIBox">
-                    <p>PSM</p>
-                    <span>S$ 2,604 - S$ 4,123</span>
+                    <p>RERA ID</p>
+                    <span>{currentOffice?.RERAID}</span>
                   </div>
-                  <div className="propBtomIBox">
-                    <p>Completion Year</p>
-                    <span>N/A</span>
-                  </div>
-                  <div className="propBtomIBox">
-                    <p># of Floors</p>
-                    <span>N/A</span>
-                  </div>
-                  <div className="propBtomIBox">
-                    <p>Total Units</p>
-                    <span>N/A</span>
-                  </div>
+
                 </div>
 
                 <div className="centerBtnBox">
-                  <BlackBtn height="50px"  width={200} btnText="Contact Agent" />
+                  <BlackBtn height="50px" width={200} btnText="Contact Agent" />
                 </div>
               </div>
             </div>
+
+
+            <div className="propertySection AmenitiesSection">
+              <p className="propDtalHeader">Amenities</p>
+              <div className="roomFasalityBox ">
+                {
+                  currentOffice?.amenities?.map((an, i) => (
+                    <div className="roomFasalityItem" key={i}>
+                      <p>{an}</p>
+                    </div>
+                  ))
+                }
+
+              </div>
+              <div className="centerBtnBox">
+                {/* <BlackBtn height="50px" width="200px" btnText="View all Amenities" /> */}
+                {/* <WhiteBtn height="50px" width="240px" btnText="Download Brochure" /> */}
+              </div>
+            </div>
+
+
 
             {/* agents row section */}
 
@@ -282,15 +316,15 @@ export default function OfficeDetails({ navItem, setNavItem }) {
 
             <div className="propertySection whatNearSection">
               <p className="propDtalHeader">What's nearby</p>
-              <div className="roomFasalityBox">
+              {/* <div className="roomFasalityBox">
                 {
                   nearYourTabList?.map((el, i) => (
                     <div className={nearSectionTab === el ? "nearSectionTab nearSectionTabActive" : "nearSectionTab"} onClick={() => setNearSectionTab(el)} key={i}><p>{el}</p></div>
                   ))
                 }
-              </div>
+              </div> */}
               <div className="mapOuterBox">
-                <div className="mapListBox">
+                {/* <div className="mapListBox">
                   <LocationNearShop title="HardwareCity Pioneer Junction" dist="390" />
                   <LocationNearShop title="AB Minimart" dist="720" />
                   <LocationNearShop title="AB Minimart" dist="720" />
@@ -300,7 +334,9 @@ export default function OfficeDetails({ navItem, setNavItem }) {
                 </div>
                 <div className="mapBox">
                   <img src={mapImg} alt="" />
-                </div>
+                </div> */}
+
+                <GoogleMapComponent lat={currentOffice?.map?.lat} lng={currentOffice?.map?.lng} />
               </div>
             </div>
 
@@ -351,13 +387,19 @@ export default function OfficeDetails({ navItem, setNavItem }) {
           <p className='SectionHeader'>Available Units</p>
           <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
           <div className="propertieCardBox">
-            <PropertiesSmallCard el={proData1} />
-            <PropertiesSmallCard el={proData2} />
-            <PropertiesSmallCard el={proData3} />
-            <PropertiesSmallCard el={proData4} />
+            {data?.map((el, i) => (
+              <PropertiesSmallCard {...el} key={i} onClick={() => {
+                localStorage.setItem("officeIndex", el?._id)
+                navigate("/office-details")
+                GoTop()
+              }} />
+            ))}
           </div>
           <div className="centerBtnBox">
-            <BlackBtn height="50px" width={200} btnText="Explore All" />
+            <BlackBtn height="50px" width={200} btnText="Explore All" onClick={() => {
+              navigate("/office")
+              GoTop()
+            }} />
           </div>
         </div>
 

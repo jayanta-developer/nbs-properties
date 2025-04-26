@@ -359,11 +359,13 @@ export default function Office({ navItem, setNavItem }) {
             <img src={sbiBannar} className='sbiBannar' />
             <div className="rightPropertieBox">
               <p className="propertiesSideHeader">Rent Flats Near You</p>
-              {
-                PropertiesData?.splice(0, 2).map((el, i) => (
-                  <PropertiesSmallCard el={el} key={i} />
-                ))
-              }
+              {data?.map((el, i) => (
+                <PropertiesSmallCard {...el} key={i}   onClick={() => {
+                  localStorage.setItem("officeIndex", el?._id)
+                  navigate("/office-details")
+                  GoTop()
+                }}/>
+              ))}
             </div>
           </div>
         </div>
@@ -387,33 +389,23 @@ export default function Office({ navItem, setNavItem }) {
         </div>
 
 
-
-        {/* Available Properties */}
-        <div className="AbelPropt">
-          <p className='SectionHeader'>Latest Office Space for Sale</p>
-          <div className="propertieCardBox">
-            <PropertiesSmallCard el={proData1} />
-            <PropertiesSmallCard el={proData2} />
-            <PropertiesSmallCard el={proData3} />
-            <PropertiesSmallCard el={proData4} />
-          </div>
-          <div className="centerBtnBox">
-            <BlackBtn height="50px" width={200} btnText="Explore All" />
-          </div>
-        </div>
-
-
         {/* Available Properties */}
         <div className="AbelPropt">
           <p className='SectionHeader'>Latest Office Space for Rent</p>
           <div className="propertieCardBox">
-            <PropertiesSmallCard el={proData1} />
-            <PropertiesSmallCard el={proData2} />
-            <PropertiesSmallCard el={proData3} />
-            <PropertiesSmallCard el={proData4} />
+            {data?.map((el, i) => (
+              <PropertiesSmallCard {...el} key={i}   onClick={() => {
+                localStorage.setItem("officeIndex", el?._id)
+                navigate("/office-details")
+                GoTop()
+              }}/>
+            ))}
           </div>
           <div className="centerBtnBox">
-            <BlackBtn height="50px" width={200} btnText="Explore All" />
+            <BlackBtn height="50px" width={200} btnText="Explore All" onClick={() => {
+              navigate("/office")
+              GoTop()
+            }} />
           </div>
         </div>
 

@@ -75,19 +75,22 @@ export const DropBox = ({ icon, setDropVal, dropList, label }) => {
 
 export const GoTop = () => window.scrollTo({ top: 0, behavior: "smooth" })
 
-export const PropertiesSmallCard = ({ el }) => {
+export const PropertiesSmallCard = ({ images, RERACarpetArea, price, ReadyToPosses, address, onClick
+}) => {
+
   return (
-    <div className="propertieCard">
+    <div className="propertieCard" onClick={onClick}>
       <div className="propImgBox">
-        <img src={el?.img} alt="" />
+        <img src={images[0]} alt="" />
       </div>
       <div className="propInfoBox">
         <div className="propAriyaInfo">
-          <p>{el?.BHK} BHK Flat</p>
-          <p>{el?.SQFT} sqft</p>
+          <p>Ready at {ReadyToPosses}</p>
+          <p>{RERACarpetArea} sqft</p>
         </div>
-        <p className="propPrice">{el?.price} Cr <samp>Onwards</samp></p>
-        <p className="propLocation">{el?.location}</p>
+        <p className="propPrice">{price} Cr <samp>Onwards</samp></p>
+        <p className="propLocation">{address.slice(0, 50)
+        }...</p>
       </div>
     </div>
   )

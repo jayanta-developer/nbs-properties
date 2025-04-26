@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import "./style.css";
+import { useNavigate } from "react-router-dom";
+
+
 
 //images
 import sbiBannar from "../../assets/Images/sbiBannar.png";
@@ -27,23 +30,26 @@ import propertieImg1 from "../../assets/Images/propertieImg1.png";
 import propertieImg2 from "../../assets/Images/propertieImg2.png";
 import propertieImg3 from "../../assets/Images/propertieImg3.png";
 import propertieImg4 from "../../assets/Images/propertieImg4.png";
-import propertieImg5 from "../../assets/Images/propertieImg5.png";
-import propertieImg6 from "../../assets/Images/propertieImg6.png";
+
 
 //components
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
-import { DropBox, PropertiesSmallCard, BlackBtn, WhiteBtn } from "../../Components/Tools"
+import { PropertiesSmallCard, BlackBtn } from "../../Components/Tools"
+import GoogleMapComponent from "../../Components/Map";
 
 //data
-import { PropertiesData, questionList } from "../../assets/Data";
-import { FetchOneProperty } from "../../Store/PropertySlice"
+import { FetchProperty } from "../../Store/PropertySlice"
 import { useDispatch, useSelector } from "react-redux";
 
 export default function PropertDetails({ navItem, setNavItem }) {
+  const navigate = useNavigate()
+
   const propertyId = localStorage.getItem("propertyId")
   const dispatch = useDispatch();
   const { data, status } = useSelector((state) => state.properys);
+
+  const currentProperty = data?.find((val) => val._id === propertyId)
 
   const [nearSectionTab, setNearSectionTab] = useState("Shopping");
   const [questionTab, setQuestionTab] = useState()
@@ -134,11 +140,11 @@ export default function PropertDetails({ navItem, setNavItem }) {
 
 
   useEffect(() => {
-    dispatch(FetchOneProperty(propertyId));
+    dispatch(FetchProperty());
     if (data?.length < 0) {
-      dispatch(FetchOneProperty(propertyId));
+      dispatch(FetchProperty());
     }
-  }, [propertyId]);
+  }, []);
   return (
     <>
       <NavBar navItem={navItem} setNavItem={setNavItem} />
@@ -155,7 +161,7 @@ export default function PropertDetails({ navItem, setNavItem }) {
 
                   <div className="propertySection">
                     <div className="propTitleNav">
-                      <p className="proprteyTitle">{data?.title}</p>
+                      <p className="proprteyTitle">{currentProperty?.title}</p>
                       <div className="propOptiopBox">
                         <p><img src={hartIcon} /> Shortlist</p>
                         <p><img src={shareIcon} /> Share</p>
@@ -181,14 +187,14 @@ export default function PropertDetails({ navItem, setNavItem }) {
                               null
                           } */}
                           {
-                            data?.images?.slice(0, 3).map((img, i) => (
+                            currentProperty?.images?.slice(0, 3).map((img, i) => (
                               <div className="propRow" key={i}><img src={img} /></div>
                             ))
                           }
 
                         </div>
                         <div className="propImgInBox2">
-                          {data?.images?.slice(0, 1).map((img, i) => (
+                          {currentProperty?.images?.slice(0, 1).map((img, i) => (
                             <img key={i} src={img} />
                           ))}
                         </div>
@@ -196,23 +202,23 @@ export default function PropertDetails({ navItem, setNavItem }) {
                       </div>
                       <div className="propTextBox">
                         <div className="propPriceBox">
-                          <p className='propPriceText'>$ {data?.price}</p>
+                          <p className='propPriceText'>$ {currentProperty?.price}</p>
                           <div className="proceNotBox">
                             <p>Negotiable</p>
                           </div>
                         </div>
 
                         {/* <p className="propNText">5 Soon Lee Street Boon Lay / Jurong / Tuas (D22)</p> */}
-                        <p className="propNText"><img src={locationIcon} /> {data?.address}</p>
+                        <p className="propNText"><img src={locationIcon} /> {currentProperty?.address}</p>
 
                         <div className="propFetuerBox">
                           <div className="featuresBox">
                             <img src={badIcon} />
-                            <p>Room <br /> <samp>{data?.room}</samp></p>
+                            <p>Room <br /> <samp>{currentProperty?.room}</samp></p>
                           </div>
                           <div className="featuresBox">
                             <img src={bathroomIcon} />
-                            <p>Bathroom <br /> <samp>{data?.bath}</samp></p>
+                            <p>Bathroom <br /> <samp>{currentProperty?.bath}</samp></p>
                           </div>
                           <div className="featuresBox">
                             <img src={BalconyIcon} />
@@ -223,11 +229,11 @@ export default function PropertDetails({ navItem, setNavItem }) {
                         <div className="propBotomInfoBox">
                           <div className="propBtomIBox">
                             <p>Build-Up-Area</p>
-                            <span>{data?.area} sqft</span>
+                            <span>{currentProperty?.area} sqft</span>
                           </div>
                           <div className="propBtomIBox">
                             <p>Developer</p>
-                            <span>{data?.propertyType
+                            <span>{currentProperty?.propertyType
                             }</span>
                           </div>
                         </div>
@@ -237,7 +243,7 @@ export default function PropertDetails({ navItem, setNavItem }) {
 
                     <div className="propMDetailsSection">
                       <p className="propDtalHeader">About This Home</p>
-                      <p className="propMDSubText1">{data?.summary}</p>
+                      <p className="propMDSubText1">{currentProperty?.summary}</p>
 
                       <p className="propSeemore">Show More {">>"}</p>
 
@@ -245,11 +251,11 @@ export default function PropertDetails({ navItem, setNavItem }) {
                       <div className="propBotomInfoBox">
                         <div className="propBtomIBox">
                           <p>Property Type</p>
-                          <span>{data?.propertyType}</span>
+                          <span>{currentProperty?.propertyType}</span>
                         </div>
                         <div className="propBtomIBox">
                           <p>Floor Size</p>
-                          <span>{data?.foolrSize} sqft</span>
+                          <span>{currentProperty?.foolrSize} sqft</span>
                         </div>
                         <div className="propBtomIBox">
                           <p>Furnishing</p>
@@ -269,7 +275,7 @@ export default function PropertDetails({ navItem, setNavItem }) {
                         </div>
                         <div className="propBtomIBox">
                           <p>Listed On</p>
-                          <span>{data?.listedOn}</span>
+                          <span>{currentProperty?.listedOn}</span>
                         </div>
                         <div className="propBtomIBox">
                           <p>Listing ID</p>
@@ -306,7 +312,7 @@ export default function PropertDetails({ navItem, setNavItem }) {
                     </div> */}
                     <div className="roomFasalityBox ">
                       {
-                        data?.amenities?.map((an, i) => (
+                        currentProperty?.amenities?.map((an, i) => (
                           <div className="roomFasalityItem" key={i}>
                             {/* <img src={airConditionerIcon} /> */}
                             <p>{an}</p>
@@ -316,22 +322,22 @@ export default function PropertDetails({ navItem, setNavItem }) {
 
                     </div>
                     <div className="centerBtnBox">
-                      <BlackBtn height="50px" width="200px" btnText="View all Amenities" />
-                      <WhiteBtn height="50px" width="240px" btnText="Download Brochure" />
+                      {/* <BlackBtn height="50px" width="200px" btnText="View all Amenities" /> */}
+                      {/* <WhiteBtn height="50px" width="240px" btnText="Download Brochure" /> */}
                     </div>
                   </div>
 
                   <div className="propertySection whatNearSection">
                     <p className="propDtalHeader">What's nearby</p>
                     <div className="roomFasalityBox">
-                      {
+                      {/* {
                         nearYourTabList?.map((el, i) => (
                           <div className={nearSectionTab === el ? "nearSectionTab nearSectionTabActive" : "nearSectionTab"} onClick={() => setNearSectionTab(el)} key={i}><p>{el}</p></div>
                         ))
-                      }
+                      } */}
                     </div>
                     <div className="mapOuterBox">
-                      <div className="mapListBox">
+                      {/* <div className="mapListBox">
                         <LocationNearShop title="HardwareCity Pioneer Junction" dist="390" />
                         <LocationNearShop title="AB Minimart" dist="720" />
                         <LocationNearShop title="AB Minimart" dist="720" />
@@ -341,7 +347,10 @@ export default function PropertDetails({ navItem, setNavItem }) {
                       </div>
                       <div className="mapBox">
                         <img src={mapImg} alt="" />
-                      </div>
+                      </div> */}
+
+                      <GoogleMapComponent lat={currentProperty?.map?.lat} lng={currentProperty?.map?.lng} />
+
                     </div>
                   </div>
 
@@ -392,7 +401,7 @@ export default function PropertDetails({ navItem, setNavItem }) {
                     <p className="propDtalHeader">Frequently Asked Questions</p>
                     <div className="questionTabBox">
                       {
-                        data?.FAQ?.map((el, i) => (
+                        currentProperty?.FAQ?.map((el, i) => (
                           <QuestionRow title={el.question} summery={el.answer} key={i} setQuestionTab={setQuestionTab} questionTab={questionTab} i={i} />
                         ))
                       }
@@ -428,18 +437,24 @@ export default function PropertDetails({ navItem, setNavItem }) {
           <p className='SectionHeader'>Similar Listings</p>
           <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
           <div className="propertieCardBox">
-            <PropertiesSmallCard el={proData1} />
-            <PropertiesSmallCard el={proData2} />
-            <PropertiesSmallCard el={proData3} />
-            <PropertiesSmallCard el={proData4} />
+            {data?.slice(0, 4)?.map((el, i) => (
+              <PropertiesSmallCard {...el} key={i} onClick={() => {
+                localStorage.setItem("propertyId", el?._id)
+                navigate("/property-details")
+                GoTop()
+              }} />
+            ))}
           </div>
-          <div className="centerBtnBox">
-            <BlackBtn height="50px" width={200} btnText="Explore All" />
-          </div>
+        </div>
+        <div className="centerBtnBox">
+          <BlackBtn height="50px" width="200px" btnText="Explore All" onClick={() => {
+            navigate("/properties")
+            GoTop()
+          }} />
         </div>
 
 
-      </div>
+      </div >
       <Footer />
     </>
   )
