@@ -31,11 +31,17 @@ import Footer from '../../Components/Footer';
 import { DropBox, PropertiesSmallCard, BlackBtn, BuildingCard, AgentCard, GoTop } from "../../Components/Tools"
 
 //data
-// import { buildingData } from "../../assets/Data";
+import { FetchOffice } from "../../Store/OfficeSlice"
+import { useDispatch, useSelector } from "react-redux";
 
 
 export default function Office({ navItem, setNavItem }) {
   const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const { data, status } = useSelector((state) => state.office);
+  console.log(data, status)
+
+
   const [sortDrop, setSortDrop] = useState(false)
   const [sortDropVal, setSortDropVal] = useState("Sort by: Relevance")
   const sortDropList = ["Sort by: Relevance", "Sort by: Item1", "Sort by: item2"]
@@ -227,6 +233,14 @@ export default function Office({ navItem, setNavItem }) {
   };
 
 
+
+  useEffect(() => {
+    dispatch(FetchOffice());
+    if (data?.length < 0) {
+      dispatch(FetchOffice());
+    }
+  }, []);
+
   return (
     <>
       <NavBar navItem={navItem} setNavItem={setNavItem} />
@@ -299,16 +313,17 @@ export default function Office({ navItem, setNavItem }) {
               <DropBox dropList={sortDropList} label="Sort by" setDropVal={setSortDropVal} />
             </div>
             <div className="propertiesListBox">
-              {buildingData?.length ? (
-                buildingData.map((el, i) => (
+
+              {data?.length ? (
+                data?.map((el, i) => (
                   <BuildingCard
-                    key={el.id || i}
-                    title={el.title}
-                    img={el.img}
-                    location={el.location}
-                    ForRent={el.ForRent}
-                    ForSale={el.ForSale}
+                    key={el._id || i}
+                    title={el?.title}
+                    price={el?.price}
+                    img={el?.images[0]}
+                    location={el?.address}
                     onClick={() => {
+                      localStorage.setItem("officeIndex", el?._id)
                       navigate("/office-details")
                       GoTop()
                     }}
@@ -320,14 +335,24 @@ export default function Office({ navItem, setNavItem }) {
             </div>
             <img src={propertyCoverImg} className='propertyCoverImg' />
             <div className="propertiesListBox">
-              {
-                buildingData?.splice(0, 2).map((el, i) => (
-                  <BuildingCard key={i} title={el.title} img={el.img} location={el.location} ForRent={el.ForRent} ForSale={el.ForSale} onClick={() => {
-                    navigate("/office-details")
-                    GoTop()
-                  }} />
+              {/* {data?.length ? (
+                data?.splice(0, 2).map((el, i) => (
+                  <BuildingCard
+                    key={el._id || i}
+                    title={el?.title}
+                    price={el?.price}
+                    img={el?.images[0]}
+                    location={el?.address}
+                    onClick={() => {
+                      localStorage.setItem("officeIndex", el?._id)
+                      navigate("/office-details")
+                      GoTop()
+                    }}
+                  />
                 ))
-              }
+              ) : (
+                <p>No buildings available.</p>
+              )} */}
             </div>
           </div>
           <div className="propertieRightSection">

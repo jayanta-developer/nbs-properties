@@ -44,8 +44,6 @@ export default function PropertDetails({ navItem, setNavItem }) {
   const propertyId = localStorage.getItem("propertyId")
   const dispatch = useDispatch();
   const { data, status } = useSelector((state) => state.properys);
-  console.log(data)
-  console.log(status)
 
   const [nearSectionTab, setNearSectionTab] = useState("Shopping");
   const [questionTab, setQuestionTab] = useState()
@@ -394,8 +392,8 @@ export default function PropertDetails({ navItem, setNavItem }) {
                     <p className="propDtalHeader">Frequently Asked Questions</p>
                     <div className="questionTabBox">
                       {
-                        questionList?.map((el, i) => (
-                          <QuestionRow title={el.title} summery={el.summery} key={i} setQuestionTab={setQuestionTab} questionTab={questionTab} i={i} />
+                        data?.FAQ?.map((el, i) => (
+                          <QuestionRow title={el.question} summery={el.answer} key={i} setQuestionTab={setQuestionTab} questionTab={questionTab} i={i} />
                         ))
                       }
                     </div>

@@ -42,7 +42,6 @@ export const FetchOffice = createAsyncThunk<OfficeDataType[]>(
   async () => {
     const response = await fetch(`${baseURL}/office`);
     const data = await response.json();
-    console.log(data);
     return data;
   }
 );

@@ -120,7 +120,7 @@ export const PropertieBigCard = ({ img, title, bhk, sqft, location, price, psf, 
   )
 }
 
-export const BuildingCard = ({ img, title, location, ForSale, ForRent, onClick }) => {
+export const BuildingCard = ({ img, title, location, price, sector, onClick }) => {
   return (
     <div className="propertieBigCard BuildingCard" onClick={onClick}>
       <div className="propImgBox">
@@ -128,11 +128,12 @@ export const BuildingCard = ({ img, title, location, ForSale, ForRent, onClick }
       </div>
       <div className="proCInfoBox">
         <p className='proCBTitle'>{title}</p>
+        <h5>Price: {price}</h5>
         <p className='propClocText'><img src={locationIcon} alt="" /> {location}</p>
         <div className="unitesBox">
           <div className="unitesInerBox">
-            <p>Unites For Sale: <samp>{ForSale}</samp></p>
-            <p>Unites For Rent: <samp>{ForRent}</samp></p>
+            {/* <p>Building Area: <samp>{buildingArea}</samp></p> */}
+            {/* <p>Area: <samp>{sector}</samp></p> */}
           </div>
           <img src={goBtnIcon} className="goBtnIcon" alt="" />
         </div>
