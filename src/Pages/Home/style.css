@@ -419,6 +419,7 @@
 }
 .propInfoBox {
   width: 100%;
+  min-height: 132px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -491,7 +492,7 @@
 .blogSumText {
   font-size: 13px;
   color: #444156;
-line-height: 15px;
+  line-height: 15px;
 }
 .LeftBlogBox {
   width: 100%;

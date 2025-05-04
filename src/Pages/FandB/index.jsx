@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./style.css"
+import { useNavigate } from "react-router-dom"
 
 
 //images
@@ -10,14 +11,28 @@ import BlogBanner from "../../assets/Images/BlogCoverPhoto.png"
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
 import { PropertiesSmallCard } from "../../Components/Tools";
+import {BlackBtn,GoTop} from "../../Components/Tools"
 
 
 //data
-import { cultureData, PropertiesData } from "../../assets/Data"
+import { cultureData } from "../../assets/Data"
 
 
-
+import { FetchProperty } from "../../Store/PropertySlice"
+import { useDispatch, useSelector } from "react-redux";
 export default function FandB({ navItem, setNavItem }) {
+  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const { data, status } = useSelector((state) => state.properys);
+
+
+
+  useEffect(() => {
+    dispatch(FetchProperty());
+    if (data?.length < 0) {
+      dispatch(FetchProperty());
+    }
+  }, []);
   return (
     <>
       <NavBar navItem={navItem} setNavItem={setNavItem} />
@@ -43,13 +58,25 @@ export default function FandB({ navItem, setNavItem }) {
           <p className='SectionHeader'>Available Banquet Hall Near You</p>
           <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
           <div className="propertieCardBox">
-            {/* {
-              PropertiesData?.splice(0, 4).map((el, i) => (
-                <PropertiesSmallCard el={el} key={i} />
+            {
+              data?.slice(0, 4).map((el, i) => (
+                <PropertiesSmallCard {...el} key={i} onClick={() => {
+                  localStorage.setItem("propertyId", el?._id)
+                  navigate("/property-details")
+                  GoTop()
+                }} />
               ))
-            } */}
+            }
           </div>
         </div>
+
+        <div className="centerBtnBox">
+          <BlackBtn width="200px" btnText="Explore All" height="50px" onClick={() => {
+            navigate("/properties")
+            GoTop()
+          }} />
+        </div>
+
       </div>
       <Footer />
     </>

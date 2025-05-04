@@ -56,69 +56,6 @@ export const nearYouPropertie = [
   },
 ];
 
-export const PropertiesData = [
-  {
-    img: propertieImg1,
-    location: "Matunga East, Mumbai, Maharastra, 720156 ",
-    BHK: "3",
-    SQFT: "1250",
-    PSF: "2,992",
-    price: "7.25",
-    agentImg: userImg,
-    agentName: "David Warner",
-  },
-  {
-    img: propertieImg2,
-    location: "Matunga East, Mumbai, Maharastra, 720156 ",
-    BHK: "3",
-    PSF: "2,992",
-    SQFT: "1250",
-    price: "7.25",
-    agentName: "David Warner",
-    agentImg: userImg,
-  },
-  {
-    img: propertieImg3,
-    location: "Matunga East, Mumbai, Maharastra, 720156 ",
-    BHK: "3",
-    SQFT: "1250",
-    PSF: "2,992",
-    price: "7.25",
-    agentName: "David Warner",
-    agentImg: userImg,
-  },
-  {
-    img: propertieImg4,
-    location: "Matunga East, Mumbai, Maharastra, 720156 ",
-    BHK: "3",
-    SQFT: "1250",
-    PSF: "2,992",
-    price: "7.25",
-    agentName: "David Warner",
-    agentImg: userImg,
-  },
-  {
-    img: propertieImg5,
-    location: "Matunga East, Mumbai, Maharastra, 720156 ",
-    BHK: "3",
-    SQFT: "1250",
-    PSF: "2,992",
-    price: "7.25",
-    agentName: "David Warner",
-    agentImg: userImg,
-  },
-  {
-    img: propertieImg6,
-    location: "Matunga East, Mumbai, Maharastra, 720156 ",
-    BHK: "3",
-    SQFT: "1250",
-    PSF: "2,992",
-    price: "7.25",
-    agentName: "David Warner",
-    agentImg: userImg,
-  },
-];
-
 export const BlogData = [
   {
     img: BlogImg1,

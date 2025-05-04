@@ -13,10 +13,9 @@ import { BlackBtn, PropertiesSmallCard } from "../../Components/Tools"
 
 //data
 //data
-import { PropertiesData, recentPostData } from "../../assets/Data";
+import { recentPostData } from "../../assets/Data";
 
 export default function BlogDetails() {
-  const [propertyData, setPropertyData] = useState(PropertiesData)
 
 
   return (
@@ -99,11 +98,11 @@ export default function BlogDetails() {
             <p className='SectionHeader'>Available Properties Near You</p>
             <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
             <div className="propertieCardBox">
-              {
+              {/* {
                 propertyData?.splice(0, 4).map((el, i) => (
                   <PropertiesSmallCard el={el} key={i} />
                 ))
-              }
+              } */}
             </div>
           </div>
 

@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import "./style.css"
+import { useNavigate } from "react-router-dom"
+
 
 //images
 import BgImg from "../../assets/Images/aboutBg.png";
@@ -18,11 +20,14 @@ import { BlackBtn, PropertiesSmallCard } from "../../Components/Tools"
 
 
 //data
-import { nearYouPropertie, PropertiesData } from "../../assets/Data"
+import { nearYouPropertie } from "../../assets/Data"
 
-
+import { FetchProperty } from "../../Store/PropertySlice"
+import { useDispatch, useSelector } from "react-redux";
 export default function About({ navItem, setNavItem }) {
-  const [propertyData, setPropertyData] = useState(PropertiesData)
+  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const { data, status } = useSelector((state) => state.properys);
 
 
   const TrustCard = ({ header, subHeader, icon }) => {
@@ -34,6 +39,16 @@ export default function About({ navItem, setNavItem }) {
       </div>
     )
   }
+
+
+
+
+  useEffect(() => {
+    dispatch(FetchProperty());
+    if (data?.length < 0) {
+      dispatch(FetchProperty());
+    }
+  }, []);
   return (
     <>
       <NavBar navItem={navItem} setNavItem={setNavItem} />
@@ -68,7 +83,7 @@ export default function About({ navItem, setNavItem }) {
                 <p className='wmDfHeader'>What Make Us Different?</p>
                 <p className='sectionSubText'>Lorem ipsum dolor sit amet consectetur. Diam scelerisque sollicitudin tristique enim integer sed nunc ultricies nisi. Urna lacinia tempor lacus placerat velit.</p>
                 <div className="wmdBtnBox">
-                  <BlackBtn width="170px" btnText="Explore Services" height="40px" />
+                  <BlackBtn width={"fit-content"} btnText="Explore Services" height="40px" />
                 </div>
                 <img src={difBgImg} />
               </div>
@@ -100,15 +115,22 @@ export default function About({ navItem, setNavItem }) {
             <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
             <div className="propertieCardBox">
               {
-                propertyData?.splice(0, 4).map((el, i) => (
-                  <PropertiesSmallCard el={el} key={i} />
+                data?.slice(0, 4).map((el, i) => (
+                  <PropertiesSmallCard {...el} key={i} onClick={() => {
+                    localStorage.setItem("propertyId", el?._id)
+                    navigate("/property-details")
+                    GoTop()
+                  }} />
                 ))
               }
             </div>
           </div>
 
           <div className="centerBtnBox">
-            <BlackBtn width="200px" btnText="Explore All" height="50px" />
+            <BlackBtn width="200px" btnText="Explore All" height="50px" onClick={() => {
+              navigate("/properties")
+              GoTop()
+            }} />
           </div>
 
         </div>

@@ -8,6 +8,7 @@ import PcardIcon1 from "../../assets/Images/pCardIcon1.svg"
 import PcardIcon2 from "../../assets/Images/pCardIcon2.svg"
 import goBtnIcon from "../../assets/Images/upArrowGoBtnIcon.svg"
 import Avatar from "../../assets/Images/avatar.png"
+import AgentIcon from "../../assets/Images/agentIcon.gif"
 
 import fullStar from "../../assets/Images/FullStar.svg"
 import hulfStar from "../../assets/Images/HulfStar.svg"
@@ -96,7 +97,7 @@ export const PropertiesSmallCard = ({ images, RERACarpetArea, price, ReadyToPoss
   )
 }
 
-export const PropertieBigCard = ({ img, title, bhk, sqft, location, price, psf, agentImg, agentName, onClick }) => {
+export const PropertieBigCard = ({ img, title, bhk, sqft, location, price, psf, agentName, onClick }) => {
   return (
     <div onClick={onClick} className="propertieBigCard">
       <div className="propImgBox">
@@ -112,7 +113,7 @@ export const PropertieBigCard = ({ img, title, bhk, sqft, location, price, psf, 
         </div>
         <div className="pcAgentBox">
           <div className="userPrf">
-            <img src={agentImg} alt="" />
+            <img src={AgentIcon} alt="" />
             <p>{agentName}</p>
           </div>
           <OutLineBtn btnText="Contact Agent" height="37px" />

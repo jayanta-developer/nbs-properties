@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./style.css"
+import { useNavigate } from "react-router-dom"
+
 
 //images
 import locationIcon from "../../assets/Images/locationIcon.svg";
@@ -30,14 +32,20 @@ import Footer from "../../Components/Footer";
 
 
 //Data
-import { nearYouPropertie, PropertiesData, BlogData } from "../../assets/Data"
+import { nearYouPropertie, BlogData } from "../../assets/Data"
 
+
+import { FetchProperty } from "../../Store/PropertySlice"
+import { useDispatch, useSelector } from "react-redux";
 export default function Home({ navItem, setNavItem }) {
+  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const { data, status } = useSelector((state) => state.properys);
+
   const [dropVal1, setDropVal1] = useState("Property type");
   const [dropVal2, setDropVal2] = useState("Property type");
   const [dropVal3, setDropVal3] = useState("Property type");
   const [homeTab, setHomeTab] = useState(0)
-  const [propertyData, setPropertyData] = useState(PropertiesData)
   const [locationDropVal, setlocationDropVal] = useState();
   const [searchPop, setSearchPop] = useState(false)
 
@@ -84,8 +92,11 @@ export default function Home({ navItem, setNavItem }) {
   }
 
   useEffect(() => {
-
-  })
+    dispatch(FetchProperty());
+    if (data?.length < 0) {
+      dispatch(FetchProperty());
+    }
+  }, []);
 
   return (
     <>
@@ -215,8 +226,12 @@ export default function Home({ navItem, setNavItem }) {
           <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
           <div className="propertieCardBox">
             {
-              propertyData?.splice(0, 4).map((el, i) => (
-                <PropertiesSmallCard el={el} key={i} />
+              data?.slice(0, 4).map((el, i) => (
+                <PropertiesSmallCard {...el} key={i} onClick={() => {
+                  localStorage.setItem("propertyId", el?._id)
+                  navigate("/property-details")
+                  GoTop()
+                }} />
               ))
             }
           </div>

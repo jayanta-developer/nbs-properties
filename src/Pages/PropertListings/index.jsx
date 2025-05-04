@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import "./style.css";
-import Select from 'react-select';
 
 
 //images
@@ -11,13 +10,6 @@ import dropIcon from "../../assets/Images/DropIcon.svg"
 import CrossIcon from "../../assets/Images/crossIcon.png"
 import userImg from "../../assets/Images/userImg.png";
 
-import propertieImg1 from "../../assets/Images/propertieImg1.png";
-import propertieImg2 from "../../assets/Images/propertieImg2.png";
-import propertieImg3 from "../../assets/Images/propertieImg3.png";
-import propertieImg4 from "../../assets/Images/propertieImg4.png";
-import propertieImg5 from "../../assets/Images/propertieImg5.png";
-import propertieImg6 from "../../assets/Images/propertieImg6.png";
-
 //components
 import { useNavigate } from "react-router-dom"
 import NavBar from '../../Components/NavBar';
@@ -26,14 +18,15 @@ import { DropBox, PropertiesSmallCard, PropertieBigCard, BlackBtn, GoTop } from 
 
 //data
 import { FetchProperty } from "../../Store/PropertySlice"
+import { FetchUsers } from "../../Store/UserSlice"
 import { useDispatch, useSelector } from "react-redux";
 
 export default function PropertListings({ navItem, setNavItem }) {
+  const navigate = useNavigate()
   const dispatch = useDispatch();
   const { data, status } = useSelector((state) => state.properys);
-  const navigate = useNavigate()
-  console.log(data);
-
+  const Agent = useSelector((state) => state.user);
+  const agentData = Agent?.data?.filter((ag) => ag.role === "Agent")
 
   const [sortDrop, setSortDrop] = useState(false)
   const [sortDropVal, setSortDropVal] = useState("Sort by: Relevance")
@@ -54,109 +47,8 @@ export default function PropertListings({ navItem, setNavItem }) {
   const PropertySize = ["22,215 sq.ft", "30,928 sq.ft", "24,394 sq.ft", "19,166 sq.ft", "34,200 sq.ft"];
   const PropertyBudget = ["15,000", "24,000", "30,000"];
 
-  const proData1 = {
-    img: propertieImg1,
-    location: "Matunga East, Mumbai, Maharastra, 720156 ",
-    BHK: "3",
-    SQFT: "1250",
-    PSF: "2,992",
-    price: "7.25",
-    agentImg: userImg,
-    agentName: "David Warner",
-  }
-  const proData2 = {
-    img: propertieImg2,
-    location: "Matunga East, Mumbai, Maharastra, 720156 ",
-    BHK: "3",
-    SQFT: "1250",
-    PSF: "2,992",
-    price: "7.25",
-    agentImg: userImg,
-    agentName: "David Warner",
-  }
-  const proData3 = {
-    img: propertieImg3,
-    location: "Matunga East, Mumbai, Maharastra, 720156 ",
-    BHK: "3",
-    SQFT: "1250",
-    PSF: "2,992",
-    price: "7.25",
-    agentImg: userImg,
-    agentName: "David Warner",
-  }
-  const proData4 = {
-    img: propertieImg4,
-    location: "Matunga East, Mumbai, Maharastra, 720156 ",
-    BHK: "3",
-    SQFT: "1250",
-    PSF: "2,992",
-    price: "7.25",
-    agentImg: userImg,
-    agentName: "David Warner",
-  }
 
-  const propertiesData = [
-    {
-      img: propertieImg1,
-      location: "Matunga East, Mumbai, Maharastra, 720156 ",
-      BHK: "3",
-      SQFT: "1250",
-      PSF: "2,992",
-      price: "7.25",
-      agentImg: userImg,
-      agentName: "David Warner",
-    },
-    {
-      img: propertieImg2,
-      location: "Matunga East, Mumbai, Maharastra, 720156 ",
-      BHK: "3",
-      PSF: "2,992",
-      SQFT: "1250",
-      price: "7.25",
-      agentName: "David Warner",
-      agentImg: userImg,
-    },
-    {
-      img: propertieImg3,
-      location: "Matunga East, Mumbai, Maharastra, 720156 ",
-      BHK: "3",
-      SQFT: "1250",
-      PSF: "2,992",
-      price: "7.25",
-      agentName: "David Warner",
-      agentImg: userImg,
-    },
-    {
-      img: propertieImg4,
-      location: "Matunga East, Mumbai, Maharastra, 720156 ",
-      BHK: "3",
-      SQFT: "1250",
-      PSF: "2,992",
-      price: "7.25",
-      agentName: "David Warner",
-      agentImg: userImg,
-    },
-    {
-      img: propertieImg5,
-      location: "Matunga East, Mumbai, Maharastra, 720156 ",
-      BHK: "3",
-      SQFT: "1250",
-      PSF: "2,992",
-      price: "7.25",
-      agentName: "David Warner",
-      agentImg: userImg,
-    },
-    {
-      img: propertieImg6,
-      location: "Matunga East, Mumbai, Maharastra, 720156 ",
-      BHK: "3",
-      SQFT: "1250",
-      PSF: "2,992",
-      price: "7.25",
-      agentName: "David Warner",
-      agentImg: userImg,
-    },
-  ];
+
 
   const handelChipsAdd = () => {
     if (chipsInputVal) {
@@ -176,8 +68,12 @@ export default function PropertListings({ navItem, setNavItem }) {
 
   useEffect(() => {
     dispatch(FetchProperty());
+    dispatch(FetchUsers());
     if (data?.length < 0) {
       dispatch(FetchProperty());
+    }
+    if (Agent.data?.length < 0) {
+      dispatch(FetchUsers());
     }
   }, []);
   return (
@@ -240,7 +136,7 @@ export default function PropertListings({ navItem, setNavItem }) {
                     sqft={el.area}
                     psf={el.foolrSize}
                     agentImg={userImg}
-                    agentName="Amit"
+                    agentName={agentData?.find((Val) => Val?._id === el?.agent)?.name}
                     onClick={() => {
                       localStorage.setItem("propertyId", el._id)
                       navigate("/property-details")
