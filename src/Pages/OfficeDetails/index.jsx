@@ -24,7 +24,8 @@ import Footer from '../../Components/Footer';
 import { DropBox, PropertiesSmallCard, BlackBtn, WhiteBtn, AgentCard, RatingBox, GoTop } from "../../Components/Tools"
 import GoogleMapComponent from "../../Components/Map"
 
-import { FetchOneOffice, FetchOffice } from "../../Store/OfficeSlice"
+import { FetchOffice } from "../../Store/OfficeSlice"
+import { FetchUsers } from "../../Store/UserSlice"
 import { useDispatch, useSelector } from "react-redux";
 
 export default function OfficeDetails({ navItem, setNavItem }) {
@@ -35,6 +36,8 @@ export default function OfficeDetails({ navItem, setNavItem }) {
   const dispatch = useDispatch();
   const { data, status } = useSelector((state) => state.office);
   const currentOffice = data?.find((val) => val._id === currentOfficeId)
+  const Agent = useSelector((state) => state.user);
+  const agentData = Agent?.data?.filter((ag) => ag.role === "Agent")
 
   const [nearSectionTab, setNearSectionTab] = useState("Shopping");
   const [questionTab, setQuestionTab] = useState()
@@ -176,8 +179,13 @@ export default function OfficeDetails({ navItem, setNavItem }) {
 
   useEffect(() => {
     dispatch(FetchOffice());
+    dispatch(FetchUsers());
+
     if (data?.length < 0) {
       dispatch(FetchOffice());
+    }
+    if (Agent.data?.length < 0) {
+      dispatch(FetchUsers());
     }
   }, []);
 
@@ -304,14 +312,14 @@ export default function OfficeDetails({ navItem, setNavItem }) {
               <p className='SectionHeader'>Building Featured Agents</p>
               <div className="propertieCardBox AgentsRowSection">
                 {
-                  inde3?.splice(0, 4).map((el, i) => (
-                    <AgentCard key={i} />
+                  agentData?.splice(0, 4).map((el, i) => (
+                    <AgentCard key={i} {...el} />
                   ))
                 }
               </div>
-              <div className="centerBtnBox">
+              {/* <div className="centerBtnBox">
                 <BlackBtn height="50px" width={200} btnText="Explore All" />
-              </div>
+              </div> */}
             </div>
 
             <div className="propertySection whatNearSection">

@@ -18,6 +18,16 @@ import BlogImg from "../../assets/Images/blogImg1.png"
 import clockIcon from "../../assets/Images/clockIcon.svg"
 import humanIcon from "../../assets/Images/AvatarBlackIcon.svg"
 
+
+const handleCall = () => {
+  window.location.href = `tel:${process.env.REACT_APP_PHONE_NUMBER}`;
+}
+export const openWhatsapp = ({ number }) => {
+  const url = `https://wa.me/${number || process.env.REACT_APP_PHONE_NUMBER}`;
+  window.open(url, '_blank');
+}
+
+
 //Buttons
 export const BlackBtn = ({ height, icon, btnText, width, onClick }) => {
   return (
@@ -146,16 +156,16 @@ export const BuildingCard = ({ img, title, location, price, sector, onClick }) =
   )
 }
 
-export const AgentCard = () => {
+export const AgentCard = ({ name, role, number }) => {
   return (
     <div className="brandProfileBox">
-      <div className="avatarBox">
-        <img src={Avatar} />
+      <div className="agentPic">
+        <img src={AgentIcon} />
       </div>
-      <p className='brandTitle'>Brendon Kuay</p>
-      <span>ERA REALTY NETWORK PTE LTD</span>
+      <p className='brandTitle'>{name}</p>
+      <span>{role}</span>
       <span>CEA: R017302B / L3002382K</span>
-      <BlackBtn btnText="WhatsApp Web" height="40px" width="85%" />
+      <BlackBtn btnText="WhatsApp Web" height="40px" width="85%" onClick={() => openWhatsapp({ number })} />
     </div>
   )
 }

@@ -53,7 +53,7 @@
   position: relative;
   cursor: pointer;
 }
-.dropBox:focus{
+.dropBox:focus {
   outline: none;
 }
 .dropIcon {
@@ -166,6 +166,10 @@
 }
 .pagination button:focus {
   outline: none;
+}
+.agentPic img {
+  width: 65px;
+  height: 65px;
 }
 /* Tabe view */
 @media only screen and (min-width: 768px) {

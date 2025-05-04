@@ -24,10 +24,8 @@ export default function Office({ navItem, setNavItem }) {
   const navigate = useNavigate()
   const dispatch = useDispatch();
   const { data, status } = useSelector((state) => state.office);
-  console.log(data, status)
 
 
-  const [sortDrop, setSortDrop] = useState(false)
   const [sortDropVal, setSortDropVal] = useState("Sort by: Relevance")
   const sortDropList = ["Sort by: Relevance", "Sort by: Item1", "Sort by: item2"]
   const [propertyTypeDropVal, setPropertyTypeDropVal] = useState("Property type")
@@ -198,33 +196,17 @@ export default function Office({ navItem, setNavItem }) {
             <div className="rightPropertieBox">
               <p className="propertiesSideHeader">Rent Flats Near You</p>
               {data?.map((el, i) => (
-                <PropertiesSmallCard {...el} key={i}   onClick={() => {
+                <PropertiesSmallCard {...el} key={i} onClick={() => {
                   localStorage.setItem("officeIndex", el?._id)
                   navigate("/office-details")
                   GoTop()
-                }}/>
+                }} />
               ))}
             </div>
           </div>
         </div>
 
-        {/* agents row section */}
 
-        <div className="AbelPropt">
-          <p className='SectionHeader'>Office Featured Agents</p>
-          <p className='sectionSubText'>Industrial development is our main line of business. We do Factory Construction, Warehouse and others</p>
-
-          <div className="propertieCardBox AgentsRowSection">
-            {
-              PropertiesData?.splice(0, 4).map((el, i) => (
-                <AgentCard key={i} />
-              ))
-            }
-          </div>
-          <div className="centerBtnBox">
-            <BlackBtn height="50px" width={200} btnText="Explore All" />
-          </div>
-        </div>
 
 
         {/* Available Properties */}
@@ -232,11 +214,11 @@ export default function Office({ navItem, setNavItem }) {
           <p className='SectionHeader'>Latest Office Space for Rent</p>
           <div className="propertieCardBox">
             {data?.map((el, i) => (
-              <PropertiesSmallCard {...el} key={i}   onClick={() => {
+              <PropertiesSmallCard {...el} key={i * 2} onClick={() => {
                 localStorage.setItem("officeIndex", el?._id)
                 navigate("/office-details")
                 GoTop()
-              }}/>
+              }} />
             ))}
           </div>
           <div className="centerBtnBox">
