@@ -192,11 +192,11 @@ export const RatingBox = ({ width, rating }) => {
 }
 
 
-export const BlogCard = ({ onClick }) => {
+export const BlogCard = ({ onClick, blogText, title, date, images }) => {
   return (
     <div className="blogCard" onClick={onClick}>
       <div className="blogImgBox">
-        <img src={BlogImg} />
+        <img src={images[images.length - 1]} />
       </div>
       <div className="blogTextBox">
         <div className="bcMBox">
@@ -206,11 +206,11 @@ export const BlogCard = ({ onClick }) => {
           </p>
           <p>
             <img src={clockIcon} />
-            20th April 2023
+            {date}
           </p>
         </div>
-        <p className='blogCTitle'>JTC launches Jalan Papan site for tender</p>
-        <p className='blogCSubTitle'>Lorem ipsum dolor sit amet consectetur. Orci vitae sagittis non porttitor pellentesque. Congue lobortis viverra platea et feugiat at tempor.</p>
+        <p className='blogCTitle'>{title}</p>
+        <p className='blogCSubTitle'>{blogText[0].summarys[0].summary.slice(0, 150)}...</p>
       </div>
     </div>
   )

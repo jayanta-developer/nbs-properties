@@ -6,7 +6,7 @@ import { combineReducers } from "redux";
 import propertyReducer from "./PropertySlice";
 import officeReducer from "./OfficeSlice";
 import userReducer from "./UserSlice";
-
+import blogReducer from "./BlogSlice";
 
 import {
   FLUSH,
@@ -26,6 +26,7 @@ const reducer = combineReducers({
   properys: propertyReducer,
   office: officeReducer,
   user: userReducer,
+  blog: blogReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

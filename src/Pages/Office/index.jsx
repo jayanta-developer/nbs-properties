@@ -146,7 +146,7 @@ export default function Office({ navItem, setNavItem }) {
 
             <div className="propertieListHeaderBox">
               <p className="propLHText">Top Office Buildings</p>
-              <DropBox dropList={sortDropList} label="Sort by" setDropVal={setSortDropVal} />
+              {/* <DropBox dropList={sortDropList} label="Sort by" setDropVal={setSortDropVal} /> */}
             </div>
             <div className="propertiesListBox">
 

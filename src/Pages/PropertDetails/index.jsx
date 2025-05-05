@@ -13,26 +13,17 @@ import locationIcon from "../../assets/Images/locationIcon2.svg";
 import badIcon from "../../assets/Images/bedIcon.svg";
 import bathroomIcon from "../../assets/Images/bathroomIcon.svg";
 import BalconyIcon from "../../assets/Images/BalconyIcon.svg";
-import airConditionerIcon from "../../assets/Images/air-conditioner.svg";
-import carParkingIcon from "../../assets/Images/car-parking.svg";
-import cctvIcon from "../../assets/Images/cctv.svg";
-import availabilityIcon from "../../assets/Images/availability.svg";
-import mapImg from "../../assets/Images/mapImg.png";
 import shoppingCartIcon from "../../assets/Images/shopping-cartIcon.svg";
 import walkIcon from "../../assets/Images/walk.svg";
 import AddIcon from "../../assets/Images/addIcon.svg";
-import userImg from "../../assets/Images/userImg.png";
-import agentImg from "../../assets/Images/Agent.jpg";
+import AgentIcon from "../../assets/Images/agentIcon.gif"
 
-import propertieImg1 from "../../assets/Images/propertieImg1.png";
-import propertieImg2 from "../../assets/Images/propertieImg2.png";
-import propertieImg3 from "../../assets/Images/propertieImg3.png";
-import propertieImg4 from "../../assets/Images/propertieImg4.png";
+
 
 //components
 import NavBar from "../../Components/NavBar";
 import Footer from "../../Components/Footer";
-import { PropertiesSmallCard, BlackBtn } from "../../Components/Tools";
+import { PropertiesSmallCard, BlackBtn, openWhatsapp, AgentCard } from "../../Components/Tools";
 import GoogleMapComponent from "../../Components/Map";
 
 //data
@@ -262,6 +253,7 @@ export default function PropertDetails({ navItem, setNavItem }) {
                       height="50px"
                       width="200px"
                       btnText="Contact Agent"
+                      onClick={() => openWhatsapp({ number: currentAgent?.number })}
                     />
                   </div>
                 </div>
@@ -333,8 +325,10 @@ export default function PropertDetails({ navItem, setNavItem }) {
               <div className="propertySection">
                 <p className="propDtalHeader">Contact with Agent</p>
                 <div className="agentBox">
-                  <div className="agImgBox">
-                    <img src={agentImg} alt="agentImg" />
+                  <div className="">
+                    <img src={
+                      AgentIcon
+                    } alt="agentImg" />
                   </div>
                   <div className="agInfoBox">
                     <h2>Sr. {currentAgent?.name}</h2>
@@ -389,15 +383,7 @@ export default function PropertDetails({ navItem, setNavItem }) {
               </div>
             </div>
             <div className="propertieRightSection">
-              <div className="brandProfileBox">
-                <div className="avatarBox">
-                  <img src={Avatar} />
-                </div>
-                <p className="brandTitle">Brendon Kuay</p>
-                <span>ERA REALTY NETWORK PTE LTD</span>
-                <span>CEA: R017302B / L3002382K</span>
-                <BlackBtn btnText="WhatsApp Web" width="200px" height="40px" />
-              </div>
+              <AgentCard name={currentAgent?.name} number={currentAgent?.number} role={currentAgent?.role} />
 
               <img src={sbiBannar} className="sbiBannar" />
             </div>

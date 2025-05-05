@@ -6,9 +6,7 @@ import { useNavigate } from "react-router-dom";
 import hartIcon from "../../assets/Images/heartIcon.svg"
 import shareIcon from "../../assets/Images/shareIcon.svg"
 import optionIcon from "../../assets/Images/dotsIcon.svg";
-import PropertieIntImg from "../../assets/Images/PropertieIntImg1.png"
 import locationIcon from "../../assets/Images/locationIcon2.svg"
-import mapImg from "../../assets/Images/mapImg.png"
 import shoppingCartIcon from "../../assets/Images/shopping-cartIcon.svg"
 import walkIcon from "../../assets/Images/walk.svg"
 import AddIcon from "../../assets/Images/addIcon.svg"
@@ -21,7 +19,7 @@ import propertieImg4 from "../../assets/Images/propertieImg4.png";
 //components
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
-import { DropBox, PropertiesSmallCard, BlackBtn, WhiteBtn, AgentCard, RatingBox, GoTop } from "../../Components/Tools"
+import { DropBox, PropertiesSmallCard, BlackBtn, WhiteBtn, AgentCard, RatingBox, GoTop, openWhatsapp } from "../../Components/Tools"
 import GoogleMapComponent from "../../Components/Map"
 
 import { FetchOffice } from "../../Store/OfficeSlice"
@@ -39,11 +37,9 @@ export default function OfficeDetails({ navItem, setNavItem }) {
   const Agent = useSelector((state) => state.user);
   const agentData = Agent?.data?.filter((ag) => ag.role === "Agent")
 
-  const [nearSectionTab, setNearSectionTab] = useState("Shopping");
   const [questionTab, setQuestionTab] = useState()
   const nearYourTabList = ["Saved Places", "Train", "Bus", "Shopping", "Food & Drink", "Bank", "Post Office"]
 
-  const inde3 = [0, 0, 0];
 
   const buildingTableData = [
     {
@@ -73,46 +69,7 @@ export default function OfficeDetails({ navItem, setNavItem }) {
     },
   ]
 
-  const proData1 = {
-    img: propertieImg1,
-    location: "Matunga East, Mumbai, Maharastra, 720156 ",
-    BHK: "3",
-    SQFT: "1250",
-    PSF: "2,992",
-    price: "7.25",
-    agentImg: userImg,
-    agentName: "David Warner",
-  }
-  const proData2 = {
-    img: propertieImg2,
-    location: "Matunga East, Mumbai, Maharastra, 720156 ",
-    BHK: "3",
-    SQFT: "1250",
-    PSF: "2,992",
-    price: "7.25",
-    agentImg: userImg,
-    agentName: "David Warner",
-  }
-  const proData3 = {
-    img: propertieImg3,
-    location: "Matunga East, Mumbai, Maharastra, 720156 ",
-    BHK: "3",
-    SQFT: "1250",
-    PSF: "2,992",
-    price: "7.25",
-    agentImg: userImg,
-    agentName: "David Warner",
-  }
-  const proData4 = {
-    img: propertieImg4,
-    location: "Matunga East, Mumbai, Maharastra, 720156 ",
-    BHK: "3",
-    SQFT: "1250",
-    PSF: "2,992",
-    price: "7.25",
-    agentImg: userImg,
-    agentName: "David Warner",
-  }
+
 
   const ratingData = [
     {
@@ -240,10 +197,10 @@ export default function OfficeDetails({ navItem, setNavItem }) {
                     </div>
 
                   </div>
-                  <div className="centerBtnBox">
+                  {/* <div className="centerBtnBox">
                     <BlackBtn height="50px" width={150} btnText="Buy" />
                     <WhiteBtn height="50px" width={150} btnText="Rent" />
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
@@ -280,7 +237,9 @@ export default function OfficeDetails({ navItem, setNavItem }) {
                 </div>
 
                 <div className="centerBtnBox">
-                  <BlackBtn height="50px" width={200} btnText="Contact Agent" />
+                  <BlackBtn height="50px" width={200} btnText="Contact Agent"
+                    onClick={() => openWhatsapp({ number: currentAgent?.number })}
+                  />
                 </div>
               </div>
             </div>
@@ -385,7 +344,7 @@ export default function OfficeDetails({ navItem, setNavItem }) {
                   ))
                 }
               </div>
-              <BlackBtn btnText="Add Review" width={200} height="40px" />
+              {/* <BlackBtn btnText="Add Review" width={200} height="40px" /> */}
             </div>
           </div>
         </div>

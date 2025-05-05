@@ -19,12 +19,14 @@ export default function NavBar({ navItem, setNavItem, Full }) {
 
   const navItems = [
     "Home",
-    "Buy",
-    "Rent",
+    "Property",
+    // "Rent",
     "Office",
-    "Retail",
-    "Industrial",
-    "F & B"
+    // "Retail",
+    // "Industrial",
+    "F & B",
+    "Blog",
+    "About Us",
   ]
 
   const handelNavigation = (el) => {
@@ -36,6 +38,10 @@ export default function NavBar({ navItem, setNavItem, Full }) {
       navigate("/office")
     } else if (el === "F & B") {
       navigate("/F&B")
+    } else if (el === "Blog") {
+      navigate("/blogs")
+    } else if (el === "About Us") {
+      navigate("/about-us")
     }
   }
 

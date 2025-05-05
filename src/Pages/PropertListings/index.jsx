@@ -122,7 +122,7 @@ export default function PropertListings({ navItem, setNavItem }) {
 
             <div className="propertieListHeaderBox">
               <p className="propLHText">379 Results | Properties for Sale in Kolkata</p>
-              <DropBox dropList={sortDropList} label="Sort by" setDropVal={setSortDropVal} />
+              {/* <DropBox dropList={sortDropList} label="Sort by" setDropVal={setSortDropVal} /> */}
             </div>
             <div className="propertiesListBox">
               {data.length &&

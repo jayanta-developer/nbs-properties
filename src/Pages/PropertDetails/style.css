@@ -1,3 +1,6 @@
+.propertyDetailsPage{
+  padding-bottom: 10%;
+}
 .brandProfileBox {
   width: 100%;
   border: 1px solid #000;
@@ -94,8 +97,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
+  gap: 33px;
 }
 .propImgInBox1 {
   width: 25%;
@@ -445,7 +447,7 @@
   }
   .propTextBox {
     width: 50%;
-    gap: 5px;
+    gap: 33px;
   }
   .propTitleNav {
     flex-direction: row;
@@ -458,6 +460,9 @@
   }
   .centerBtnBox .BlackBtn {
     width: unset;
+  }
+  .propertyDetailsPage{
+    padding-bottom: 5%;
   }
 }
 /* Desktop view */
