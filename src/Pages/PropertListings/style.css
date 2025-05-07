@@ -270,6 +270,10 @@
 .addChip img {
   rotate: 44deg;
 }
+.AbelPropt
+.SectionHeader{
+text-align: center;
+}
 /* Tabe view */
 @media only screen and (min-width: 768px) {
   .propertieListHeaderBox {
