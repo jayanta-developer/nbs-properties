@@ -32,7 +32,7 @@ export default function NavBar({ navItem, setNavItem, Full }) {
   const handelNavigation = (el) => {
     if (el === "Home") {
       navigate("/")
-    } else if (el === "Buy") {
+    } else if (el === "Property") {
       navigate("/properties")
     } else if (el === "Office") {
       navigate("/office")

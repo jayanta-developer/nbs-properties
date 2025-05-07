@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 import { Reloader } from "../Components/Tools";
 
-export const baseURL = "http://localhost:3001/nbs/api";
+export const baseURL = import.meta.env.VITE_BASE_URL;
 
 export enum STATUSES {
   IDLE = "idle",
