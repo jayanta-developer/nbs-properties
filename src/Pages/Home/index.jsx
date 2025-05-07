@@ -409,14 +409,14 @@ export default function Home({ navItem, setNavItem }) {
             Construction, Warehouse and others
           </p>
           <div className="blogDisplaySection">
-            <div data-aos="fade-right" className="RightBlogBox">
+            <div data-aos="fade-up" className="RightBlogBox">
               <div className="RBlogImgBox">
                 <img src={BlogData[0].img} alt="" />
               </div>
               <p className="blogTitle">{BlogData[0].title}</p>
               <p className="blogSumText">{BlogData[0].summery}</p>
             </div>
-            <div data-aos="fade-left" className="LeftBlogBox">
+            <div data-aos="fade-up" className="LeftBlogBox">
               {BlogData?.slice(-3).map((el, i) => (
                 <div key={i} className="blogRowCard">
                   <div className="brImgBox">

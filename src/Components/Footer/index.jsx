@@ -1,6 +1,6 @@
-import React from 'react'
-import "./style.css"
-import { useNavigate } from "react-router-dom"
+import React from 'react';
+import "./style.css";
+import { useNavigate } from "react-router-dom";
 
 //images
 import nbsBlackIcon from "../../assets/Images/footerClogo.svg"
@@ -18,8 +18,7 @@ import GoTopIcon from "../../assets/Images/GoTopIcon.svg"
 import { GoTop } from "../../Components/Tools"
 
 export default function Footer() {
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
 
   const handelNavigation = (el) => {
     window.scrollTo({ top: 0, behavior: "smooth" })
@@ -33,7 +32,6 @@ export default function Footer() {
       navigate("/about-us")
     }
   }
-
 
   const FooterRowItems = [
     "Login / Sign Up",
@@ -55,9 +53,7 @@ export default function Footer() {
           <img src={FooterPatnerImg5} />
         </div>
 
-
         <img src={nbsBlackIcon} alt="" className='FooterClogo' />
-
         <div className="footerRowBox">
           {
             FooterRowItems?.map((el, i) => (
@@ -65,14 +61,12 @@ export default function Footer() {
             ))
           }
         </div>
-
         <div className="footerMideaBox">
           <img src={FacebookIcon} />
           <img src={TwitterIcon} />
           <img src={InstaIcon} />
           <img src={LinkdinIcon} />
         </div>
-
         <p className="footerBottomText">© 2024 <samp>NBS Property</samp> All right & Reserved</p>
         <img src={GoTopIcon} className='goTopIcon' alt="" onClick={GoTop} />
       </div>
