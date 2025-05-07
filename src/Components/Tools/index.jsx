@@ -2,19 +2,14 @@ import "./style.css"
 
 
 //images
-import dropIcon from "../../assets/Images/DropIcon.svg"
 import locationIcon from "../../assets/Images/locationIcon2.svg"
 import PcardIcon1 from "../../assets/Images/pCardIcon1.svg"
 import PcardIcon2 from "../../assets/Images/pCardIcon2.svg"
 import goBtnIcon from "../../assets/Images/upArrowGoBtnIcon.svg"
-import Avatar from "../../assets/Images/avatar.png"
 import AgentIcon from "../../assets/Images/agentIcon.gif"
-
 import fullStar from "../../assets/Images/FullStar.svg"
 import hulfStar from "../../assets/Images/HulfStar.svg"
 import emptyStar from "../../assets/Images/EmptyStar.svg"
-
-import BlogImg from "../../assets/Images/blogImg1.png"
 import clockIcon from "../../assets/Images/clockIcon.svg"
 import humanIcon from "../../assets/Images/AvatarBlackIcon.svg"
 
@@ -56,9 +51,9 @@ export const WhiteFillBtn = ({ height, icon, btnText }) => {
   )
 }
 
-export const OutLineBtn = ({ height, icon, btnText }) => {
+export const OutLineBtn = ({ height, icon, btnText, onClick }) => {
   return (
-    <div style={{ height: height }} className="BlackBtn OutLineBtn">
+    <div onClick={onClick} style={{ height: height }} className="BlackBtn OutLineBtn">
       {icon ? <img src={icon} /> : null}
       <p>{btnText}</p>
     </div>
@@ -90,7 +85,7 @@ export const PropertiesSmallCard = ({ images, RERACarpetArea, price, ReadyToPoss
 }) => {
 
   return (
-    <div className="propertieCard" onClick={onClick}>
+    <div data-aos="fade-up" className="propertieCard" onClick={onClick}>
       <div className="propImgBox">
         <img src={images[0]} alt="" />
       </div>
@@ -109,7 +104,7 @@ export const PropertiesSmallCard = ({ images, RERACarpetArea, price, ReadyToPoss
 
 export const PropertieBigCard = ({ img, title, bhk, sqft, location, price, psf, agentName, onClick }) => {
   return (
-    <div onClick={onClick} className="propertieBigCard">
+    <div data-aos="fade-up" onClick={onClick} className="propertieBigCard">
       <div className="propImgBox">
         <img src={img} alt="" />
       </div>
@@ -136,7 +131,7 @@ export const PropertieBigCard = ({ img, title, bhk, sqft, location, price, psf, 
 
 export const BuildingCard = ({ img, title, location, price, sector, onClick }) => {
   return (
-    <div className="propertieBigCard BuildingCard" onClick={onClick}>
+    <div data-aos="fade-up" className="propertieBigCard BuildingCard" onClick={onClick}>
       <div className="propImgBox">
         <img src={img} alt="" />
       </div>
@@ -158,7 +153,7 @@ export const BuildingCard = ({ img, title, location, price, sector, onClick }) =
 
 export const AgentCard = ({ name, role, number }) => {
   return (
-    <div className="brandProfileBox">
+    <div data-aos="fade-up" className="brandProfileBox">
       <div className="agentPic">
         <img src={AgentIcon} />
       </div>
@@ -194,7 +189,7 @@ export const RatingBox = ({ width, rating }) => {
 
 export const BlogCard = ({ onClick, blogText, title, date, images }) => {
   return (
-    <div className="blogCard" onClick={onClick}>
+    <div data-aos="fade-up" className="blogCard" onClick={onClick}>
       <div className="blogImgBox">
         <img src={images[images.length - 1]} />
       </div>

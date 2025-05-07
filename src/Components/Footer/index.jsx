@@ -22,7 +22,7 @@ export default function Footer() {
 
 
   const handelNavigation = (el) => {
-    window.scrollTo({top:0,behavior:"smooth"})
+    window.scrollTo({ top: 0, behavior: "smooth" })
     if (el === "Contact Us") {
       navigate("/contact-us")
     } else if (el === "Login / Sign Up") {
@@ -47,7 +47,7 @@ export default function Footer() {
   return (
     <>
       <div className="FooterContainer">
-        <div className="FooterTopBox">
+        <div data-aos="fade-up" className="FooterTopBox">
           <img src={FooterPatnerImg1} />
           <img src={FooterPatnerImg2} />
           <img src={FooterPatnerImg3} />
