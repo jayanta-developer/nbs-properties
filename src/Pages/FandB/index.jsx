@@ -11,7 +11,7 @@ import BlogBanner from "../../assets/Images/BlogCoverPhoto.png"
 import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
 import { PropertiesSmallCard } from "../../Components/Tools";
-import {BlackBtn,GoTop} from "../../Components/Tools"
+import { BlackBtn, GoTop } from "../../Components/Tools"
 
 
 //data
@@ -44,7 +44,7 @@ export default function FandB({ navItem, setNavItem }) {
         <div className="coultureCardBox">
           {
             cultureData?.map((el, i) => (
-              <div key={i} className="cultureCard">
+              <div data-aos="fade-up" key={i} className="cultureCard">
                 <img src={el.icon} />
                 <p className='cultTitle'>{el?.title}</p>
                 <p className='cultSubTitle'>{el?.summery}</p>

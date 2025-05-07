@@ -43,6 +43,7 @@ export default function NavBar({ navItem, setNavItem, Full }) {
     } else if (el === "About Us") {
       navigate("/about-us")
     }
+    setSideMenu(false)
   }
 
   useEffect(() => {
@@ -88,8 +89,8 @@ export default function NavBar({ navItem, setNavItem, Full }) {
             {
               navItems?.map((el, i) => (
                 <p className={navItem === el ? 'navItem AtivenavItem' : "navItem"} onClick={() => {
-                  setNavItem(el)
                   handelNavigation(el)
+                  setNavItem(el)
                 }} key={i}>{el}</p>
               ))
             }

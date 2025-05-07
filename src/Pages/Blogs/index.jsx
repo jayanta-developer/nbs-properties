@@ -10,7 +10,7 @@ import bookingBaner from "../../assets/Images/bookingBaner.png";
 //components
 import NavBar from "../../Components/NavBar";
 import Footer from "../../Components/Footer";
-import { BlogCard } from "../../Components/Tools";
+import { BlogCard, GoTop } from "../../Components/Tools";
 
 import { useDispatch, useSelector } from "react-redux";
 import { FetchBlog } from "../../Store/BlogSlice";
@@ -18,9 +18,6 @@ import { FetchBlog } from "../../Store/BlogSlice";
 export default function Blogs() {
   const dispatch = useDispatch();
   const { data, status } = useSelector((state) => state.blog);
-  console.log('====================================');
-  console.log(data);
-  console.log('====================================');
   const Navigate = useNavigate();
   const ary = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
@@ -92,7 +89,10 @@ export default function Blogs() {
           <p className="blogMainHeader">Our informative Blogs</p>
           <div className="blogCardBox">
             {currentData?.map((el, i) => (
-              <BlogCard key={i} {...el} onClick={() => Navigate("/blog-details")} />
+              <BlogCard key={i} {...el} onClick={() => {
+                Navigate("/blog-details")
+                GoTop()
+              }} />
             ))}
           </div>
           <div className="pagination">
